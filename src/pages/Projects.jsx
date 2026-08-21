@@ -11,6 +11,7 @@ export default function Projects() {
   const { projects, loading, error, retry } = useProjects();
   const { categories } = useCategories();
   const [activeCategoryId, setActiveCategoryId] = useState(33); // "All" default
+  const [viewMode, setViewMode] = useState('vertical'); // Default to Apple-style vertical carousel
   const [filtered, setFiltered] = useState([]);
   const gridRef = useRef(null);
   const titleRef = useRef(null);
@@ -22,7 +23,6 @@ export default function Projects() {
       return;
     }
 
-    // Filter by category id — a project belongs to a category if its categories array contains that id
     const result = projects.filter((p) =>
       p.categories.some((c) => c.id === activeCategoryId)
     );
@@ -61,10 +61,6 @@ export default function Projects() {
     );
   }, []);
 
-  const activeCategory = categories.find((c) => {
-    if (c.id === activeCategoryId) return true;
-    return c.children?.some((child) => child.id === activeCategoryId);
-  });
   const activeCategoryName = activeCategoryId === 33
     ? 'All'
     : categories.find((c) => c.id === activeCategoryId)?.name ||
@@ -76,17 +72,40 @@ export default function Projects() {
       <div className={styles.container}>
         {/* Page Header */}
         <div ref={titleRef} className={styles.pageHeader}>
-          <h1 className={styles.pageTitle}>Work</h1>
-          <p className={styles.projectCount}>
-            {!loading && (
-              <span>
-                {filtered.length} {filtered.length === 1 ? 'Project' : 'Projects'}
-                {activeCategoryId !== 33 && (
-                  <span className={styles.categoryBadge}> — {activeCategoryName}</span>
-                )}
-              </span>
-            )}
-          </p>
+          <div>
+            <h1 className={styles.pageTitle}>Work</h1>
+            <p className={styles.projectCount}>
+              {!loading && (
+                <span>
+                  {filtered.length} {filtered.length === 1 ? 'Project' : 'Projects'}
+                  {activeCategoryId !== 33 && (
+                    <span className={styles.categoryBadge}> — {activeCategoryName}</span>
+                  )}
+                </span>
+              )}
+            </p>
+          </div>
+
+          <div className={styles.headerRight}>
+            <div className={styles.viewToggle}>
+              <button
+                className={`${styles.toggleBtn} ${viewMode === 'vertical' ? styles.toggleBtnActive : ''}`}
+                onClick={() => setViewMode('vertical')}
+                title="Vertical Interactive Showcase"
+                data-cursor="link"
+              >
+                Carousel
+              </button>
+              <button
+                className={`${styles.toggleBtn} ${viewMode === 'grid' ? styles.toggleBtnActive : ''}`}
+                onClick={() => setViewMode('grid')}
+                title="Editorial Grid View"
+                data-cursor="link"
+              >
+                Grid
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Category Filter */}
@@ -98,13 +117,14 @@ export default function Projects() {
           />
         )}
 
-        {/* Project Grid */}
+        {/* Project Grid / Showcase */}
         <div ref={gridRef}>
           <ProjectGrid
             projects={filtered}
             loading={loading}
             error={error}
             onRetry={retry}
+            viewMode={viewMode}
           />
         </div>
       </div>
@@ -113,3 +133,4 @@ export default function Projects() {
     </main>
   );
 }
+

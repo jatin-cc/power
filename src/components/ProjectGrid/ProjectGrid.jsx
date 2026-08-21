@@ -1,25 +1,26 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import ProjectCard from '../ProjectCard/ProjectCard.jsx';
+import VerticalProjectCarousel from '../VerticalProjectCarousel/VerticalProjectCarousel.jsx';
 import styles from './ProjectGrid.module.css';
 
 /**
  * Returns layout class based on position in grid for editorial variation.
- * Pattern: featured (full), normal, normal, wide, normal, normal, repeat
  */
 function getCardSpan(index) {
   const pattern = index % 7;
-  if (pattern === 0) return 'full'; // full width
-  if (pattern === 3) return 'wide'; // 2/3 width
+  if (pattern === 0) return 'full';
+  if (pattern === 3) return 'wide';
   return 'normal';
 }
 
-export default function ProjectGrid({ projects, loading, error, onRetry }) {
+export default function ProjectGrid({ projects, loading, error, onRetry, viewMode = 'vertical' }) {
   const gridRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Animate cards in when projects change
+  // Animate cards in grid mode when projects change
   useEffect(() => {
+    if (viewMode !== 'grid') return;
     const cards = cardRefs.current.filter(Boolean);
     if (cards.length === 0) return;
 
@@ -32,7 +33,19 @@ export default function ProjectGrid({ projects, loading, error, onRetry }) {
       ease: 'power3.out',
       delay: 0.1,
     });
-  }, [projects]);
+  }, [projects, viewMode]);
+
+  // Default to Vertical Apple-Style Showcase Experience
+  if (viewMode === 'vertical') {
+    return (
+      <VerticalProjectCarousel
+        projects={projects}
+        loading={loading}
+        error={error}
+        onRetry={onRetry}
+      />
+    );
+  }
 
   if (error) {
     return (
@@ -93,3 +106,4 @@ export default function ProjectGrid({ projects, loading, error, onRetry }) {
     </div>
   );
 }
+
