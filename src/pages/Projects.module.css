@@ -1,0 +1,45 @@
+.main {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.pageHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.projectCount {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.categoryBadge {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .pageHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
