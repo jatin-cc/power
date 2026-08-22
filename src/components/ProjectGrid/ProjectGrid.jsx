@@ -1,51 +1,55 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectCard from '../ProjectCard/ProjectCard.jsx';
-import VerticalProjectCarousel from '../VerticalProjectCarousel/VerticalProjectCarousel.jsx';
 import styles from './ProjectGrid.module.css';
 
-/**
- * Returns layout class based on position in grid for editorial variation.
- */
-function getCardSpan(index) {
-  const pattern = index % 7;
-  if (pattern === 0) return 'full';
-  if (pattern === 3) return 'wide';
-  return 'normal';
-}
+gsap.registerPlugin(ScrollTrigger);
 
-export default function ProjectGrid({ projects, loading, error, onRetry, viewMode = 'vertical' }) {
-  const gridRef = useRef(null);
-  const cardRefs = useRef([]);
+export default function ProjectGrid({ projects = [], loading, error, onRetry }) {
+  const [expandedProjectId, setExpandedProjectId] = useState(null);
+  const containerRef = useRef(null);
+  const rowsRef = useRef([]);
 
-  // Animate cards in grid mode when projects change
+  const handleToggleExpand = (id) => {
+    setExpandedProjectId((prev) => (prev === id ? null : id));
+  };
+
+  // Scroll scale-down animation without hiding cards initially
   useEffect(() => {
-    if (viewMode !== 'grid') return;
-    const cards = cardRefs.current.filter(Boolean);
-    if (cards.length === 0) return;
+    if (loading || !projects.length || !containerRef.current) return;
 
-    gsap.set(cards, { opacity: 0, y: 50 });
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      duration: 0.85,
-      stagger: 0.08,
-      ease: 'power3.out',
-      delay: 0.1,
-    });
-  }, [projects, viewMode]);
+    const rows = rowsRef.current.filter(Boolean);
+    if (!rows.length) return;
 
-  // Default to Vertical Apple-Style Showcase Experience
-  if (viewMode === 'vertical') {
-    return (
-      <VerticalProjectCarousel
-        projects={projects}
-        loading={loading}
-        error={error}
-        onRetry={onRetry}
-      />
-    );
-  }
+    // Ensure all cards are 100% visible immediately on load (no initial hiding)
+    gsap.set(rows, { opacity: 1, y: 0, scale: 1 });
+
+    const ctx = gsap.context(() => {
+      rows.forEach((row) => {
+        // Smooth scale down as card scrolls toward top of screen
+        gsap.to(row, {
+          scale: 0.94,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: row,
+            start: 'top 15%',   // starts scaling when card reaches top 15% of viewport
+            end: 'bottom top',  // finishes scale down as card leaves screen
+            scrub: true,        // smooth scroll-linked effect
+          },
+        });
+      });
+    }, containerRef);
+
+    // Refresh ScrollTrigger calculations
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [projects, loading]);
 
   if (error) {
     return (
@@ -60,17 +64,15 @@ export default function ProjectGrid({ projects, loading, error, onRetry, viewMod
 
   if (loading) {
     return (
-      <div className={styles.grid} aria-busy="true">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className={`${styles.cardWrap} ${styles[getCardSpan(i)]}`}>
-            <div
-              className={styles.skeleton}
-              style={{ aspectRatio: i === 0 ? '16/10' : i % 3 === 1 ? '3/4' : '4/3' }}
-            />
-            <div className={styles.skeletonMeta}>
-              <div className={styles.skeletonLine} style={{ width: '60%' }} />
-              <div className={styles.skeletonLine} style={{ width: '40%', marginTop: '0.5rem' }} />
+      <div className={styles.loadingContainer} aria-busy="true">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div key={i} className={styles.skeletonRow}>
+            <div className={styles.skeletonLeft}>
+              <div className={styles.skeletonIcon} />
+              <div className={styles.skeletonLine} style={{ width: '80%' }} />
+              <div className={styles.skeletonLine} style={{ width: '50%' }} />
             </div>
+            <div className={styles.skeletonRight} />
           </div>
         ))}
       </div>
@@ -86,24 +88,17 @@ export default function ProjectGrid({ projects, loading, error, onRetry, viewMod
   }
 
   return (
-    <div ref={gridRef} className={styles.grid}>
-      {projects.map((project, i) => {
-        const span = getCardSpan(i);
-        return (
-          <div
-            key={project.id}
-            ref={(el) => (cardRefs.current[i] = el)}
-            className={`${styles.cardWrap} ${styles[span]}`}
-          >
-            <ProjectCard
-              project={project}
-              index={i}
-              featured={span === 'full'}
-            />
-          </div>
-        );
-      })}
+    <div ref={containerRef} className={styles.gridWrapper}>
+      {projects.map((project, i) => (
+        <div key={project.id} ref={(el) => (rowsRef.current[i] = el)}>
+          <ProjectCard
+            project={project}
+            index={i}
+            isExpanded={expandedProjectId === project.id}
+            onToggleExpand={() => handleToggleExpand(project.id)}
+          />
+        </div>
+      ))}
     </div>
   );
 }
-

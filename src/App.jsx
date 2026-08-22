@@ -18,6 +18,8 @@ export default function App() {
   // Initialize Lenis smooth scroll
   useLenis();
 
+  const isProjectsPage = location.pathname === '/projects' || location.pathname === '/';
+
   return (
     <>
       {/* Initial Splash / Loading Screen */}
@@ -28,18 +30,18 @@ export default function App() {
       {/* Global Interactive Custom Cursor */}
       <CustomCursor />
 
-      {/* Fixed Navigation Header */}
-      <Header />
+      {/* Render header globally for pages other than projects showcase */}
+      {!isProjectsPage && <Header />}
 
       {/* Main Route Content with Smooth Page Transitions */}
       <PageTransition key={location.pathname}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Projects />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Projects />} />
         </Routes>
       </PageTransition>
     </>

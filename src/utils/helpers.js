@@ -32,9 +32,14 @@ export function normalizeProject(raw) {
     awards: raw.project_awards || [],
     publications: raw.project_publications || [],
     url: raw.project_url || '',
-    // Computed
+    // Computed & Metadata
     primaryCategory: getPrimaryCategory(raw),
     year: extractYear(raw),
+    client: raw.project_client || raw.project_collaboration || 'UNIVERSIDAD FRANCISCO DE VITORIA',
+    typology: (getPrimaryCategory(raw) || raw.project_typology_copy || 'CULTURE').toUpperCase(),
+    size: raw.project_builtup_area || raw.project_site_area || '4,300 / 46,285',
+    statusText: raw.project_status || 'IN DESIGN',
+    description: stripHtml(raw.project_summary_1 || raw.project_summary_2 || raw.project_summary_3 || ''),
   };
 }
 
