@@ -1,11 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CTAButton from '@/components/CTAButton';
-import { ShieldCheck, Zap, Award, ArrowDown } from 'lucide-react';
+import { Zap, Award, CheckCircle2 } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +64,7 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[92vh] pt-32 pb-20 flex items-center justify-center bg-white overflow-hidden subtle-noise"
+      className="relative min-h-[88vh] pt-28 pb-16 flex items-center justify-center bg-white overflow-hidden subtle-noise"
     >
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
@@ -77,17 +76,17 @@ export default function HeroSection() {
             <div ref={eyebrowRef} className="inline-flex items-center gap-2">
               <span className="w-8 h-[2px] bg-[#0052cc]" />
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
-                PRECISION POWER ENGINEERING
+                G SONS POWER TRANSFORMERS PVT. LTD.
               </span>
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0f172a] leading-[1.08]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0f172a] leading-[1.12]">
                 <span ref={titleLine1Ref} className="block">
-                  Next-Gen Power
+                  Engineering Reliable Power.
                 </span>
                 <span ref={titleLine2Ref} className="block text-[#0052cc]">
-                  Transformers.
+                  Building Electrical Infrastructure.
                 </span>
               </h1>
             </div>
@@ -96,34 +95,34 @@ export default function HeroSection() {
               ref={subtitleRef}
               className="text-base sm:text-lg text-slate-600 max-w-xl font-normal leading-relaxed"
             >
-              Engineered up to 500 MVA, 400 kV Class. Delivering high-efficiency power transformers, custom arc furnace units, ester fluid eco-designs, and 24/7 predictive diagnostics for global energy infrastructure.
+              Manufacturing Oil-Filled Distribution Transformers, Cast Resin Dry-Type Transformers, VPI Dry Type, and Compact Substations (CSS) up to 5 MVA in 11 kV & 33 kV voltage classes.
             </p>
 
-            <div ref={ctaGroupRef} className="pt-4 flex flex-wrap items-center gap-4">
+            <div ref={ctaGroupRef} className="pt-2 flex flex-wrap items-center gap-4">
               <CTAButton href="/products-services" size="lg" variant="primary">
-                Explore Products & Services
+                Explore Products & Switchgear
               </CTAButton>
               <CTAButton href="/contact" size="lg" variant="outline">
-                Request Engineering RFQ
+                Request Engineering Quote
               </CTAButton>
             </div>
 
             {/* Technical Metadata Badges */}
             <div
               ref={metaBadgeRef}
-              className="pt-8 border-t border-slate-200 grid grid-cols-3 gap-6 text-xs text-slate-600 font-medium"
+              className="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 text-xs text-slate-600 font-medium"
             >
               <div>
-                <span className="block font-bold text-base text-[#0f172a]">500 MVA</span>
-                <span className="text-slate-500">Max Capacity</span>
+                <span className="block font-bold text-sm sm:text-base text-[#0f172a]">Up to 5 MVA</span>
+                <span className="text-slate-500">Manufacturing Capacity</span>
               </div>
               <div>
-                <span className="block font-bold text-base text-[#0052cc]">400 kV Class</span>
-                <span className="text-slate-500">EHV Transmission</span>
+                <span className="block font-bold text-sm sm:text-base text-[#0052cc]">11 kV & 33 kV</span>
+                <span className="text-slate-500">Voltage Classes</span>
               </div>
               <div>
-                <span className="block font-bold text-base text-[#0f172a]">ISO/IEC 17025</span>
-                <span className="text-slate-500">Accredited Testing</span>
+                <span className="block font-bold text-sm sm:text-base text-[#0f172a]">BIS & ZED Gold</span>
+                <span className="text-slate-500">Licensed Quality</span>
               </div>
             </div>
           </div>
@@ -138,7 +137,7 @@ export default function HeroSection() {
               <img
                 ref={imageRef}
                 src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
-                alt="High-Voltage Power Transformer Manufacturing"
+                alt="G Sons Power Distribution Transformer Manufacturing"
                 className="w-full h-full object-cover"
               />
 
@@ -150,10 +149,10 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <span className="text-xs font-bold text-[#0f172a] block">
-                      Sub-55 dB Low Noise
+                      Cast Resin & Oil-Filled
                     </span>
                     <span className="text-[11px] text-slate-500 block">
-                      Resonance Damping Core Technology
+                      CRGO & Electrolytic Copper Core
                     </span>
                   </div>
                 </div>

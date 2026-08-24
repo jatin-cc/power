@@ -1,46 +1,51 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import SectionHeading from '@/components/SectionHeading';
-import { locations } from '@/data/locations';
 import { MapPin, Phone, Mail, CheckCircle2 } from 'lucide-react';
-import gsap from 'gsap';
+
+const gstplLocations = [
+  {
+    id: "loc-main",
+    name: "G Sons Power Corporate & Manufacturing Complex",
+    type: "Headquarters & Plant Facility",
+    address: "G Sons Power Transformers Pvt. Ltd., State-of-the-Art Electrical Industrial Zone, India",
+    phone: "+91 800 555-POWER",
+    email: "sales@gsonspower.com",
+    stats: "Up to 5 MVA Manufacturing Hub"
+  },
+  {
+    id: "loc-testing",
+    name: "GSTPL Precision Routine Testing Lab",
+    type: "ISO Compliant Test Bay",
+    address: "G Sons Quality Control Station, India",
+    phone: "+91 800 555-TEST",
+    email: "quality@gsonspower.com",
+    stats: "100% Factory Routine Tested"
+  }
+];
 
 export default function GlobalPresence() {
-  const [selectedLoc, setSelectedLoc] = useState(locations[0]);
-  const detailRef = useRef(null);
-
-  const handleSelect = (loc) => {
-    if (selectedLoc.id === loc.id) return;
-    gsap.to(detailRef.current, {
-      opacity: 0,
-      y: 10,
-      duration: 0.2,
-      onComplete: () => {
-        setSelectedLoc(loc);
-        gsap.to(detailRef.current, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
-      },
-    });
-  };
+  const [selectedLoc, setSelectedLoc] = useState(gstplLocations[0]);
 
   return (
-    <section className="py-24 bg-white border-b border-slate-200">
+    <section className="py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading
-          eyebrow="GLOBAL FOOTPRINT"
-          title="Manufacturing Facilities & Regional Service Hubs."
-          subtitle="Operating state-of-the-art production plants and rapid-response diagnostic hubs strategic to major industrial corridors."
+          eyebrow="MANUFACTURING & QUALITY HUB"
+          title="Modern Production Facility & Quality Test Bay."
+          subtitle="Our manufacturing facility is equipped with advanced winding machines, vacuum resin casting systems, curing ovens, and precision testing equipment."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Location List Buttons */}
           <div className="lg:col-span-5 space-y-3">
-            {locations.map((loc) => {
+            {gstplLocations.map((loc) => {
               const isSelected = selectedLoc.id === loc.id;
               return (
                 <button
                   key={loc.id}
-                  onClick={() => handleSelect(loc)}
+                  onClick={() => setSelectedLoc(loc)}
                   className={`w-full text-left p-5 border transition-all duration-200 flex items-start justify-between cursor-pointer ${
                     isSelected
                       ? 'border-[#0052cc] bg-[#0052cc]/5 shadow-sm'
@@ -69,8 +74,8 @@ export default function GlobalPresence() {
           </div>
 
           {/* Location Details Display Panel */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between min-h-[380px]">
-            <div ref={detailRef} className="space-y-6">
+          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between min-h-[320px]">
+            <div className="space-y-6">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>
                   <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-1">
@@ -95,24 +100,6 @@ export default function GlobalPresence() {
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-[#0052cc] shrink-0" />
                   <span className="font-medium">{selectedLoc.email}</span>
-                </div>
-              </div>
-
-              {/* Vector Blueprint Map Graphic */}
-              <div className="pt-4 border-t border-slate-200">
-                <div className="h-40 bg-white border border-slate-200 relative overflow-hidden flex items-center justify-center bg-grid-pattern">
-                  <div className="text-center p-4">
-                    <span className="text-xs font-bold text-[#0052cc] uppercase tracking-widest block mb-1">
-                      GEOGRAPHIC COORDINATES
-                    </span>
-                    <span className="text-lg font-mono font-bold text-[#0f172a]">
-                      LAT: {selectedLoc.coordinates.lat}° N | LNG: {selectedLoc.coordinates.lng}° W
-                    </span>
-                  </div>
-                  <div className="absolute top-3 right-3 flex items-center gap-1 text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 border border-emerald-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    LIVE FACILITY NODE
-                  </div>
                 </div>
               </div>
             </div>

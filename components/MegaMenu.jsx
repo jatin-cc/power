@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Zap, Shield, Cpu, Factory, Globe } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Factory } from 'lucide-react';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
 import { industries } from '@/data/industries';
@@ -33,7 +33,7 @@ export default function MegaMenu({ activeTab, onClose }) {
                       {item.name}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 pl-10">
+                  <p className="text-xs text-slate-500 line-clamp-2 pl-10 font-normal">
                     {item.shortDesc}
                   </p>
                 </Link>
@@ -43,13 +43,13 @@ export default function MegaMenu({ activeTab, onClose }) {
             <div className="col-span-4 bg-slate-50 p-6 border border-slate-200 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-2">
-                  Featured Product
+                  FEATURED CAPABILITY
                 </span>
                 <h4 className="font-bold text-base text-[#0f172a] mb-2">
-                  500 MVA EHV Power Transformer
+                  Cast Resin Dry-Type & Oil-Filled up to 5 MVA
                 </h4>
-                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                  Ultra-high-voltage step-up transmission units engineered for grid resilience and sub-55 dB acoustic sound dampening.
+                <p className="text-xs text-slate-600 mb-4 leading-relaxed font-normal">
+                  BIS Licensed and ZED Gold Certified manufacturing in 11 kV and 33 kV voltage classes tailored for industrial and utility installations.
                 </p>
               </div>
               <Link
@@ -81,7 +81,7 @@ export default function MegaMenu({ activeTab, onClose }) {
                       {item.name}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 pl-10">
+                  <p className="text-xs text-slate-500 line-clamp-2 pl-10 font-normal">
                     {item.shortDesc}
                   </p>
                 </Link>
@@ -91,13 +91,13 @@ export default function MegaMenu({ activeTab, onClose }) {
             <div className="col-span-4 bg-slate-50 p-6 border border-slate-200 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-2">
-                  24/7 Field Support
+                  PROJECT CUSTOMIZATION
                 </span>
                 <h4 className="font-bold text-base text-[#0f172a] mb-2">
-                  Emergency Diagnostic Response
+                  Technical Support & Site Commissioning
                 </h4>
-                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                  Mobile oil vacuum degasification and high-precision SFRA dielectric condition assessment available worldwide.
+                <p className="text-xs text-slate-600 mb-4 leading-relaxed font-normal">
+                  Our engineering team provides project-specific customization, factory routine test documentation, and site energization guidance.
                 </p>
               </div>
               <Link
@@ -105,7 +105,7 @@ export default function MegaMenu({ activeTab, onClose }) {
                 onClick={onClose}
                 className="inline-flex items-center gap-2 text-xs font-bold text-[#0052cc] uppercase tracking-wider hover:gap-3 transition-all"
               >
-                Request Immediate Support <ArrowRight className="w-3.5 h-3.5" />
+                Request Technical Quote <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function MegaMenu({ activeTab, onClose }) {
                       {item.name}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 pl-10">
+                  <p className="text-xs text-slate-500 line-clamp-2 pl-10 font-normal">
                     {item.desc}
                   </p>
                 </Link>
@@ -139,13 +139,13 @@ export default function MegaMenu({ activeTab, onClose }) {
             <div className="col-span-4 bg-slate-50 p-6 border border-slate-200 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-2">
-                  Sector Versatility
+                  SECTOR SOLUTIONS
                 </span>
                 <h4 className="font-bold text-base text-[#0f172a] mb-2">
-                  Tailored Grid Solutions
+                  Engineered Power Distribution
                 </h4>
-                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                  Custom harmonic shielding for arc furnaces, traction substations, and green solar/wind offshore platforms.
+                <p className="text-xs text-slate-600 mb-4 leading-relaxed font-normal">
+                  Serving data centres, commercial developments, solar projects, utilities, hospitals, and heavy industrial facilities across India and internationally.
                 </p>
               </div>
               <Link
@@ -160,14 +160,14 @@ export default function MegaMenu({ activeTab, onClose }) {
         )}
 
         {activeTab === 'company' && (
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             <Link
               href="/about"
               onClick={onClose}
               className="p-4 border border-slate-200 hover:border-[#0052cc] hover:bg-[#0052cc]/5 transition-all"
             >
-              <h4 className="font-bold text-sm text-[#0f172a] mb-1">About Vortex</h4>
-              <p className="text-xs text-slate-500">Corporate story, mission, vision, and core engineering philosophy.</p>
+              <h4 className="font-bold text-sm text-[#0f172a] mb-1">About G Sons Power</h4>
+              <p className="text-xs text-slate-500">Company story, mission, and G Sons Group heritage.</p>
             </Link>
             <Link
               href="/infrastructure"
@@ -175,23 +175,15 @@ export default function MegaMenu({ activeTab, onClose }) {
               className="p-4 border border-slate-200 hover:border-[#0052cc] hover:bg-[#0052cc]/5 transition-all"
             >
               <h4 className="font-bold text-sm text-[#0f172a] mb-1">Infrastructure</h4>
-              <p className="text-xs text-slate-500">ISO 17025 UHV Faraday labs, VPD dry chambers, and plant capacity.</p>
+              <p className="text-xs text-slate-500">Vacuum casting ovens, winding bays, and routine testing labs.</p>
             </Link>
             <Link
-              href="/leadership"
+              href="/contact"
               onClick={onClose}
               className="p-4 border border-slate-200 hover:border-[#0052cc] hover:bg-[#0052cc]/5 transition-all"
             >
-              <h4 className="font-bold text-sm text-[#0f172a] mb-1">Executive Leadership</h4>
-              <p className="text-xs text-slate-500">Board members, engineering doctorate chairs, and executive team.</p>
-            </Link>
-            <Link
-              href="/sustainability"
-              onClick={onClose}
-              className="p-4 border border-slate-200 hover:border-[#0052cc] hover:bg-[#0052cc]/5 transition-all"
-            >
-              <h4 className="font-bold text-sm text-[#0f172a] mb-1">Sustainability & ESG</h4>
-              <p className="text-xs text-slate-500">Ester fluid eco-design, lower carbon footprint, and fire safety.</p>
+              <h4 className="font-bold text-sm text-[#0f172a] mb-1">Contact & RFQ</h4>
+              <p className="text-xs text-slate-500">Technical quote inquiries and factory sales contacts.</p>
             </Link>
           </div>
         )}

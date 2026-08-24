@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { X, ChevronDown, ArrowRight, Zap, Phone, Mail } from 'lucide-react';
+import { X, ChevronDown, ArrowRight, Phone, Mail } from 'lucide-react';
 import gsap from 'gsap';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
@@ -42,13 +42,12 @@ export default function MobileMenu({ isOpen, onClose }) {
     >
       {/* Header Bar */}
       <div className="flex items-center justify-between pb-6 border-b border-slate-200">
-        <Link href="/" onClick={onClose} className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#0052cc] flex items-center justify-center text-white font-bold text-lg">
-            V
-          </div>
-          <span className="font-bold text-lg tracking-wider uppercase text-[#0f172a]">
-            VORTEX <span className="text-[#0052cc] text-xs font-semibold block">POWER SYSTEMS</span>
-          </span>
+        <Link href="/" onClick={onClose}>
+          <img
+            src="/logo.jpeg"
+            alt="G Sons Power Transformers"
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         <button
@@ -152,16 +151,6 @@ export default function MobileMenu({ isOpen, onClose }) {
 
         <div className="mobile-nav-item border-b border-slate-100 pb-3">
           <Link
-            href="/blog"
-            onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
-          >
-            Blog & Insights
-          </Link>
-        </div>
-
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
-          <Link
             href="/about"
             onClick={onClose}
             className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
@@ -186,11 +175,11 @@ export default function MobileMenu({ isOpen, onClose }) {
         <div className="flex flex-col gap-2 text-xs text-slate-600 font-medium">
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-[#0052cc]" />
-            <span>+1 (800) 555-VOLT</span>
+            <span>+91 800 555-POWER</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-[#0052cc]" />
-            <span>corporate@vortexpowersystems.com</span>
+            <span>sales@gsonspower.com</span>
           </div>
         </div>
 
@@ -199,7 +188,7 @@ export default function MobileMenu({ isOpen, onClose }) {
           onClick={onClose}
           className="w-full bg-[#0052cc] text-white font-bold text-sm tracking-wider uppercase py-3.5 px-6 flex items-center justify-center gap-2 hover:bg-[#0041a3] transition-colors"
         >
-          <span>Request Quote</span>
+          <span>Get Technical Quote</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

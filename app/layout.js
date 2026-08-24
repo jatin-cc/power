@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Vortex Power Systems | Power Transformers & Electrical Engineering",
-    template: "%s | Vortex Power Systems",
+    default: "G Sons Power Transformers Pvt. Ltd. | Distribution Transformers & Compact Substations",
+    template: "%s | G Sons Power Transformers",
   },
-  description: "Global engineering corporation producing ultra-high-voltage power transformers up to 500 MVA 400 kV, custom arc furnace units, ester fluid eco-designs, and 24/7 predictive diagnostics.",
+  description: "G Sons Power Transformers Pvt. Ltd. manufactures Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), Compact Substations (CSS), and HT/LT Switchgear Panels up to 5 MVA in 11 kV & 33 kV voltage classes.",
 };
 
 export default function RootLayout({ children }) {

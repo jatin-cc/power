@@ -40,59 +40,53 @@ export default function StatisticsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white border-b border-slate-200">
+    <section ref={sectionRef} className="py-16 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-200">
           {/* Stat 1 */}
           <div className="pt-6 md:pt-0 md:px-6 first:px-0">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0052cc] tracking-tight mb-2">
-              <span className="stat-number" data-target="40" data-suffix="+">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0052cc] tracking-tight mb-2">
+              <span className="stat-number" data-target="5" data-suffix=" MVA">
                 0
               </span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
-              Years of Excellence
+              Max Transformer Rating
             </h4>
-            <p className="text-xs text-slate-500">Founded in 1985</p>
+            <p className="text-xs text-slate-500">11 kV & 33 kV Voltage Classes</p>
           </div>
 
           {/* Stat 2 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight mb-2">
-              <span className="stat-number" data-target="5000" data-suffix="+">
-                0
-              </span>
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-2">
+              <span>BIS / ZED</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
-              Installed Transformers
+              Gold Certified
             </h4>
-            <p className="text-xs text-slate-500">Operating in grid substations</p>
+            <p className="text-xs text-slate-500">Zero Defect Manufacturing</p>
           </div>
 
           {/* Stat 3 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0052cc] tracking-tight mb-2">
-              <span className="stat-number" data-target="45" data-suffix="+">
-                0
-              </span>
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0052cc] tracking-tight mb-2">
+              <span>100%</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
-              Countries Served
+              Copper Windings
             </h4>
-            <p className="text-xs text-slate-500">Global transmission projects</p>
+            <p className="text-xs text-slate-500">Electrolytic Grade Conductor</p>
           </div>
 
           {/* Stat 4 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0f172a] tracking-tight mb-2">
-              <span className="stat-number" data-target="15000" data-suffix=" MVA">
-                0
-              </span>
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-2">
+              <span>IS 1180 / 2026</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
-              Annual Production
+              Compliant Standards
             </h4>
-            <p className="text-xs text-slate-500">Plant throughput capacity</p>
+            <p className="text-xs text-slate-500">National & ECBC Efficiency</p>
           </div>
         </div>
       </div>

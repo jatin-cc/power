@@ -1,184 +1,183 @@
 export const products = [
   {
-    id: "power-transformers",
-    slug: "power-transformers",
-    name: "Power Transformers",
-    category: "Transmission & Substation",
-    capacity: "Up to 500 MVA, 400 kV Class",
-    shortDesc: "Engineered for high-voltage transmission networks, utility grids, and bulk power transfer with ultra-low loss and maximum thermal resilience.",
-    fullDesc: "Vortex Power Systems Power Transformers are built for supreme grid stability and heavy-duty step-up/step-down transmission applications. Manufactured using high-permeability grain-oriented silicon steel (CRGO) and high-purity electrolytic copper, each transformer is subjected to strict impulse voltage withstand testing and thermal modeling.",
+    id: "oil-filled-distribution-transformers",
+    slug: "oil-filled-distribution-transformers",
+    name: "Oil-Filled Distribution Transformers",
+    category: "Distribution Transformers",
+    capacity: "200 kVA – 5 MVA, 11 kV & 33 kV",
+    shortDesc: "High-performance liquid-immersed transformers built with premium CRGO cores and copper windings for continuous outdoor and indoor operation.",
+    fullDesc: "G Sons Power manufactures high-performance Oil-Filled Distribution Transformers with ratings up to 5 MVA in 11 kV and 33 kV voltage classes. Built using high-grade CRGO magnetic cores, precision-wound electrolytic copper conductors, robust tank fabrication, and quality mineral/ester oil insulation. Designed for low loss and high energy efficiency compliant with IS 1180 and IS 2026 standards.",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
     features: [
-      "Low loss CRGO core assembly with stepping lap joints",
-      "Thermally upgraded kraft paper insulation with high dielectric strength",
-      "ONAN, ONAF, OFAF, or ODAF cooling configurations",
-      "Dynamic short-circuit strength compliant with IEC 60076",
-      "Seated online fiber-optic hot-spot temperature sensors"
+      "BIS compliant manufacturing up to 5 MVA, 33 kV Class",
+      "High-grade CRGO magnetic core with step-lap joints",
+      "100% Electrolytic Copper Windings for maximum conductivity",
+      "ONAN cooling system (ONAF available for heavy duty)",
+      "OCTC and OLTC tapping configurations with Dyn11 vector group"
     ],
     specs: [
-      { label: "Rated Capacity", value: "10 MVA to 500 MVA" },
-      { label: "Voltage Class", value: "Up to 400 kV (Custom high-voltage variants available)" },
-      { label: "Frequency", value: "50 Hz / 60 Hz" },
-      { label: "Cooling Type", value: "ONAN / ONAF / OFAF / ODAF" },
-      { label: "Winding Material", value: "High-grade Electrolytic Copper (ETP)" },
-      { label: "Impedance Range", value: "7% to 18% (Tailored per system short-circuit rating)" },
-      { label: "Insulation Level", value: "LI 1425 kV / AC 630 kV" },
-      { label: "Tap Changer", value: "On-Load Tap Changer (OLTC) / Off-Circuit Tap Changer (OCTC)" }
+      { label: "Capacity Range", value: "200 kVA – 5 MVA" },
+      { label: "Voltage Class", value: "11 kV / 33 kV" },
+      { label: "Frequency / Phase", value: "50 Hz / Three Phase" },
+      { label: "Cooling Method", value: "ONAN (ONAF where applicable)" },
+      { label: "Tap Changer", value: "Off-Circuit Tap Changer (OCTC) / On-Load Tap Changer (OLTC)" },
+      { label: "Vector Group", value: "Dyn11 (Project-specific options available)" },
+      { label: "Applicable Standards", value: "IS 1180, IS 2026, IS 335" },
+      { label: "Installation", value: "Indoor & Outdoor" }
     ],
     applications: [
-      "National Power Transmission Networks",
-      "Thermal & Hydroelectric Power Generating Stations",
-      "Inter-regional Substation Hubs",
-      "Heavy Industrial Power Receiving Stations"
+      "Utilities & Power Distribution Networks",
+      "Industrial Plants & Manufacturing Facilities",
+      "Commercial Infrastructure & Office Parks",
+      "Solar & Renewable Energy Projects"
     ]
   },
   {
-    id: "distribution-transformers",
-    slug: "distribution-transformers",
-    name: "Distribution Transformers",
-    category: "Primary & Secondary Distribution",
-    capacity: "100 kVA to 10,000 kVA, 33 kV Class",
-    shortDesc: "High-efficiency liquid-immersed and dry-type distribution transformers designed for continuous city grid and industrial power delivery.",
-    fullDesc: "Designed to meet stringently low total cost of ownership (TCO) and high energy efficiency norms (Energy Star / Eco-Design Tier 2), our Distribution Transformers serve municipal, commercial, and industrial distribution lines with zero downtime reliability.",
+    id: "cast-resin-dry-type-transformers",
+    slug: "cast-resin-dry-type-transformers",
+    name: "Cast Resin Dry-Type Transformers (CRT)",
+    category: "Dry-Type Transformers",
+    capacity: "200 kVA – 5 MVA, 11 kV & 33 kV",
+    shortDesc: "Fire-safe, low-maintenance indoor distribution transformers engineered with vacuum cast epoxy resin insulation and zero mineral oil.",
+    fullDesc: "Designed for installations where fire safety, environmental protection, and low maintenance are essential. G Sons Power Cast Resin Dry-Type Transformers (CRT) utilize vacuum cast epoxy resin insulation, high-grade CRGO cores, and electrolytic copper windings, providing dependable performance for indoor commercial, data center, hospital, and high-rise developments.",
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=1200&q=80",
     features: [
-      "Hermetically sealed or conservator tank construction",
-      "Biodegradable synthetic or natural ester fluid options",
-      "Cast Resin Dry Type (CRT) variant for indoor high-fire-safety zones",
-      "Corrosion-resistant C5-M marine grade protective coating",
-      "Low sound emission design with sound damping dampers"
+      "100% Fire-Safe Construction with Class F / NOMEX insulation",
+      "Eco-Friendly design with zero mineral oil or leak risks",
+      "Vacuum cast epoxy resin encapsulation (Moisture & dust resistant)",
+      "High mechanical short-circuit strength and low noise operation",
+      "ANAN natural air cooling (Forced air cooling options available)"
     ],
     specs: [
-      { label: "Rated Capacity", value: "100 kVA to 10 MVA" },
-      { label: "Primary Voltage", value: "11 kV, 22 kV, 33 kV" },
-      { label: "Secondary Voltage", value: "415 V, 690 V, 3.3 kV, 6.6 kV, 11 kV" },
-      { label: "Insulation Class", value: "Class A (Liquid) / Class F or H (Dry Type)" },
-      { label: "Standards", value: "IEC 60076, IEEE C57.12, IS 1180" },
-      { label: "Short Circuit Test", value: "Fully short-circuit type tested at CPRI/KEMA" }
+      { label: "Capacity Range", value: "200 kVA – 5 MVA" },
+      { label: "Voltage Class", value: "11 kV / 33 kV" },
+      { label: "Insulation System", value: "Cast Resin (Class F / Class H)" },
+      { label: "Cooling Method", value: "ANAN (Air Natural Air Natural)" },
+      { label: "Vector Group", value: "Dyn11 (Project-specific options)" },
+      { label: "Conductor / Core", value: "Electrolytic Copper / CRGO Steel" },
+      { label: "Applicable Standards", value: "IS 2026, ECBC & Project Specs" },
+      { label: "Installation", value: "Indoor Installation" }
     ],
     applications: [
+      "Data Centres & Semiconductor Facilities",
+      "Hospitals, Airports & Metro Rail Stations",
       "Commercial Complexes & High-Rise Buildings",
-      "Urban Power Distribution Grids",
-      "Industrial Parks & Manufacturing Plants",
-      "Microgrids & Solar Distribution Plants"
+      "Indoor Industrial Substation Bays"
     ]
   },
   {
-    id: "furnace-transformers",
-    slug: "furnace-transformers",
-    name: "Furnace Transformers",
-    category: "Heavy Industry & Metallurgy",
-    capacity: "Up to 120 MVA, High Current Duty",
-    shortDesc: "Custom-engineered for Electric Arc Furnaces (EAF) and Submerged Arc Furnaces (SAF) enduring extreme thermal and mechanical stresses.",
-    fullDesc: "Furnace operation demands transformers that withstand frequent short circuits, extreme secondary currents (up to 100 kA), and intense harmonic distortion. Vortex Furnace Transformers incorporate heavy copper bus-bars and specialized winding arrangements designed to resist high electromagnetic forces.",
+    id: "vpi-dry-type-transformers",
+    slug: "vpi-dry-type-transformers",
+    name: "VPI Dry Type Transformers",
+    category: "Dry-Type Transformers",
+    capacity: "Up to 5 MVA, 11 kV & 33 kV Class",
+    shortDesc: "Vacuum Pressure Impregnated (VPI) dry-type transformers engineered for heavy commercial and industrial distribution.",
+    fullDesc: "G Sons Power VPI Dry Type Transformers use high-temperature polyester resin impregnation applied under vacuum and pressure. They provide excellent dielectric strength, high overload thermal capacity, and robust moisture resistance for commercial and light industrial applications.",
+    image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=1200&q=80",
+    features: [
+      "Vacuum Pressure Impregnated (VPI) high-temperature insulation",
+      "High thermal overload capacity with low acoustic noise",
+      "Environmentally safe with zero liquid coolant requirement",
+      "Flexible enclosure designs (IP21 to IP54 protection class)"
+    ],
+    specs: [
+      { label: "Capacity Range", value: "100 kVA to 5 MVA" },
+      { label: "Voltage Class", value: "11 kV / 33 kV" },
+      { label: "Insulation Class", value: "Class H / Class C" },
+      { label: "Cooling", value: "ANAN / ANAF" }
+    ],
+    applications: [
+      "Commercial Malls & Shopping Centers",
+      "Educational Institutions & Universities",
+      "Industrial Distribution Systems",
+      "Urban Microgrid Stations"
+    ]
+  },
+  {
+    id: "inverter-duty-transformers",
+    slug: "inverter-duty-transformers",
+    name: "Inverter Duty Transformers",
+    category: "Renewable Energy Solutions",
+    capacity: "Up to 5 MVA, Multi-Winding Solar Duty",
+    shortDesc: "Specialized multi-winding step-up transformers designed to interface solar PV inverters with 11 kV / 33 kV grid distribution lines.",
+    fullDesc: "Solar power generation involves high harmonic distortion, pulsed DC-to-AC conversion, and variable loading. G Sons Power Inverter Duty Transformers feature multiple secondary windings, electrostatic copper shielding between windings, and reinforced insulation structures to ensure 100% grid compliance.",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
+    features: [
+      "Multi-winding design (2, 3, or 4 secondary inputs for solar inverters)",
+      "Electrostatic copper shielding to isolate high-frequency harmonics",
+      "Heavy duty core-clamp construction for continuous solar loading",
+      "BIS licensed manufacturing compliant with IS 2026"
+    ],
+    specs: [
+      { label: "Capacity", value: "Up to 5 MVA" },
+      { label: "Voltage Class", value: "11 kV / 33 kV" },
+      { label: "Secondary Configuration", value: "Dual / Triple / Quad LV Windings" },
+      { label: "Application", value: "Solar Utility Scale & Wind Farms" }
+    ],
+    applications: [
+      "Utility-Scale Solar PV Power Plants",
+      "Rooftop Commercial Solar Systems",
+      "Wind Energy Farm Substation Arrays",
+      "BESS Energy Storage Systems"
+    ]
+  },
+  {
+    id: "compact-substations-css",
+    slug: "compact-substations-css",
+    name: "Compact Substations (CSS)",
+    category: "Substation Solutions",
+    capacity: "11 kV & 33 kV Class, Transformer up to 5 MVA",
+    shortDesc: "Factory-assembled, space-saving package substations integrating HT switchgear (RMU/VCB), Transformer, and LT distribution panels.",
+    fullDesc: "G Sons Power Compact Substations (CSS) are fully integrated, type-tested package substations enclosed in heavy metal enclosures. Combining an HT Switchgear compartment (RMU/VCB), an Oil-Filled or Dry-Type Transformer up to 5 MVA, and an LT Switchgear panel (PCC/MCC/APFC), CSS provides complete plug-and-play power delivery with minimal land footprint.",
     image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
     features: [
-      "Reinforced winding structure to withstand thousands of arcing short-circuits",
-      "Direct water-cooled internal heat exchangers (OFWF cooling)",
-      "High current secondary bushings with internal delta closure",
-      "Motorized On-Load Tap Changer capable of 100+ steps daily",
-      "Vibration-isolated core framework"
+      "Turnkey integrated 11 kV & 33 kV Compact Substation (CSS)",
+      "Accommodates Oil-Filled or Cast Resin Dry-Type Transformers up to 5 MVA",
+      "Integrated HT Section (SF6 RMU / VCB Panel / Metering)",
+      "Integrated LT Section (PCC / MCC / APFC / SCADA integration)",
+      "IP54 / IP55 weatherproof enclosure with powder-coated C5 protection"
     ],
     specs: [
-      { label: "Rated Capacity", value: "5 MVA to 120 MVA" },
-      { label: "Secondary Current", value: "Up to 100 kA continuous" },
-      { label: "Cooling Method", value: "OFAF / OFWF (Oil Forced Water Forced)" },
-      { label: "Duty Cycle", value: "Heavy Industrial Arc Duty" },
-      { label: "Regulating Method", value: "Direct regulation or separate auto-transformer setup" }
+      { label: "Voltage Class", value: "11 kV / 33 kV" },
+      { label: "Transformer Rating", value: "Up to 5 MVA (Oil or Dry Type)" },
+      { label: "HT Compartment", value: "RMU / VCB / Bus Coupler / Metering" },
+      { label: "LT Compartment", value: "PCC / MCC / APFC / SCADA Remote Terminal Unit" },
+      { label: "Enclosure Protection", value: "IP54 / IP55 Outdoor Class" },
+      { label: "Standards", value: "IEC 62271-202, IS 14786" }
     ],
     applications: [
-      "Steel Melting Shop (Electric Arc Furnaces)",
-      "Ferroalloy & Submerged Arc Smelters",
-      "Ladle Furnace (LF) Refining Units",
-      "Silicon Metal Reduction Plants"
+      "Smart City Infrastructure & Residential Townships",
+      "Industrial Parks & Manufacturing Estates",
+      "Commercial Centers, Hospitals & Airports",
+      "Water Treatment Plants & Infrastructure Terminals"
     ]
   },
   {
-    id: "rectifier-transformers",
-    slug: "rectifier-transformers",
-    name: "Rectifier Transformers",
-    category: "Electrolysis & Traction",
-    capacity: "Up to 80 MVA, Multi-Pulse Systems",
-    shortDesc: "Heavy-duty step-down units coupled with multi-phase rectifier bridge configurations for aluminum smelting, chemical electrolysis, and DC traction.",
-    fullDesc: "Designed for combined operation with semiconductor rectifiers, these units supply smooth direct current (DC) for energy-intensive electrochemical processes. Features multi-pulse phase shifting (6, 12, 18, 24, or 48-pulse) to cancel system harmonics effectively.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
-    features: [
-      "Integrated inter-phase transformers (IPT) within single tank",
-      "Multi-pulse phase shifting (15°, 7.5°, 3.75° angle offsets)",
-      "Heavy harmonic copper shielding on primary and secondary windings",
-      "Advanced oil diagnostic sensors with integrated gas relay system"
-    ],
-    specs: [
-      { label: "Capacity Range", value: "Up to 80 MVA" },
-      { label: "Pulse Configuration", value: "6, 12, 18, 24, 36, 48 Pulse" },
-      { label: "DC Voltage Output", value: "100 V to 1,500 V DC" },
-      { label: "Insulation Medium", value: "High flashpoint mineral oil or synthetic ester" }
-    ],
-    applications: [
-      "Aluminum & Copper Smelting Smelters",
-      "Chlor-Alkali Electrochemical Plants",
-      "DC Railway Traction Substations",
-      "Electroplating & Surface Treatment Lines"
-    ]
-  },
-  {
-    id: "special-transformers",
-    slug: "special-transformers",
-    name: "Special Transformers",
-    category: "Custom Engineering",
-    capacity: "Tailored to Extreme Duty Standards",
-    shortDesc: "Custom-built magnetic solutions including phase-shifting transformers, grounding transformers, and marine offshore power units.",
-    fullDesc: "When standard off-the-shelf transformers cannot handle complex phase shifts, high environmental salinity, hazardous zone classifications, or peculiar voltage waveforms, Vortex custom designs mission-critical special transformers.",
+    id: "ht-lt-control-panels",
+    slug: "ht-lt-control-panels",
+    name: "HT, LT & Automation Panels",
+    category: "Switchgear & Automation",
+    capacity: "VCB Panels, PCC, MCC, APFC & PLC Panels",
+    shortDesc: "Complete engineered electrical switchgear range including VCB HT Panels, PCC/MCC LT Panels, APFC Panels, and PLC Control Panels.",
+    fullDesc: "Complementing our transformer manufacturing, G Sons Power engineers custom High Tension (HT) and Low Tension (LT) power distribution panels. Built with internal compartmentalization, high short-circuit busbar withstand, and SCADA automation integration for complete power control.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80",
     features: [
-      "Zig-zag connected Grounding Transformers (Neutral Grounding)",
-      "Quad-booster Phase Shift Transformers for power flow control",
-      "Explosion-proof marine offshore substation transformers",
-      "High frequency pulse and converter duty transformers"
+      "HT Panels: VCB Panels, Metering Panels, Bus Coupler & Custom HT Panels",
+      "LT Panels: PCC, MCC, APFC Panels, PDB, DB, Feeder Pillars & Synchronizing Panels",
+      "Control & Automation: PLC Panels, Instrumentation Panels & Custom SCADA Automation",
+      "Fully compartmentalized modular steel construction with high short-circuit rating"
     ],
     specs: [
-      { label: "Engineering Scope", value: "100% Bespoke Electromagnetic & Mechanical Design" },
-      { label: "Certification", value: "ATEX, DNV-GL, ABS Marine Class Certified" },
-      { label: "Enclosure", value: "IP56 / IP66 Stainless Steel options" }
+      { label: "HT Voltage Rating", value: "11 kV & 33 kV Vacuum Circuit Breaker (VCB) Panels" },
+      { label: "LT Voltage Rating", value: "415 V / 690 V (Up to 6300A Busbar Rating)" },
+      { label: "Enclosure Rating", value: "IP42 to IP65 Form 3b / Form 4" },
+      { label: "Automation", value: "PLC, HMI, APFC Power Factor Controllers, SCADA" }
     ],
     applications: [
-      "Offshore Wind Turbines & Oil Platforms",
-      "Grid Power Flow Management",
-      "Neutral Grounding Substation Circuits",
-      "Mining Flameproof Underground Operations"
-    ]
-  },
-  {
-    id: "reactors",
-    slug: "reactors",
-    name: "Shunt & Series Reactors",
-    category: "Grid Stability & Reactive Power",
-    capacity: "Up to 100 MVAR, 400 kV Class",
-    shortDesc: "High-inductance inductive reactors for reactive power compensation, line charging current suppression, and short-circuit current limiting.",
-    fullDesc: "Grid stability requires precise reactive power management. Vortex Shunt Reactors compensate for capacitive reactive power generated by long high-voltage transmission cables, maintaining voltage limits under light load conditions.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
-    features: [
-      "Gapped core design with high-rigidity ceramic spacers",
-      "Low mechanical vibration and sub-60 dB acoustic emissions",
-      "Oil-immersed gapped core construction for long dielectric lifespan",
-      "Integrated vibration and acoustic monitoring ports"
-    ],
-    specs: [
-      { label: "Rated MVAR", value: "5 MVAR to 100 MVAR" },
-      { label: "Voltage Class", value: "Up to 400 kV" },
-      { label: "Linearity", value: "Linear V-I characteristics up to 1.5 pu voltage" }
-    ],
-    applications: [
-      "High Voltage EHV Transmission Lines",
-      "Long Subsea & Underground Cable Link Interconnectors",
-      "Substation Fault Current Suppression",
-      "Wind Farm Collector Networks"
+      "Industrial Plant Power Distribution Centers",
+      "Substation Switchgear Rooms & Control Hubs",
+      "Commercial Building Electrical Rooms",
+      "Process Automation & Motor Control Facilities"
     ]
   }
 ];

@@ -1,110 +1,109 @@
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
-import { milestones } from '@/data/milestones';
-import { leadershipTeam } from '@/data/team';
-import { ShieldCheck, Award, Zap, Globe, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Award, Zap, Factory, CheckCircle2, HeartHandshake } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Us | Vortex Power Systems',
-  description: 'Learn about our 40-year engineering heritage, ISO 17025 UHV laboratories, executive leadership, and commitment to global power grid reliability.',
+  title: 'About Us | G Sons Power Transformers Pvt. Ltd.',
+  description: 'Learn about G Sons Power Transformers Pvt. Ltd. (GSTPL), our BIS Licensed manufacturing, ZED Gold Certification, and G Sons Group heritage.',
 };
+
+const valueCards = [
+  { title: "BIS Licensed Manufacturing", desc: "Compliant with IS 1180, IS 2026 & IS 335 national standards.", icon: Award },
+  { title: "ZED Gold Certified", desc: "Zero Defect, Zero Effect environmentally sustainable manufacturing.", icon: ShieldCheck },
+  { title: "Startup India Recognized", desc: "Agile, innovative, next-generation Indian electrical manufacturing enterprise.", icon: Zap },
+  { title: "Women-Led Enterprise", desc: "Empowering inclusive industrial growth and customer-focused engineering.", icon: HeartHandshake },
+  { title: "Up to 5 MVA Capability", desc: "Engineering 11 kV & 33 kV Distribution Transformers and Compact Substations.", icon: Factory },
+  { title: "Industrial & Utility Ready", desc: "Powering commercial developments, solar projects, data centres, and utilities.", icon: CheckCircle2 }
+];
 
 export default function AboutPage() {
   return (
     <main className="pt-32 pb-24 bg-white text-[#0f172a]">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
-        <div className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-[#0052cc]" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
-              CORPORATE HERITAGE & VISION
-            </span>
-          </div>
+      <section className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="max-w-3xl space-y-4">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+            G SONS POWER TRANSFORMERS PVT. LTD.
+          </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
-            Pioneering High-Voltage Power Engineering Since 1985.
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
+            Engineering Reliable Power. Building Tomorrow's Electrical Infrastructure.
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            Vortex Power Systems is an independent global corporation specializing in custom electromagnetic power transformers, high-current arc furnace units, ester fluid eco-designs, and 24/7 predictive diagnostics.
+            At G Sons Power Transformers Pvt. Ltd., we believe electrical equipment is the backbone of industries, cities, critical infrastructure, and the energy transition.
           </p>
         </div>
       </section>
 
-      {/* Vision & Mission Cards */}
-      <section className="bg-slate-50 border-y border-slate-200 py-20 mb-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 border border-slate-200 shadow-sm space-y-4">
-            <div className="w-10 h-10 bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
-              <Zap className="w-5 h-5" />
-            </div>
-            <h3 className="text-2xl font-bold text-[#0f172a]">Our Vision</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-              To empower the global energy transition by engineering the most thermally efficient, dielectric resilient, and environmentally safe high-voltage transformers for national transmission grids and critical industries.
+      {/* Main Overview */}
+      <section className="bg-slate-50 border-y border-slate-200 py-16 mb-16">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div className="bg-white p-8 border border-slate-200 shadow-sm space-y-3">
+            <h3 className="text-xl font-bold text-[#0f172a]">World-Class Distribution Solutions</h3>
+            <p>
+              Founded with a vision to deliver world-class distribution solutions manufactured in India, we specialize in the design and manufacturing of Oil-Filled Distribution Transformers, Cast Resin Dry Type Transformers, VPI Dry Type Transformers, Compact Substations (CSS), and engineered power distribution switchgear.
+            </p>
+            <p>
+              Backed by decades of engineering expertise from the G Sons Group, our manufacturing combines modern production processes, stringent quality control, and adherence to national and international standards.
             </p>
           </div>
 
-          <div className="bg-white p-8 border border-slate-200 shadow-sm space-y-4">
-            <div className="w-10 h-10 bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h3 className="text-2xl font-bold text-[#0f172a]">Our Mission</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-              To deliver zero-defect electromagnetic power equipment backed by ISO/IEC 17025 accredited impulse testing, continuous IoT predictive health telemetry, and 24/7 mobile field service support worldwide.
+          <div className="bg-white p-8 border border-slate-200 shadow-sm space-y-3">
+            <h3 className="text-xl font-bold text-[#0f172a]">Future-Ready Technologies</h3>
+            <p>
+              Every product is engineered for reliability, efficiency, safety, and long service life. Today, our solutions power manufacturing facilities, commercial developments, educational institutions, renewable energy projects, utility networks, and mission-critical installations across India.
+            </p>
+            <p>
+              As a Startup India Recognized Enterprise, ZED Gold Certified Manufacturer, BIS Licensed Manufacturer, and Women-Led Enterprise, we represent the next generation of Indian electrical manufacturing.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Historical Milestones Timeline */}
-      <section className="max-w-7xl mx-auto px-6 mb-24">
+      {/* 6 Value Cards */}
+      <section className="max-w-7xl mx-auto px-6 mb-16">
         <SectionHeading
-          eyebrow="HISTORICAL TIMELINE"
-          title="Key Milestones in Our 40-Year Journey."
-          subtitle="From a regional repair workshop in 1985 to a multi-plant global transformer corporation."
+          eyebrow="WHY G SONS POWER?"
+          title="Engineered for Reliability, Safety & Longevity."
+          subtitle="Combining innovation, agility, and uncompromising quality with customer-focused engineering."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {milestones.map((m) => (
-            <div key={m.year} className="p-6 bg-slate-50 border border-slate-200 relative">
-              <span className="text-3xl font-extrabold text-[#0052cc] block mb-2 font-mono">
-                {m.year}
-              </span>
-              <h4 className="font-bold text-base text-[#0f172a] mb-2">{m.title}</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">{m.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Executive Leadership Grid */}
-      <section className="bg-slate-50 border-t border-slate-200 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading
-            eyebrow="LEADERSHIP & GOVERNANCE"
-            title="Executive Leadership Team."
-            subtitle="Led by veteran electrical engineers, doctorate researchers, and high-voltage grid specialists."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {leadershipTeam.map((member) => (
-              <div key={member.name} className="bg-white border border-slate-200 overflow-hidden shadow-sm">
-                <div className="aspect-[4/5] bg-slate-200 overflow-hidden">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {valueCards.map((card, idx) => {
+            const IconComp = card.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-slate-50 p-6 border border-slate-200 shadow-sm hover:border-[#0052cc]/40 transition-all flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold shrink-0">
+                  <IconComp className="w-5 h-5" />
                 </div>
-                <div className="p-6 space-y-2">
-                  <h4 className="font-bold text-base text-[#0f172a]">{member.name}</h4>
-                  <span className="text-xs font-bold text-[#0052cc] uppercase tracking-wider block">
-                    {member.role}
-                  </span>
-                  <p className="text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
-                    {member.bio}
+                <div>
+                  <h3 className="text-sm font-bold text-[#0f172a] mb-1">{card.title}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                    {card.desc}
                   </p>
                 </div>
               </div>
-            ))}
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="bg-[#0052cc] text-white p-10 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+          <div className="space-y-2 max-w-xl">
+            <h3 className="text-2xl font-bold">Consult G Sons Power Engineers</h3>
+            <p className="text-xs text-white/90">
+              Submit your project specifications or request a custom quotation for Oil-Filled / Dry-Type Transformers up to 5 MVA.
+            </p>
           </div>
+          <CTAButton href="/contact" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0052cc]">
+            Request Technical Quote
+          </CTAButton>
         </div>
       </section>
     </main>

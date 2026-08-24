@@ -1,62 +1,42 @@
 export const industries = [
   {
-    id: "power-utilities",
-    slug: "power-utilities",
-    name: "Power Generation & Utilities",
-    tagline: "National Grids & Thermal/Hydro Generating Stations",
-    desc: "Supplying ultra-reliable step-up generator transformers (GSU) and high-voltage transmission units engineered for uninterrupted national power distribution.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Power Transformers", "Shunt & Series Reactors", "Online Monitoring & IoT Systems"],
-    stats: { capacity: "500 MVA", voltage: "400 kV", installations: "1,200+" }
+    id: "industrial-semiconductor",
+    slug: "industrial-semiconductor",
+    name: "Industrial & Semiconductor Facilities",
+    tagline: "High-Reliability Power Distribution",
+    desc: "Supplying continuous duty Oil-Filled and Cast Resin Dry-Type transformers engineered to resist harmonic load stress and power continuous manufacturing lines.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    keyProducts: ["Oil-Filled Distribution Transformers", "Cast Resin Dry Type Transformers", "HT & LT Switchgear Panels"],
+    stats: { capacity: "Up to 5 MVA", voltage: "11 kV & 33 kV", standard: "IS 2026 / IS 1180" }
   },
   {
-    id: "renewable-energy",
-    slug: "renewable-energy",
-    name: "Renewable Energy (Solar & Wind)",
-    tagline: "High-Efficiency Solar Inverter & Offshore Wind Transformers",
-    desc: "Purpose-built for variable loading, high harmonic content from solar inverters, and harsh marine environments in offshore wind farms.",
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Distribution Transformers", "Special Transformers", "Ester Fluid Transformers"],
-    stats: { capacity: "33 kV / 110 kV", standard: "IEC 60076-16", installations: "2,500 MW" }
-  },
-  {
-    id: "steel-metals",
-    slug: "steel-metals",
-    name: "Steel & Metallurgy Industries",
-    tagline: "Arc Duty & High Current Smelting Equipment",
-    desc: "Withstanding hundreds of daily furnace short-circuits and thermal surges in Electric Arc Furnaces (EAF) and Submerged Arc Smelters.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Furnace Transformers", "Rectifier Transformers", "Repair & Refurbishment"],
-    stats: { maxCurrent: "100 kA", overload: "150%", installations: "450+" }
-  },
-  {
-    id: "railways-transit",
-    slug: "railways-transit",
-    name: "Railways & Metro Transit",
-    tagline: "25 kV AC Traction & DC Metro Sub-stations",
-    desc: "Providing trackside traction step-down power and pulse-rectified DC sub-station units for high-speed rail lines and urban freight corridors.",
-    image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Rectifier Transformers", "Special Transformers", "Diagnostics & Testing"],
-    stats: { duty: "Traction Class 25 kV", pulse: "12-24 Pulse", installations: "800+" }
-  },
-  {
-    id: "data-centers",
-    slug: "data-centers",
-    name: "High-Density Data Centers",
-    tagline: "Mission-Critical 99.999% Uptime Power",
-    desc: "Dry-type cast resin and low-noise ester transformers delivering clean power to hyperscale cloud data infrastructure without fire risk.",
+    id: "data-centres-hospitals",
+    slug: "data-centres-hospitals",
+    name: "Data Centres & Hospitals",
+    tagline: "100% Fire-Safe Indoor Power Infrastructure",
+    desc: "Cast Resin Dry-Type (CRT) transformers with zero mineral oil, zero fire hazard, low acoustic noise, and Class F/H insulation for 99.999% uptime environments.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Cast Resin Dry Type", "Distribution Transformers", "IoT Monitoring"],
-    stats: { fireClass: "F1 / E2 / C2", noise: "< 52 dB", uptime: "99.999%" }
+    keyProducts: ["Cast Resin Dry Type (CRT)", "VPI Dry Type Transformers", "APFC & PCC Panels"],
+    stats: { fireClass: "100% Oil-Free", cooling: "ANAN", installation: "Indoor Safe" }
   },
   {
-    id: "oil-gas-mining",
-    slug: "oil-gas-mining",
-    name: "Oil, Gas & Deep Mining",
-    tagline: "Flameproof & ATEX Explosive Zone Solutions",
-    desc: "Robust hazardous-environment transformers designed for offshore production platforms, refinery complexes, and underground flameproof mining cells.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    keyProducts: ["Special Transformers", "Ester Fluid Transformers", "Field Services"],
-    stats: { rating: "ATEX Zone 1/2", coating: "C5-M Heavy Offshore", installations: "650+" }
+    id: "solar-renewable-energy",
+    slug: "solar-renewable-energy",
+    name: "Solar & Renewable Energy",
+    tagline: "Inverter Duty & Substation Solutions",
+    desc: "Multi-winding Inverter Duty Transformers and Compact Substations (CSS) step up solar PV inverter voltage to 11 kV / 33 kV grid distribution lines.",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
+    keyProducts: ["Inverter Duty Transformers", "Compact Substations (CSS)", "VCB HT Panels"],
+    stats: { duty: "Solar PV Duty", harmonics: "Copper Shielded", class: "33 kV Substation" }
+  },
+  {
+    id: "smart-cities-commercial",
+    slug: "smart-cities-commercial",
+    name: "Smart Cities & Infrastructure",
+    tagline: "Space-Saving Integrated Compact Substations",
+    desc: "Turnkey Package Substations (CSS) integrating HT switchgear (RMU/VCB), Transformer, and LT distribution panels for urban townships, airports, and metro rail.",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
+    keyProducts: ["Compact Substations (CSS)", "Cast Resin CRT Transformers", "Feeder Pillars"],
+    stats: { enclosure: "IP54 / IP55 Weatherproof", footprint: "Compact Package", standard: "IEC 62271-202" }
   }
 ];
