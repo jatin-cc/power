@@ -46,7 +46,7 @@ export default function TestimonialSlider() {
 
           <div ref={cardRef} className="space-y-6">
             <p className="text-lg sm:text-2xl font-semibold text-[#0f172a] leading-relaxed italic">
-              "{activeT.quote}"
+              &ldquo;{activeT.quote}&rdquo;
             </p>
 
             <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">

@@ -27,7 +27,7 @@ export default function AboutPage() {
           </span>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
-            Engineering Reliable Power. Building Tomorrow's Electrical Infrastructure.
+            Engineering Reliable Power. Building Tomorrow&apos;s Electrical Infrastructure.
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
