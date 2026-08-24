@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #ffffff;
+    --bg-surface: #fafafc;
+    --bg-muted: #f1f5f9;
+    
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-light: #94a3b8;
+    
+    /* Single Brand Accent Color System: Deep Precision Blue */
+    --accent: #0052cc;
+    --accent-hover: #0041a3;
+    --accent-light: rgba(0, 82, 204, 0.08);
+    --accent-border: rgba(0, 82, 204, 0.2);
+    
+    --border-color: #e2e8f0;
+  }
+
+  html {
+    scroll-behavior: auto; /* Handled by Lenis / GSAP */
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+
+  /* Custom minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 82, 204, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+}
+
+/* Custom Grid & Blueprint Decorative Background Utilities */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 82, 204, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 82, 204, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(0, 82, 204, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Engineering Technical Line Drawing Effect */
+.blueprint-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Custom noise overlay for premium subtle industrial texture */
+.subtle-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+}
+
+/* GSAP Pin Container Helpers */
+.pin-spacer {
+  background-color: transparent !important;
+}
+
+/* Horizontal scroll panel flex optimization */
+.horizontal-scroll-container {
+  will-change: transform;
+}
