@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-white text-[#0f172a] selection:bg-[#0052cc] selection:text-white">
         <SmoothScroll>
-          <CustomCursor />
+          {/*<CustomCursor />*/}
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />

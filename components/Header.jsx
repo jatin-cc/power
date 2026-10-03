@@ -38,11 +38,10 @@ export default function Header() {
   return (
     <header
       onMouseLeave={handleHeaderMouseLeave}
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2.5'
-          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5'
-      }`}
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled
+        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2.5'
+        : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo from logo.jpeg */}
@@ -58,9 +57,8 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-8">
           <Link
             href="/about"
-            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${
-              pathname === '/about' ? 'text-[#0052cc]' : 'text-[#0f172a]'
-            }`}
+            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${pathname === '/about' ? 'text-[#0052cc]' : 'text-[#0f172a]'
+              }`}
           >
             About
           </Link>
@@ -70,9 +68,8 @@ export default function Header() {
             className="relative py-2 cursor-pointer flex items-center gap-1 group"
           >
             <span
-              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${
-                pathname.startsWith('/products') ? 'text-[#0052cc]' : 'text-[#0f172a]'
-              }`}
+              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${pathname.startsWith('/products') ? 'text-[#0052cc]' : 'text-[#0f172a]'
+                }`}
             >
               Products
             </span>
@@ -84,9 +81,8 @@ export default function Header() {
             className="relative py-2 cursor-pointer flex items-center gap-1 group"
           >
             <span
-              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${
-                pathname.startsWith('/services') ? 'text-[#0052cc]' : 'text-[#0f172a]'
-              }`}
+              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${pathname.startsWith('/services') ? 'text-[#0052cc]' : 'text-[#0f172a]'
+                }`}
             >
               Services
             </span>
@@ -95,9 +91,8 @@ export default function Header() {
 
           <Link
             href="/infrastructure"
-            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${
-              pathname === '/infrastructure' ? 'text-[#0052cc]' : 'text-[#0f172a]'
-            }`}
+            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${pathname === '/infrastructure' ? 'text-[#0052cc]' : 'text-[#0f172a]'
+              }`}
           >
             Infrastructure
           </Link>
@@ -107,9 +102,8 @@ export default function Header() {
             className="relative py-2 cursor-pointer flex items-center gap-1 group"
           >
             <span
-              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${
-                pathname === '/industries' ? 'text-[#0052cc]' : 'text-[#0f172a]'
-              }`}
+              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#0052cc] ${pathname === '/industries' ? 'text-[#0052cc]' : 'text-[#0f172a]'
+                }`}
             >
               Industries
             </span>
@@ -118,9 +112,8 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${
-              pathname === '/contact' ? 'text-[#0052cc]' : 'text-[#0f172a]'
-            }`}
+            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#0052cc] ${pathname === '/contact' ? 'text-[#0052cc]' : 'text-[#0f172a]'
+              }`}
           >
             Contact
           </Link>
@@ -128,10 +121,10 @@ export default function Header() {
 
         {/* Right Desktop CTA */}
         <div className="hidden lg:flex items-center gap-5">
-          <div className="flex items-center gap-2 text-xs font-medium text-slate-600 border-r border-slate-200 pr-5">
+          {/* <div className="flex items-center gap-2 text-xs font-medium text-slate-600 border-r border-slate-200 pr-5">
             <Phone className="w-3.5 h-3.5 text-[#0052cc]" />
             <span>+91 800 555-POWER</span>
-          </div>
+          </div> */}
 
           <CTAButton href="/contact" size="sm" variant="primary">
             Get Technical Quote

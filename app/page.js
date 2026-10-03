@@ -1,74 +1,54 @@
 import HeroSection from '@/components/home/HeroSection';
-import CompanyIntro from '@/components/home/CompanyIntro';
-import StatisticsSection from '@/components/home/StatisticsSection';
-import GlobalPresence from '@/components/home/GlobalPresence';
-import ProductScroller from '@/components/home/ProductScroller';
-import ServicesInteractive from '@/components/home/ServicesInteractive';
-import InfrastructureStory from '@/components/home/InfrastructureStory';
-import ManufacturingProcess from '@/components/home/ManufacturingProcess';
-import EngineeringVisual from '@/components/home/EngineeringVisual';
-import IndustriesSelector from '@/components/home/IndustriesSelector';
+import TrustedBy from '@/components/home/TrustedBy';
+import AboutUsSection from '@/components/home/AboutUsSection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
-import CaseStudiesSection from '@/components/home/CaseStudiesSection';
-import TestimonialSlider from '@/components/home/TestimonialSlider';
+import HomeCTA from '@/components/home/HomeCTA';
+import MeetOurTeam from '@/components/home/MeetOurTeam';
+import ProductsSection from '@/components/home/ProductsSection';
+import IndustriesSelector from '@/components/home/IndustriesSelector';
 import EventsSection from '@/components/home/EventsSection';
 import FAQSection from '@/components/home/FAQSection';
 import BlogSection from '@/components/home/BlogSection';
 
 export const metadata = {
-  title: 'Vortex Power Systems | Ultra-High-Voltage Power Transformers & Grid Solutions',
-  description: 'Global leader in ultra-high-voltage power transformers up to 500 MVA 400 kV, custom arc furnace transformers, ester fluid eco-designs, and 24/7 predictive diagnostics.',
+  title: 'G Sons Power Transformers Pvt. Ltd. | Distribution Transformers & Compact Substations',
+  description: 'Specializing in Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), VPI Dry Type Transformers, and Compact Substations up to 5 MVA in 11 kV & 33 kV voltage classes.',
 };
 
 export default function HomePage() {
   return (
     <main className="w-full overflow-hidden bg-white text-[#0f172a]">
-      {/* 01 Hero */}
+      {/* 01. Hero Banner */}
       <HeroSection />
 
-      {/* 02 Company Introduction */}
-      <CompanyIntro />
+      {/* 02. Trusted By (Infinite Logo Loop) */}
+      <TrustedBy />
 
-      {/* 03 Statistics Count-Up */}
-      <StatisticsSection />
+      {/* 03. About Us */}
+      <AboutUsSection />
 
-      {/* 04 Global Presence / Locations */}
-      <GlobalPresence />
-
-      {/* 05 Products Pinned Horizontal Scroller */}
-      <ProductScroller />
-
-      {/* 06 Interactive Services */}
-      <ServicesInteractive />
-
-      {/* 07 Infrastructure Story */}
-      <InfrastructureStory />
-
-      {/* 08 Scroll-Driven Manufacturing Process Story */}
-      <ManufacturingProcess />
-
-      {/* 09 Engineering R&D Blueprint Line Visual */}
-      <EngineeringVisual />
-
-      {/* 10 Industries Application Selector */}
-      <IndustriesSelector />
-
-      {/* 11 Why Choose Us Story */}
+      {/* 04. Why Choose Us */}
       <WhyChooseUs />
 
-      {/* 12 Case Studies Showcase */}
-      <CaseStudiesSection />
+      {/* 05. CTA – Call to Action */}
+      <HomeCTA />
 
-      {/* 13 Testimonials GSAP Slider */}
-      <TestimonialSlider />
+      {/* 06. Meet Our Team */}
+      <MeetOurTeam />
 
-      {/* 14 Events & News */}
+      {/* 07. Our Products */}
+      <ProductsSection />
+
+      {/* 08. Industries We Empower With Expertise */}
+      <IndustriesSelector />
+
+      {/* 09. Events & Industry Interactions */}
       <EventsSection />
 
-      {/* 15 Technical FAQ Accordion */}
+      {/* 10. FAQ */}
       <FAQSection />
 
-      {/* 16 Blog Editorial Knowledge Hub */}
+      {/* 11. Blogs / Insights */}
       <BlogSection />
     </main>
   );

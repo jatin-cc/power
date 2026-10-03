@@ -2,60 +2,120 @@
 
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
+import { 
+  Zap, 
+  Layers, 
+  Cpu, 
+  ShieldCheck, 
+  Settings2, 
+  ClockCheck, 
+  ArrowRight,
+  CheckCircle2
+} from 'lucide-react';
+
+const reasons = [
+  {
+    num: '01',
+    title: '100% Electrolytic Grade Copper',
+    desc: 'High-purity electrolytic copper conductors with Class-F / Class-H insulation deliver superior short-circuit withstand capability, minimal I²R losses, and thermal longevity.',
+    icon: Zap,
+    tag: 'Highest Electrical Conductivity'
+  },
+  {
+    num: '02',
+    title: 'Prime Grade CRGO Magnetic Cores',
+    desc: 'Precision step-lap mitered core laminations cut from low-loss Cold-Rolled Grain Oriented (CRGO) silicon steel dramatically reduce core losses and acoustic humming.',
+    icon: Layers,
+    tag: 'Ultra-Low No-Load Loss'
+  },
+  {
+    num: '03',
+    title: 'Dual Technology Expertise (CRT & Oil)',
+    desc: 'Specialized manufacturing across both Cast Resin Dry Type (100% fire-safe, maintenance-free for indoor buildings) and Hermetically Sealed / Conservator Oil-Filled units.',
+    icon: Cpu,
+    tag: 'Complete Transformer Spectrum'
+  },
+  {
+    num: '04',
+    title: 'Rigorous 100% In-House Testing',
+    desc: 'Every transformer undergoes comprehensive routine and dielectric testing including turns ratio, vector group, winding resistance, insulation resistance, and dielectric loss.',
+    icon: ShieldCheck,
+    tag: 'IS 1180 & IS 2026 Compliant'
+  },
+  {
+    num: '05',
+    title: 'Custom Engineering & Tapping',
+    desc: 'Engineered for project-specific voltage classes (11 kV & 33 kV), Off-Circuit Tap Changers (OCTC), On-Load Tap Changers (OLTC with RTCC), and tailor-made physical dimensions.',
+    icon: Settings2,
+    tag: 'Bespoke Sizing & Controls'
+  },
+  {
+    num: '06',
+    title: 'ZED Gold Quality & Rapid Delivery',
+    desc: 'Zero Defect certified manufacturing ensures strict quality audits, rapid manufacturing lead times, seaworthy/roadworthy packaging, and turnkey commissioning assistance.',
+    icon: ClockCheck,
+    tag: 'Zero Defect Manufacturing'
+  }
+];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white border-b border-slate-200">
+    <section id="why-choose-us" className="py-24 bg-slate-50/70 border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="ENGINEERING QUALITY"
-              title="Dependable Power Systems. Built for Longevity."
-              subtitle="We do not simply manufacture transformers. We engineer reliable power distribution solutions that keep industries running and infrastructure connected."
-            />
-            <CTAButton href="/contact" size="md" variant="primary">
-              Consult Our Engineering Team
-            </CTAButton>
-          </div>
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+          <SectionHeading
+            eyebrow="ENGINEERING EXCELLENCE"
+            title="Why Choose G Sons Power Transformers?"
+            subtitle="We do not just build transformers — we engineer reliable power distribution solutions designed to keep industrial operations running without interruption."
+            className="mb-0 max-w-3xl"
+          />
+          <CTAButton href="/contact" size="md" variant="primary">
+            Speak With an Engineer
+          </CTAButton>
+        </div>
 
-          <div className="lg:col-span-7 space-y-6 pl-0 lg:pl-8 border-l-0 lg:border-l border-slate-200">
-            <div className="space-y-1">
-              <span className="text-xs font-bold text-[#0052cc] tracking-widest uppercase">
-                01 / CERTIFIED QUALITY
-              </span>
-              <h3 className="text-lg font-bold text-[#0f172a]">
-                BIS Licensed & ZED Gold Certified
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Manufactured compliant with IS 1180, IS 2026, IS 335, and ECBC regulations with Zero Defect & Zero Effect quality standards.
-              </p>
-            </div>
+        {/* 6 Feature Grid Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reasons.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="group bg-white border border-slate-200 p-8 rounded-sm shadow-xs hover:border-[#0052cc] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+              >
+                {/* Top Corner Number */}
+                <div className="absolute top-6 right-6 text-2xl font-black text-slate-100 group-hover:text-[#0052cc]/10 transition-colors pointer-events-none">
+                  {item.num}
+                </div>
 
-            <div className="space-y-1 pt-4 border-t border-slate-100">
-              <span className="text-xs font-bold text-[#0052cc] tracking-widest uppercase">
-                02 / PREMIUM MATERIALS
-              </span>
-              <h3 className="text-lg font-bold text-[#0f172a]">
-                Electrolytic Copper & High-Grade CRGO Core
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                100% precision copper windings and low-loss CRGO silicon steel laminations ensuring maximum thermal durability and energy efficiency.
-              </p>
-            </div>
+                <div>
+                  {/* Icon and Tag */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-12 h-12 rounded-sm bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold group-hover:bg-[#0052cc] group-hover:text-white transition-colors duration-300">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0052cc] bg-[#0052cc]/10 px-2.5 py-1 rounded-xs">
+                      {item.tag}
+                    </span>
+                  </div>
 
-            <div className="space-y-1 pt-4 border-t border-slate-100">
-              <span className="text-xs font-bold text-[#0052cc] tracking-widest uppercase">
-                03 / FULL CUSTOMIZATION
-              </span>
-              <h3 className="text-lg font-bold text-[#0f172a]">
-                Project-Specific Custom Engineering
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Custom voltage ratios (11 kV & 33 kV), Off-Circuit Tap Links (OCTC), On-Load Tap Changers (OLTC), vector groups, and IP enclosures up to 5 MVA.
-              </p>
-            </div>
-          </div>
+                  <h3 className="text-lg font-bold text-[#0f172a] mb-2.5 group-hover:text-[#0052cc] transition-colors">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-slate-400 group-hover:text-[#0052cc] transition-colors">
+                  <CheckCircle2 className="w-4 h-4 text-[#0052cc]" />
+                  <span>Certified Performance Guarantee</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
