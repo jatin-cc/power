@@ -1,48 +1,61 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
-import { X, ChevronDown, ArrowRight, Phone, Mail } from 'lucide-react';
-import gsap from 'gsap';
+import { usePathname } from 'next/navigation';
+import { X, ChevronDown, ArrowRight, Phone, Mail, Zap, Wrench, ShieldCheck } from 'lucide-react';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
 
 export default function MobileMenu({ isOpen, onClose }) {
-  const menuRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      gsap.fromTo(
-        menuRef.current,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' }
-      );
-      gsap.fromTo(
-        '.mobile-nav-item',
-        { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: 0.4, stagger: 0.05, ease: 'power2.out', delay: 0.1 }
-      );
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [isOpen]);
+    setMounted(true);
+  }, []);
 
-  if (!isOpen) return null;
+  // Close menu on route change
+  useEffect(() => {
+    if (isOpen) {
+      onClose();
+    }
+  }, [pathname]);
+
+  // Lock body scroll and listen for ESC key
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  if (!mounted || !isOpen) return null;
 
   const toggleSection = (section) => {
-    setExpandedSection(expandedSection === section ? null : section);
+    setExpandedSection(prev => prev === section ? null : section);
   };
 
-  return (
-    <div
-      ref={menuRef}
-      className="fixed inset-0 bg-white z-50 overflow-y-auto flex flex-col justify-between p-6 text-[#0f172a]"
-    >
-      {/* Header Bar */}
-      <div className="flex items-center justify-between pb-6 border-b border-slate-200">
-        <Link href="/" onClick={onClose}>
+  const menuContent = (
+    <div className="fixed inset-0 z-[99999] flex flex-col bg-white text-[#0f172a] animate-in fade-in duration-200">
+      {/* Top Header Bar */}
+      <div className="h-16 px-5 border-b border-slate-200 flex items-center justify-between bg-white shrink-0">
+        <Link href="/" onClick={onClose} className="flex items-center gap-2">
           <img
             src="/logo.jpeg"
             alt="G Sons Power Transformers"
@@ -52,40 +65,54 @@ export default function MobileMenu({ isOpen, onClose }) {
 
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#0052cc] hover:text-[#0052cc] transition-colors"
+          className="w-10 h-10 rounded border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#0052cc] hover:text-[#0052cc] hover:bg-slate-50 transition-colors cursor-pointer"
           aria-label="Close menu"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Main Links List */}
-      <div className="py-8 flex-1 space-y-4">
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+      {/* Scrollable Navigation Body */}
+      <div className="flex-1 overflow-y-auto px-5 py-6 space-y-2">
+        {/* Home */}
+        <div className="border-b border-slate-100 pb-2">
           <Link
             href="/"
             onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
           >
             Home
           </Link>
         </div>
 
-        {/* Products Accordion */}
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+        {/* Products Dropdown Accordion */}
+        <div className="border-b border-slate-100 pb-2">
           <button
             onClick={() => toggleSection('products')}
-            className="w-full flex items-center justify-between text-xl font-bold text-[#0f172a] py-1"
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors cursor-pointer text-left"
           >
-            <span>Products</span>
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-[#0052cc]" />
+              <span>Products</span>
+            </div>
             <ChevronDown
-              className={`w-5 h-5 text-[#0052cc] transition-transform duration-300 ${
+              className={`w-4 h-4 text-[#0052cc] transition-transform duration-200 ${
                 expandedSection === 'products' ? 'rotate-180' : ''
               }`}
             />
           </button>
+
           {expandedSection === 'products' && (
-            <div className="mt-3 pl-4 space-y-2 border-l-2 border-[#0052cc]/20">
+            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#0052cc]/20">
+              <Link
+                href="/products-services"
+                onClick={onClose}
+                className="block text-xs font-bold uppercase tracking-wider text-[#0052cc] py-1"
+              >
+                → View All Products Catalog
+              </Link>
               {products.map((p) => (
                 <Link
                   key={p.id}
@@ -100,21 +127,32 @@ export default function MobileMenu({ isOpen, onClose }) {
           )}
         </div>
 
-        {/* Services Accordion */}
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+        {/* Services Dropdown Accordion */}
+        <div className="border-b border-slate-100 pb-2">
           <button
             onClick={() => toggleSection('services')}
-            className="w-full flex items-center justify-between text-xl font-bold text-[#0f172a] py-1"
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors cursor-pointer text-left"
           >
-            <span>Services</span>
+            <div className="flex items-center gap-2">
+              <Wrench className="w-4 h-4 text-[#0052cc]" />
+              <span>Services</span>
+            </div>
             <ChevronDown
-              className={`w-5 h-5 text-[#0052cc] transition-transform duration-300 ${
+              className={`w-4 h-4 text-[#0052cc] transition-transform duration-200 ${
                 expandedSection === 'services' ? 'rotate-180' : ''
               }`}
             />
           </button>
+
           {expandedSection === 'services' && (
-            <div className="mt-3 pl-4 space-y-2 border-l-2 border-[#0052cc]/20">
+            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#0052cc]/20">
+              <Link
+                href="/services"
+                onClick={onClose}
+                className="block text-xs font-bold uppercase tracking-wider text-[#0052cc] py-1"
+              >
+                → All Engineering Services
+              </Link>
               {services.map((s) => (
                 <Link
                   key={s.id}
@@ -129,69 +167,115 @@ export default function MobileMenu({ isOpen, onClose }) {
           )}
         </div>
 
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+        {/* Infrastructure */}
+        <div className="border-b border-slate-100 pb-2">
           <Link
             href="/infrastructure"
             onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/infrastructure' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
           >
             Infrastructure
           </Link>
         </div>
 
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+        {/* Industries */}
+        <div className="border-b border-slate-100 pb-2">
           <Link
             href="/industries"
             onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/industries' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
           >
             Industries
           </Link>
         </div>
 
-        <div className="mobile-nav-item border-b border-slate-100 pb-3">
+        {/* About Us */}
+        <div className="border-b border-slate-100 pb-2">
           <Link
             href="/about"
             onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/about' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
           >
-            Company
+            About Us
           </Link>
         </div>
 
-        <div className="mobile-nav-item pb-3">
+        {/* Events */}
+        <div className="border-b border-slate-100 pb-2">
+          <Link
+            href="/events"
+            onClick={onClose}
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/events' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
+          >
+            Events & Expos
+          </Link>
+        </div>
+
+        {/* Leadership */}
+        <div className="border-b border-slate-100 pb-2">
+          <Link
+            href="/leadership"
+            onClick={onClose}
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/leadership' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
+          >
+            Leadership
+          </Link>
+        </div>
+
+        {/* Contact */}
+        <div className="pb-2">
           <Link
             href="/contact"
             onClick={onClose}
-            className="text-xl font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors block"
+            className={`block py-2.5 text-base font-bold transition-colors ${
+              pathname === '/contact' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+            }`}
           >
             Contact & RFQ
           </Link>
         </div>
       </div>
 
-      {/* Bottom Contact Shortcut & CTA */}
-      <div className="mobile-nav-item pt-6 border-t border-slate-200 space-y-4">
-        <div className="flex flex-col gap-2 text-xs text-slate-600 font-medium">
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4 text-[#0052cc]" />
+      {/* Bottom Sticky Action Footer */}
+      <div className="p-5 border-t border-slate-200 bg-slate-50 space-y-3 shrink-0">
+        <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
+          <a
+            href="tel:+918005557693"
+            className="flex items-center gap-1.5 text-slate-700 hover:text-[#0052cc]"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#0052cc]" />
             <span>+91 800 555-POWER</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4 text-[#0052cc]" />
+          </a>
+          <a
+            href="mailto:sales@gsonspower.com"
+            className="flex items-center gap-1.5 text-slate-700 hover:text-[#0052cc]"
+          >
+            <Mail className="w-3.5 h-3.5 text-[#0052cc]" />
             <span>sales@gsonspower.com</span>
-          </div>
+          </a>
         </div>
 
         <Link
           href="/contact"
           onClick={onClose}
-          className="w-full bg-[#0052cc] text-white font-bold text-sm tracking-wider uppercase py-3.5 px-6 flex items-center justify-center gap-2 hover:bg-[#0041a3] transition-colors"
+          className="w-full bg-[#0052cc] text-white font-bold text-xs tracking-wider uppercase py-3.5 px-4 rounded-xs flex items-center justify-center gap-2 hover:bg-[#0041a3] transition-colors shadow-xs"
         >
-          <span>Get Technical Quote</span>
+          <span>Request Engineering Quote</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </div>
   );
+
+  return createPortal(menuContent, document.body);
 }

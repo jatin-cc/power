@@ -133,8 +133,12 @@ export default function Header() {
 
         {/* Mobile Hamburger Trigger */}
         <button
-          onClick={() => setMobileMenuOpen(true)}
-          className="lg:hidden w-10 h-10 border border-slate-200 flex items-center justify-center text-[#0f172a] hover:border-[#0052cc] hover:text-[#0052cc] transition-colors cursor-pointer"
+          type="button"
+          onClick={() => {
+            setActiveMegaTab(null);
+            setMobileMenuOpen(true);
+          }}
+          className="lg:hidden w-10 h-10 border border-slate-200 flex items-center justify-center text-[#0f172a] hover:border-[#0052cc] hover:text-[#0052cc] transition-colors cursor-pointer bg-white"
           aria-label="Open mobile menu"
         >
           <Menu className="w-5 h-5" />

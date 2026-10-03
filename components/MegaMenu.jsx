@@ -12,7 +12,7 @@ export default function MegaMenu({ activeTab, onClose }) {
   return (
     <div
       onMouseLeave={onClose}
-      className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl shadow-slate-900/5 transition-all duration-300 z-50 text-[#0f172a]"
+      className="hidden lg:block absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl shadow-slate-900/5 transition-all duration-300 z-50 text-[#0f172a]"
     >
       <div className="max-w-7xl mx-auto px-6 py-8">
         {activeTab === 'products' && (

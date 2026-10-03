@@ -21,6 +21,14 @@ export const metadata = {
     template: "%s | G Sons Power Transformers",
   },
   description: "G Sons Power Transformers Pvt. Ltd. manufactures Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), Compact Substations (CSS), and HT/LT Switchgear Panels up to 5 MVA in 11 kV & 33 kV voltage classes.",
+  icons: {
+    icon: [
+      { url: '/logo.jpeg' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/logo.jpeg',
+    apple: '/logo.jpeg',
+  },
 };
 
 export default function RootLayout({ children }) {
