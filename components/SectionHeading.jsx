@@ -47,8 +47,8 @@ export default function SectionHeading({
     <div ref={containerRef} className={`flex flex-col max-w-3xl mb-12 ${alignmentClasses} ${className}`}>
       {eyebrow && (
         <div className="heading-anim inline-flex items-center gap-2 mb-3">
-          <span className="w-6 h-[2px] bg-[#0052cc]" />
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="w-6 h-[2px] bg-gradient-to-r from-[#063772] to-[#23790a]" />
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             {eyebrow}
           </span>
         </div>

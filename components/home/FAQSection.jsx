@@ -57,24 +57,24 @@ export default function FAQSection() {
                 key={idx}
                 className={`border rounded-sm transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'border-[#0052cc] bg-slate-50/80 shadow-xs'
+                    ? 'border-[#063772] bg-slate-50/80 shadow-xs'
                     : 'border-slate-200 bg-white hover:border-slate-300'
                 }`}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between font-bold text-sm sm:text-base text-[#0f172a] hover:text-[#0052cc] transition-colors cursor-pointer"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between font-bold text-sm sm:text-base text-[#0f172a] hover:text-[#063772] transition-colors cursor-pointer"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4 flex items-center gap-3">
-                    <span className="text-xs font-black text-[#0052cc] shrink-0">
+                    <span className="text-xs font-black text-[#063772] shrink-0">
                       Q{idx + 1}.
                     </span>
                     <span>{faq.question}</span>
                   </span>
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-[#0052cc] text-white rotate-180' : 'bg-slate-100 text-slate-500'
+                      isOpen ? 'bg-[#063772] text-white rotate-180' : 'bg-slate-100 text-slate-500'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function FAQSection() {
         <div className="mt-12 text-center p-6 bg-slate-50 border border-slate-200 rounded-sm">
           <p className="text-xs text-slate-600">
             Have a technical query not listed here?{' '}
-            <Link href="/contact" className="text-[#0052cc] font-bold hover:underline">
+            <Link href="/contact" className="text-[#063772] font-bold hover:underline">
               Contact our transformer design engineers directly
             </Link>{' '}
             or call <span className="font-bold text-[#0f172a]">+91 800 555-POWER</span>.

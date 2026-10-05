@@ -13,7 +13,7 @@ export default function IndustriesPage() {
     <main className="pt-32 pb-24 bg-white text-[#0f172a]">
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             SECTOR MATRIX
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
@@ -26,38 +26,42 @@ export default function IndustriesPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 space-y-12">
-        {industries.map((ind) => (
-          <div
-            id={ind.slug}
-            key={ind.id}
-            className="bg-slate-50 border border-slate-200 p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-sm"
-          >
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-3 py-1">
-                {ind.tagline}
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{ind.name}</h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
-
-              <div className="pt-3 border-t border-slate-200 space-y-2">
-                <span className="text-[10px] font-bold tracking-widest text-[#0f172a] uppercase block">
-                  DEPLOYED TRANSFORMER CATEGORIES
+        {industries.map((ind, idx) => {
+          const isGreen = idx % 2 === 1;
+          const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+          return (
+            <div
+              id={ind.slug}
+              key={ind.id}
+              className="bg-slate-50 border border-slate-200 p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-sm"
+            >
+              <div className="lg:col-span-7 space-y-4">
+                <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 ${badgeBg}`}>
+                  {ind.tagline}
                 </span>
-                <div className="flex flex-wrap gap-2">
-                  {ind.keyProducts.map((kp, kpIdx) => (
-                    <span key={kpIdx} className="bg-white border border-slate-200 text-[#0052cc] text-xs font-bold px-3 py-1">
-                      {kp}
-                    </span>
-                  ))}
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{ind.name}</h2>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{ind.desc}</p>
+
+                <div className="pt-3 border-t border-slate-200 space-y-2">
+                  <span className="text-[10px] font-bold tracking-widest text-[#0f172a] uppercase block">
+                    DEPLOYED TRANSFORMER CATEGORIES
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {ind.keyProducts.map((kp, kpIdx) => (
+                      <span key={kpIdx} className="bg-white border border-[#23790a]/20 text-[#23790a] text-xs font-bold px-3 py-1">
+                        {kp}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="lg:col-span-5 border border-slate-200 bg-white p-2 shadow-sm">
-              <img src={ind.image} alt={ind.name} className="w-full aspect-[4/3] object-cover" />
+              <div className="lg:col-span-5 border border-slate-200 bg-white p-2 shadow-sm">
+                <img src={ind.image} alt={ind.name} className="w-full aspect-[4/3] object-cover" />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
     </main>
   );

@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #063772;
+  --color-primary-hover: #042956;
+  --color-primary-light: #edf4fc;
+  --color-primary-dark: #031f42;
+
+  --color-secondary: #23790a;
+  --color-secondary-hover: #1c6208;
+  --color-secondary-light: #eff9ec;
+  --color-secondary-dark: #154805;
+
+  --color-accent: #063772;
+  --color-accent-hover: #042956;
+  --color-accent-light: #edf4fc;
+}
+
 @layer base {
   :root {
     --bg-main: #ffffff;
@@ -10,11 +26,21 @@
     --text-muted: #475569;
     --text-light: #94a3b8;
     
-    /* Single Brand Accent Color System: Deep Precision Blue */
-    --accent: #0052cc;
-    --accent-hover: #0041a3;
-    --accent-light: rgba(0, 82, 204, 0.08);
-    --accent-border: rgba(0, 82, 204, 0.2);
+    /* Brand Colors extracted from official logo: Primary Blue & Secondary Green */
+    --primary: #063772;
+    --primary-hover: #042956;
+    --primary-light: rgba(6, 55, 114, 0.08);
+    --primary-border: rgba(6, 55, 114, 0.2);
+
+    --secondary: #23790a;
+    --secondary-hover: #1c6208;
+    --secondary-light: rgba(35, 121, 10, 0.08);
+    --secondary-border: rgba(35, 121, 10, 0.2);
+    
+    --accent: #063772;
+    --accent-hover: #042956;
+    --accent-light: rgba(6, 55, 114, 0.08);
+    --accent-border: rgba(6, 55, 114, 0.2);
     
     --border-color: #e2e8f0;
   }
@@ -27,7 +53,7 @@
   }
 
   ::selection {
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: #ffffff;
   }
 
@@ -40,11 +66,11 @@
     background: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 82, 204, 0.25);
+    background: rgba(6, 55, 114, 0.3);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    background: var(--primary);
   }
 }
 
@@ -52,12 +78,12 @@
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(0, 82, 204, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 82, 204, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(6, 55, 114, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 55, 114, 0.04) 1px, transparent 1px);
 }
 
 .bg-dots-pattern {
-  background-image: radial-gradient(rgba(0, 82, 204, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(6, 55, 114, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

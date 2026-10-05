@@ -117,11 +117,11 @@ export default function ManufacturingProcess() {
                 alt={processSteps[activeStep].title}
                 className="w-full h-full object-cover transition-all duration-500"
               />
-              <div className="absolute top-4 left-4 bg-[#0052cc] text-white px-3 py-1 text-xs font-bold uppercase tracking-wider">
+              <div className="absolute top-4 left-4 bg-[#063772] text-white px-3 py-1 text-xs font-bold uppercase tracking-wider">
                 STEP {processSteps[activeStep].step} PROTOCOL
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 border border-slate-200">
-                <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-1">
+                <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1">
                   ACTIVE PHASE
                 </span>
                 <h4 className="font-bold text-sm text-[#0f172a]">
@@ -136,7 +136,7 @@ export default function ManufacturingProcess() {
             {/* Animated Active Line */}
             <div
               ref={lineRef}
-              className="absolute left-[-2px] top-0 w-[2px] h-full bg-[#0052cc] origin-top scale-y-0 transition-transform duration-100 pointer-events-none"
+              className="absolute left-[-2px] top-0 w-[2px] h-full bg-gradient-to-b from-[#063772] to-[#23790a] origin-top scale-y-0 transition-transform duration-100 pointer-events-none"
             />
 
             {processSteps.map((item, idx) => {
@@ -146,14 +146,14 @@ export default function ManufacturingProcess() {
                   key={item.step}
                   className={`process-step-item relative transition-all duration-300 p-6 border ${
                     isActive
-                      ? 'bg-white border-[#0052cc] shadow-md shadow-[#0052cc]/10'
+                      ? 'bg-white border-[#063772] shadow-md shadow-[#063772]/10'
                       : 'bg-white/60 border-slate-200 opacity-60'
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <span
                       className={`text-xs font-extrabold px-2.5 py-0.5 ${
-                        isActive ? 'bg-[#0052cc] text-[#ffffff]' : 'bg-slate-100 text-slate-600'
+                        isActive ? 'bg-[#063772] text-[#ffffff]' : 'bg-slate-100 text-slate-600'
                       }`}
                     >
                       {item.step}

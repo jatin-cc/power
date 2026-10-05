@@ -23,38 +23,42 @@ export default function BlogSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogArticles.map((art) => (
-            <Link
-              key={art.id}
-              href={`/blog/${art.slug}`}
-              className="group bg-white border border-slate-200 rounded-sm p-7 flex flex-col justify-between hover:border-[#0052cc] hover:shadow-xl transition-all duration-300 shadow-2xs"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
-                  <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-2.5 py-1 rounded-xs">
-                    {art.category}
-                  </span>
-                  <div className="flex items-center gap-1.5 text-slate-500">
-                    <Clock className="w-3.5 h-3.5 text-[#0052cc]" />
-                    <span>{art.readTime}</span>
+          {blogArticles.map((art, idx) => {
+            const isGreen = idx === 1;
+            const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+            return (
+              <Link
+                key={art.id}
+                href={`/blog/${art.slug}`}
+                className="group bg-white border border-slate-200 rounded-sm p-7 flex flex-col justify-between hover:border-[#063772] hover:shadow-xl transition-all duration-300 shadow-2xs"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-xs ${badgeBg}`}>
+                      {art.category}
+                    </span>
+                    <div className="flex items-center gap-1.5 text-slate-500">
+                      <Clock className="w-3.5 h-3.5 text-[#23790a]" />
+                      <span>{art.readTime}</span>
+                    </div>
                   </div>
+
+                  <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#063772] transition-colors leading-snug">
+                    {art.title}
+                  </h3>
+
+                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed font-normal">
+                    {art.excerpt}
+                  </p>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#0052cc] transition-colors leading-snug">
-                  {art.title}
-                </h3>
-
-                <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed font-normal">
-                  {art.excerpt}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0052cc] uppercase tracking-wider">
-                <span>Read Technical Paper</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </div>
-            </Link>
-          ))}
+                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#063772] uppercase tracking-wider">
+                  <span>Read Technical Paper</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

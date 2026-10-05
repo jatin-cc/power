@@ -74,8 +74,8 @@ export default function HeroSection() {
           {/* Left Hero Content */}
           <div className="lg:col-span-7 space-y-6">
             <div ref={eyebrowRef} className="inline-flex items-center gap-2">
-              <span className="w-8 h-[2px] bg-[#0052cc]" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+              <span className="w-8 h-[2px] bg-gradient-to-r from-[#063772] to-[#23790a]" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
                 G SONS POWER TRANSFORMERS PVT. LTD.
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function HeroSection() {
                 <span ref={titleLine1Ref} className="block">
                   Engineering Reliable Power.
                 </span>
-                <span ref={titleLine2Ref} className="block text-[#0052cc]">
+                <span ref={titleLine2Ref} className="block text-[#063772]">
                   Building Electrical Infrastructure.
                 </span>
               </h1>
@@ -113,15 +113,15 @@ export default function HeroSection() {
               className="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 text-xs text-slate-600 font-medium"
             >
               <div>
-                <span className="block font-bold text-sm sm:text-base text-[#0f172a]">Up to 5 MVA</span>
+                <span className="block font-bold text-sm sm:text-base text-[#063772]">Up to 5 MVA</span>
                 <span className="text-slate-500">Manufacturing Capacity</span>
               </div>
               <div>
-                <span className="block font-bold text-sm sm:text-base text-[#0052cc]">11 kV & 33 kV</span>
+                <span className="block font-bold text-sm sm:text-base text-[#23790a]">11 kV & 33 kV</span>
                 <span className="text-slate-500">Voltage Classes</span>
               </div>
               <div>
-                <span className="block font-bold text-sm sm:text-base text-[#0f172a]">BIS & ZED Gold</span>
+                <span className="block font-bold text-sm sm:text-base text-[#063772]">BIS & ZED Gold</span>
                 <span className="text-slate-500">Licensed Quality</span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function HeroSection() {
               {/* Floating Quality Overlay Card */}
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 bg-[#063772]/10 text-[#063772] flex items-center justify-center font-bold">
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>

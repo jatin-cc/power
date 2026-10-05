@@ -69,13 +69,13 @@ export default function ProductScroller() {
       {/* Pinned Wrapper: Pins when CATEGORY 01 / 06 touches top of screen */}
       <div ref={cardsWrapperRef} className="w-full bg-white pt-4 pb-12">
         <div className="max-w-7xl mx-auto px-6 mb-6 flex justify-between items-center">
-          <span className="text-xs font-extrabold tracking-widest text-[#0052cc] uppercase">
+          <span className="text-xs font-extrabold tracking-widest text-[#063772] uppercase">
             CATEGORY {String(activeIdx + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
           </span>
           <div className="w-48 h-1.5 bg-slate-100 border border-slate-200 relative overflow-hidden">
             <div
               ref={progressBarRef}
-              className="h-full bg-[#0052cc] origin-left transition-transform duration-75"
+              className="h-full bg-gradient-to-r from-[#063772] to-[#23790a] origin-left transition-transform duration-75"
               style={{ transform: 'scaleX(0.16)' }}
             />
           </div>
@@ -90,13 +90,13 @@ export default function ProductScroller() {
             {products.map((product, idx) => (
               <div
                 key={product.id}
-                className="w-[85vw] sm:w-[550px] md:w-[80vw] lg:w-[70vw] max-w-5xl shrink-0 bg-slate-50 border border-slate-200 p-8 sm:p-10 flex flex-col lg:flex-row gap-8 items-center justify-between shadow-sm hover:border-[#0052cc]/40 transition-colors"
+                className="w-[85vw] sm:w-[550px] md:w-[80vw] lg:w-[70vw] max-w-5xl shrink-0 bg-slate-50 border border-slate-200 p-8 sm:p-10 flex flex-col lg:flex-row gap-8 items-center justify-between shadow-sm hover:border-[#063772]/40 transition-colors"
                 data-cursor="VIEW"
               >
                 {/* Left Details */}
                 <div className="w-full lg:w-1/2 space-y-5">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-extrabold text-[#0052cc] tracking-widest uppercase bg-[#0052cc]/10 px-3 py-1">
+                    <span className="text-xs font-extrabold text-[#063772] tracking-widest uppercase bg-[#063772]/10 px-3 py-1">
                       PRODUCT {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">
@@ -108,7 +108,7 @@ export default function ProductScroller() {
                     {product.name}
                   </h3>
 
-                  <div className="text-xs font-bold text-[#0052cc] uppercase tracking-wider flex items-center gap-2">
+                  <div className="text-xs font-bold text-[#063772] uppercase tracking-wider flex items-center gap-2">
                     <Zap className="w-4 h-4" />
                     <span>RATED CAPACITY: {product.capacity}</span>
                   </div>
@@ -121,7 +121,7 @@ export default function ProductScroller() {
                   <div className="space-y-2 pt-2 border-t border-slate-200">
                     {product.features.slice(0, 3).map((feat, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-[#0052cc] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#23790a] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}

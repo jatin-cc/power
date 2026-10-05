@@ -79,28 +79,49 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((item, idx) => {
             const Icon = item.icon;
+            const isGreen = idx % 2 === 1;
             return (
               <div
                 key={idx}
-                className="group bg-white border border-slate-200 p-8 rounded-sm shadow-xs hover:border-[#0052cc] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                className={`group bg-white border border-slate-200 p-8 rounded-sm shadow-xs transition-all duration-300 flex flex-col justify-between relative overflow-hidden ${
+                  isGreen ? 'hover:border-[#23790a] hover:shadow-xl' : 'hover:border-[#063772] hover:shadow-xl'
+                }`}
               >
                 {/* Top Corner Number */}
-                <div className="absolute top-6 right-6 text-2xl font-black text-slate-100 group-hover:text-[#0052cc]/10 transition-colors pointer-events-none">
+                <div
+                  className={`absolute top-6 right-6 text-2xl font-black text-slate-100 transition-colors pointer-events-none ${
+                    isGreen ? 'group-hover:text-[#23790a]/10' : 'group-hover:text-[#063772]/10'
+                  }`}
+                >
                   {item.num}
                 </div>
 
                 <div>
                   {/* Icon and Tag */}
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-sm bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold group-hover:bg-[#0052cc] group-hover:text-white transition-colors duration-300">
+                    <div
+                      className={`w-12 h-12 rounded-sm flex items-center justify-center font-bold transition-colors duration-300 ${
+                        isGreen
+                          ? 'bg-[#23790a]/10 text-[#23790a] group-hover:bg-[#23790a] group-hover:text-white'
+                          : 'bg-[#063772]/10 text-[#063772] group-hover:bg-[#063772] group-hover:text-white'
+                      }`}
+                    >
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0052cc] bg-[#0052cc]/10 px-2.5 py-1 rounded-xs">
+                    <span
+                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs ${
+                        isGreen ? 'text-[#23790a] bg-[#23790a]/10' : 'text-[#063772] bg-[#063772]/10'
+                      }`}
+                    >
                       {item.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0f172a] mb-2.5 group-hover:text-[#0052cc] transition-colors">
+                  <h3
+                    className={`text-lg font-bold text-[#0f172a] mb-2.5 transition-colors ${
+                      isGreen ? 'group-hover:text-[#23790a]' : 'group-hover:text-[#063772]'
+                    }`}
+                  >
                     {item.title}
                   </h3>
 
@@ -109,8 +130,12 @@ export default function WhyChooseUs() {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-slate-400 group-hover:text-[#0052cc] transition-colors">
-                  <CheckCircle2 className="w-4 h-4 text-[#0052cc]" />
+                <div
+                  className={`pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-slate-400 transition-colors ${
+                    isGreen ? 'group-hover:text-[#23790a]' : 'group-hover:text-[#063772]'
+                  }`}
+                >
+                  <CheckCircle2 className="w-4 h-4 text-[#23790a]" />
                   <span>Certified Performance Guarantee</span>
                 </div>
               </div>

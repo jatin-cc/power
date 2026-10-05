@@ -71,7 +71,7 @@ export default function AboutUsSection() {
               </CTAButton>
               <Link
                 href="/infrastructure"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0052cc] hover:underline uppercase tracking-wider"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#063772] hover:text-[#23790a] hover:underline uppercase tracking-wider"
               >
                 Inspect Factory Infrastructure <ArrowRight className="w-4 h-4" />
               </Link>
@@ -83,21 +83,40 @@ export default function AboutUsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
+            const isGreen = idx % 2 === 1;
             return (
               <div
                 key={idx}
-                className="group relative bg-slate-50 border border-slate-200 p-6 rounded-sm hover:border-[#0052cc] hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className={`group relative bg-slate-50 border border-slate-200 p-6 rounded-sm hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between ${
+                  isGreen ? 'hover:border-[#23790a]' : 'hover:border-[#063772]'
+                }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-sm bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold group-hover:bg-[#0052cc] group-hover:text-white transition-colors">
+                    <div
+                      className={`w-11 h-11 rounded-sm flex items-center justify-center font-bold transition-colors ${
+                        isGreen
+                          ? 'bg-[#23790a]/10 text-[#23790a] group-hover:bg-[#23790a] group-hover:text-white'
+                          : 'bg-[#063772]/10 text-[#063772] group-hover:bg-[#063772] group-hover:text-white'
+                      }`}
+                    >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0052cc] bg-[#0052cc]/10 px-2 py-0.5 rounded-xs">
+                    <span
+                      className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs ${
+                        isGreen
+                          ? 'text-[#23790a] bg-[#23790a]/10'
+                          : 'text-[#063772] bg-[#063772]/10'
+                      }`}
+                    >
                       {item.badge}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-[#0f172a] mb-2 group-hover:text-[#0052cc] transition-colors">
+                  <h3
+                    className={`text-base font-bold text-[#0f172a] mb-2 transition-colors ${
+                      isGreen ? 'group-hover:text-[#23790a]' : 'group-hover:text-[#063772]'
+                    }`}
+                  >
                     {item.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -111,19 +130,26 @@ export default function AboutUsSection() {
 
         {/* Real-world Metrics Strip */}
         <div className="bg-[#0f172a] text-white p-8 sm:p-10 rounded-sm shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
-          {stats.map((stat, idx) => (
-            <div key={idx} className={`${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''} space-y-1`}>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#0052cc] tracking-tight">
-                {stat.value}
+          {stats.map((stat, idx) => {
+            const isGreen = idx % 2 === 1;
+            return (
+              <div key={idx} className={`${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''} space-y-1`}>
+                <div
+                  className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
+                    isGreen ? 'text-[#23790a]' : 'text-[#38bdf8]'
+                  }`}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-xs sm:text-sm font-bold text-white">
+                  {stat.label}
+                </div>
+                <div className="text-[11px] text-slate-400">
+                  {stat.detail}
+                </div>
               </div>
-              <div className="text-xs sm:text-sm font-bold text-white">
-                {stat.label}
-              </div>
-              <div className="text-[11px] text-slate-400">
-                {stat.detail}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

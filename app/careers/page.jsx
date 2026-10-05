@@ -19,7 +19,7 @@ export default function CareersPage() {
     <main className="pt-32 pb-24 bg-white text-[#0f172a]">
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             CAREERS & CULTURE
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
@@ -37,27 +37,31 @@ export default function CareersPage() {
         </h2>
 
         <div className="space-y-4">
-          {openPositions.map((pos, idx) => (
-            <div
-              key={idx}
-              className="p-6 bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-[#0052cc] transition-colors"
-            >
-              <div className="space-y-1">
-                <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-2.5 py-0.5">
-                  {pos.department}
-                </span>
-                <h3 className="font-bold text-base sm:text-lg text-[#0f172a]">{pos.title}</h3>
-                <div className="flex items-center gap-4 text-xs text-slate-500 font-medium pt-1">
-                  <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#0052cc]" /> {pos.location}</span>
-                  <span>•</span>
-                  <span>{pos.type}</span>
+          {openPositions.map((pos, idx) => {
+            const isGreen = idx % 2 === 1;
+            const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+            return (
+              <div
+                key={idx}
+                className="p-6 bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-[#063772] transition-colors"
+              >
+                <div className="space-y-1">
+                  <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 ${badgeBg}`}>
+                    {pos.department}
+                  </span>
+                  <h3 className="font-bold text-base sm:text-lg text-[#0f172a]">{pos.title}</h3>
+                  <div className="flex items-center gap-4 text-xs text-slate-500 font-medium pt-1">
+                    <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#23790a]" /> {pos.location}</span>
+                    <span>•</span>
+                    <span>{pos.type}</span>
+                  </div>
                 </div>
+                <CTAButton href="/contact" size="sm" variant="primary">
+                  Apply for Position
+                </CTAButton>
               </div>
-              <CTAButton href="/contact" size="sm" variant="primary">
-                Apply for Position
-              </CTAButton>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>

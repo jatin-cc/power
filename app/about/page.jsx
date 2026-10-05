@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             G SONS POWER TRANSFORMERS PVT. LTD.
           </span>
 
@@ -72,12 +72,15 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {valueCards.map((card, idx) => {
             const IconComp = card.icon;
+            const isGreen = idx === 1 || idx === 3;
+            const iconBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+            const hoverBorder = isGreen ? 'hover:border-[#23790a]/40' : 'hover:border-[#063772]/40';
             return (
               <div
                 key={idx}
-                className="bg-slate-50 p-6 border border-slate-200 shadow-sm hover:border-[#0052cc]/40 transition-all flex items-start gap-4"
+                className={`bg-slate-50 p-6 border border-slate-200 shadow-sm transition-all flex items-start gap-4 ${hoverBorder}`}
               >
-                <div className="w-10 h-10 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold shrink-0">
+                <div className={`w-10 h-10 rounded flex items-center justify-center font-bold shrink-0 ${iconBg}`}>
                   <IconComp className="w-5 h-5" />
                 </div>
                 <div>
@@ -94,14 +97,14 @@ export default function AboutPage() {
 
       {/* Bottom CTA */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="bg-[#0052cc] text-white p-10 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <div className="bg-gradient-to-r from-[#031f42] via-[#063772] to-[#144905] text-white p-10 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="space-y-2 max-w-xl">
             <h3 className="text-2xl font-bold">Consult G Sons Power Engineers</h3>
             <p className="text-xs text-white/90">
               Submit your project specifications or request a custom quotation for Oil-Filled / Dry-Type Transformers up to 5 MVA.
             </p>
           </div>
-          <CTAButton href="/contact" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0052cc]">
+          <CTAButton href="/contact" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#063772]">
             Request Technical Quote
           </CTAButton>
         </div>

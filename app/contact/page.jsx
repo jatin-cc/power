@@ -47,7 +47,7 @@ export default function ContactPage() {
           {/* Left Contact Info & Offices */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
                 ENGINEERING CONSULTATION & RFQ
               </span>
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
@@ -61,7 +61,7 @@ export default function ContactPage() {
             {/* Direct Contact Cards */}
             <div className="space-y-4 pt-4 border-t border-slate-200 text-xs sm:text-sm text-slate-700">
               <div className="p-5 bg-slate-50 border border-slate-200 flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#0052cc] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#063772] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-[#0f172a] text-sm mb-0.5">Corporate Headquarters</h4>
                   <p className="text-slate-600 leading-relaxed">
@@ -71,7 +71,7 @@ export default function ContactPage() {
               </div>
 
               <div className="p-5 bg-slate-50 border border-slate-200 flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#0052cc] shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-[#063772] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-[#0f172a] text-sm mb-0.5">Global Sales & Support Hotline</h4>
                   <p className="text-slate-600">+1 (800) 555-VOLT / +1 (800) 555-8658</p>
@@ -79,7 +79,7 @@ export default function ContactPage() {
               </div>
 
               <div className="p-5 bg-slate-50 border border-slate-200 flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#0052cc] shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#063772] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-[#0f172a] text-sm mb-0.5">RFQ & Technical Inbox</h4>
                   <p className="text-slate-600">corporate@vortexpowersystems.com</p>
@@ -92,7 +92,7 @@ export default function ContactPage() {
           <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 sm:p-10 shadow-sm">
             {submitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 bg-[#0052cc] text-white rounded-full mx-auto flex items-center justify-center font-bold">
+                <div className="w-16 h-16 bg-[#23790a] text-white rounded-full mx-auto flex items-center justify-center font-bold">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-extrabold text-[#0f172a]">Engineering Inquiry Received!</h3>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 <div className="pt-4">
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold text-[#0052cc] uppercase tracking-wider underline cursor-pointer"
+                    className="text-xs font-bold text-[#063772] uppercase tracking-wider underline cursor-pointer"
                   >
                     Submit Another Inquiry
                   </button>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="e.g. Dr. Robert Vance"
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                     />
                   </div>
 
@@ -141,7 +141,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="e.g. National Transmission Authority"
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="r.vance@utility.com"
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                     />
                   </div>
 
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (555) 019-2834"
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -190,7 +190,7 @@ export default function ContactPage() {
                       value={formData.country}
                       onChange={handleChange}
                       placeholder="e.g. United States, Germany, Japan"
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                     />
                   </div>
 
@@ -202,7 +202,7 @@ export default function ContactPage() {
                       name="industry"
                       value={formData.industry}
                       onChange={handleChange}
-                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none cursor-pointer"
+                      className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none cursor-pointer"
                     >
                       <option>Power & Utilities</option>
                       <option>Renewable Energy (Solar/Wind)</option>
@@ -222,7 +222,7 @@ export default function ContactPage() {
                     name="productOrService"
                     value={formData.productOrService}
                     onChange={handleChange}
-                    className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none cursor-pointer"
+                    className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none cursor-pointer"
                   >
                     <optgroup label="Transformer Products">
                       {products.map((p) => (
@@ -248,7 +248,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Specify MVA rating, voltage class, vector group, cooling type (ONAN/ONAF), or required field diagnostic protocol..."
-                    className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#0052cc] focus:outline-none"
+                    className="w-full bg-white border border-slate-300 p-3 text-xs text-[#0f172a] focus:border-[#063772] focus:outline-none"
                   />
                 </div>
 
@@ -260,7 +260,7 @@ export default function ContactPage() {
                     required
                     checked={formData.consent}
                     onChange={handleChange}
-                    className="cursor-pointer accent-[#0052cc]"
+                    className="cursor-pointer accent-[#063772]"
                   />
                   <label htmlFor="consent" className="text-[11px] text-slate-600 cursor-pointer">
                     I agree to allow Vortex Power Systems to process my information for engineering proposal generation.
@@ -270,7 +270,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#0052cc] text-white font-bold text-xs uppercase tracking-wider py-4 hover:bg-[#0041a3] transition-colors cursor-pointer disabled:opacity-50"
+                  className="w-full bg-[#063772] text-white font-bold text-xs uppercase tracking-wider py-4 hover:bg-[#042956] transition-colors cursor-pointer disabled:opacity-50"
                 >
                   {loading ? 'Processing Specification Proposal...' : 'Submit Engineering RFQ Inquiry'}
                 </button>

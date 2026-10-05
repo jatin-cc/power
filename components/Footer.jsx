@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#0052cc] uppercase block mb-3">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#063772] uppercase block mb-3">
               ENGINEERING RELIABLE POWER
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
@@ -61,15 +61,15 @@ export default function Footer() {
 
           <div className="pt-2 flex flex-col gap-2 text-xs text-slate-600 font-medium">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#0052cc] shrink-0" />
+              <MapPin className="w-4 h-4 text-[#063772] shrink-0" />
               <span>G Sons Power Transformers Pvt. Ltd., India</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#0052cc] shrink-0" />
+              <Phone className="w-4 h-4 text-[#063772] shrink-0" />
               <span>+91 800 555-POWER</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#0052cc] shrink-0" />
+              <Mail className="w-4 h-4 text-[#063772] shrink-0" />
               <span>sales@gsonspower.com</span>
             </div>
           </div>
@@ -81,12 +81,12 @@ export default function Footer() {
             Products
           </h4>
           <ul className="space-y-2.5 text-xs font-medium text-slate-600">
-            <li><Link href="/products/oil-filled-distribution-transformers" className="hover:text-[#0052cc] transition-colors">Oil-Filled Transformers</Link></li>
-            <li><Link href="/products/cast-resin-dry-type-transformers" className="hover:text-[#0052cc] transition-colors">Cast Resin Dry Type (CRT)</Link></li>
-            <li><Link href="/products/vpi-dry-type-transformers" className="hover:text-[#0052cc] transition-colors">VPI Dry Type Units</Link></li>
-            <li><Link href="/products/inverter-duty-transformers" className="hover:text-[#0052cc] transition-colors">Inverter Duty Transformers</Link></li>
-            <li><Link href="/products/compact-substations-css" className="hover:text-[#0052cc] transition-colors">Compact Substations (CSS)</Link></li>
-            <li><Link href="/products/ht-lt-control-panels" className="hover:text-[#0052cc] transition-colors">HT & LT Switchgear Panels</Link></li>
+            <li><Link href="/products/oil-filled-distribution-transformers" className="hover:text-[#063772] transition-colors">Oil-Filled Transformers</Link></li>
+            <li><Link href="/products/cast-resin-dry-type-transformers" className="hover:text-[#063772] transition-colors">Cast Resin Dry Type (CRT)</Link></li>
+            <li><Link href="/products/vpi-dry-type-transformers" className="hover:text-[#063772] transition-colors">VPI Dry Type Units</Link></li>
+            <li><Link href="/products/inverter-duty-transformers" className="hover:text-[#063772] transition-colors">Inverter Duty Transformers</Link></li>
+            <li><Link href="/products/compact-substations-css" className="hover:text-[#063772] transition-colors">Compact Substations (CSS)</Link></li>
+            <li><Link href="/products/ht-lt-control-panels" className="hover:text-[#063772] transition-colors">HT & LT Switchgear Panels</Link></li>
           </ul>
         </div>
 
@@ -96,9 +96,9 @@ export default function Footer() {
             Services
           </h4>
           <ul className="space-y-2.5 text-xs font-medium text-slate-600">
-            <li><Link href="/services/project-specific-custom-engineering" className="hover:text-[#0052cc] transition-colors">Custom Engineering</Link></li>
-            <li><Link href="/services/factory-routine-type-testing" className="hover:text-[#0052cc] transition-colors">Routine & Type Testing</Link></li>
-            <li><Link href="/services/site-commissioning-technical-support" className="hover:text-[#0052cc] transition-colors">Site Commissioning Support</Link></li>
+            <li><Link href="/services/project-specific-custom-engineering" className="hover:text-[#23790a] transition-colors">Custom Engineering</Link></li>
+            <li><Link href="/services/factory-routine-type-testing" className="hover:text-[#23790a] transition-colors">Routine & Type Testing</Link></li>
+            <li><Link href="/services/site-commissioning-technical-support" className="hover:text-[#23790a] transition-colors">Site Commissioning Support</Link></li>
           </ul>
         </div>
 
@@ -108,11 +108,11 @@ export default function Footer() {
             Credentials
           </h4>
           <ul className="space-y-2 text-xs font-semibold text-slate-700">
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#0052cc]" /> BIS Licensed Manufacturer</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#0052cc]" /> ZED Gold Certified</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#0052cc]" /> Startup India Recognized</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#0052cc]" /> Women-Led Enterprise</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#0052cc]" /> Up to 5 MVA Capacity</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> BIS Licensed Manufacturer</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" /> ZED Gold Certified</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> Startup India Recognized</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" /> Women-Led Enterprise</li>
+            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> Up to 5 MVA Capacity</li>
           </ul>
         </div>
       </div>
@@ -125,8 +125,8 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-2.5 py-1 border border-emerald-200 rounded font-semibold text-[10px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 bg-[#eff9ec] text-[#23790a] px-2.5 py-1 border border-[#23790a]/25 rounded font-semibold text-[10px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#23790a] animate-pulse" />
               BIS & ZED GOLD CERTIFIED {timeString && `(${timeString})`}
             </span>
           </div>

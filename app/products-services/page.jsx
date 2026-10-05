@@ -16,7 +16,7 @@ export default function ProductsServicesPage() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl space-y-4 mb-12">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             ENGINEERING CATALOG
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
@@ -33,7 +33,7 @@ export default function ProductsServicesPage() {
             onClick={() => setTab('products')}
             className={`px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
               tab === 'products'
-                ? 'bg-[#0052cc] text-white shadow-md shadow-[#0052cc]/15'
+                ? 'bg-[#063772] text-white shadow-md shadow-[#063772]/15'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -43,7 +43,7 @@ export default function ProductsServicesPage() {
             onClick={() => setTab('services')}
             className={`px-6 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
               tab === 'services'
-                ? 'bg-[#0052cc] text-white shadow-md shadow-[#0052cc]/15'
+                ? 'bg-[#23790a] text-white shadow-md shadow-[#23790a]/15'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -57,14 +57,14 @@ export default function ProductsServicesPage() {
             {products.map((p) => (
               <div
                 key={p.id}
-                className="bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0052cc] transition-all shadow-sm"
+                className="bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between hover:border-[#063772] transition-all shadow-sm"
               >
                 <div className="space-y-4">
-                  <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-2.5 py-0.5">
+                  <span className="text-[10px] font-bold text-[#063772] uppercase tracking-widest bg-[#063772]/10 px-2.5 py-0.5">
                     {p.category}
                   </span>
                   <h3 className="text-xl font-extrabold text-[#0f172a]">{p.name}</h3>
-                  <div className="text-xs font-bold text-[#0052cc] flex items-center gap-1.5">
+                  <div className="text-xs font-bold text-[#23790a] flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5" />
                     <span>CAPACITY: {p.capacity}</span>
                   </div>
@@ -74,7 +74,7 @@ export default function ProductsServicesPage() {
                   <ul className="space-y-2 pt-3 border-t border-slate-200 text-xs text-slate-700 font-medium">
                     {p.features.slice(0, 3).map((f, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0052cc] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#23790a] shrink-0 mt-0.5" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -97,11 +97,11 @@ export default function ProductsServicesPage() {
             {services.map((s) => (
               <div
                 key={s.id}
-                className="bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0052cc] transition-all shadow-sm"
+                className="bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between hover:border-[#23790a] transition-all shadow-sm"
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
+                    <div className="w-8 h-8 rounded bg-[#23790a]/10 text-[#23790a] flex items-center justify-center font-bold">
                       <Shield className="w-4 h-4" />
                     </div>
                     <h3 className="text-xl font-extrabold text-[#0f172a]">{s.name}</h3>
@@ -111,12 +111,12 @@ export default function ProductsServicesPage() {
                   </p>
 
                   <div className="pt-3 border-t border-slate-200 space-y-2">
-                    <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block">
+                    <span className="text-[10px] font-bold tracking-widest text-[#23790a] uppercase block">
                       KEY DELIVERABLES
                     </span>
                     {s.benefits.slice(0, 3).map((b, bIdx) => (
                       <div key={bIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0052cc] shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#23790a] shrink-0" />
                         <span>{b}</span>
                       </div>
                     ))}
@@ -124,7 +124,7 @@ export default function ProductsServicesPage() {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-slate-200">
-                  <CTAButton href={`/services/${s.slug}`} size="sm" variant="primary" className="w-full">
+                  <CTAButton href={`/services/${s.slug}`} size="sm" variant="secondary" className="w-full">
                     Service Process Breakdown
                   </CTAButton>
                 </div>

@@ -33,7 +33,7 @@ export default function NewsPage() {
     <main className="pt-32 pb-24 bg-white text-[#0f172a]">
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="max-w-3xl space-y-4">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc]">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
             PRESS & MEDIA
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0f172a]">
@@ -43,23 +43,27 @@ export default function NewsPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 space-y-8">
-        {newsList.map((item, idx) => (
-          <div key={idx} className="p-8 bg-slate-50 border border-slate-200 space-y-3 shadow-sm">
-            <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
-              <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-2.5 py-0.5">
-                {item.category}
-              </span>
-              <div className="flex items-center gap-1">
-                <Calendar className="w-3.5 h-3.5 text-[#0052cc]" />
-                <span>{item.date}</span>
+        {newsList.map((item, idx) => {
+          const isGreen = idx === 1;
+          const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+          return (
+            <div key={idx} className="p-8 bg-slate-50 border border-slate-200 space-y-3 shadow-sm">
+              <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
+                <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 ${badgeBg}`}>
+                  {item.category}
+                </span>
+                <div className="flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5 text-[#23790a]" />
+                  <span>{item.date}</span>
+                </div>
               </div>
+              <h2 className="text-xl font-bold text-[#0f172a]">{item.title}</h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                {item.excerpt}
+              </p>
             </div>
-            <h2 className="text-xl font-bold text-[#0f172a]">{item.title}</h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-              {item.excerpt}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </section>
     </main>
   );

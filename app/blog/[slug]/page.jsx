@@ -29,7 +29,7 @@ export default async function BlogArticlePage({ params }) {
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-xs font-bold text-[#0052cc] uppercase tracking-wider hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#063772] uppercase tracking-wider hover:gap-3 transition-all"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Knowledge Hub
         </Link>
@@ -38,7 +38,7 @@ export default async function BlogArticlePage({ params }) {
       {/* Header */}
       <article className="max-w-4xl mx-auto px-6">
         <div className="space-y-4 border-b border-slate-200 pb-8 mb-8">
-          <span className="text-xs font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-3 py-1">
+          <span className="text-xs font-bold text-[#063772] uppercase tracking-widest bg-[#063772]/10 px-3 py-1">
             {article.category}
           </span>
 
@@ -48,15 +48,15 @@ export default async function BlogArticlePage({ params }) {
 
           <div className="flex flex-wrap items-center gap-6 text-xs text-slate-500 font-medium pt-2">
             <div className="flex items-center gap-1.5">
-              <User className="w-4 h-4 text-[#0052cc]" />
+              <User className="w-4 h-4 text-[#063772]" />
               <span>{article.author}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-[#0052cc]" />
+              <Calendar className="w-4 h-4 text-[#23790a]" />
               <span>{article.date}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-[#0052cc]" />
+              <Clock className="w-4 h-4 text-[#23790a]" />
               <span>{article.readTime}</span>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default async function BlogArticlePage({ params }) {
         {/* Author Footer */}
         <div className="mt-16 p-6 bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest block mb-1">
+            <span className="text-[10px] font-bold text-[#063772] uppercase tracking-widest block mb-1">
               AUTHOR PROFILE
             </span>
             <h4 className="font-bold text-base text-[#0f172a]">{article.author}</h4>

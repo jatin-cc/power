@@ -48,14 +48,14 @@ export default function GlobalPresence() {
                   onClick={() => setSelectedLoc(loc)}
                   className={`w-full text-left p-5 border transition-all duration-200 flex items-start justify-between cursor-pointer ${
                     isSelected
-                      ? 'border-[#0052cc] bg-[#0052cc]/5 shadow-sm'
+                      ? 'border-[#063772] bg-[#063772]/5 shadow-sm'
                       : 'border-slate-200 bg-white hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className={`w-8 h-8 rounded-none flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 ${
-                        isSelected ? 'bg-[#0052cc] text-white' : 'bg-slate-100 text-slate-600'
+                        isSelected ? 'bg-[#063772] text-white' : 'bg-slate-100 text-slate-600'
                       }`}
                     >
                       <MapPin className="w-4 h-4" />
@@ -67,7 +67,7 @@ export default function GlobalPresence() {
                       </span>
                     </div>
                   </div>
-                  {isSelected && <CheckCircle2 className="w-5 h-5 text-[#0052cc] shrink-0" />}
+                  {isSelected && <CheckCircle2 className="w-5 h-5 text-[#23790a] shrink-0" />}
                 </button>
               );
             })}
@@ -78,27 +78,27 @@ export default function GlobalPresence() {
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-1">
+                  <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1">
                     {selectedLoc.type}
                   </span>
                   <h3 className="text-2xl font-bold text-[#0f172a]">{selectedLoc.name}</h3>
                 </div>
-                <span className="bg-[#0052cc]/10 text-[#0052cc] px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                <span className="bg-[#23790a]/10 text-[#23790a] px-3 py-1 text-xs font-bold uppercase tracking-wider">
                   {selectedLoc.stats}
                 </span>
               </div>
 
               <div className="space-y-4 text-xs sm:text-sm text-slate-600">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#0052cc] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#063772] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">{selectedLoc.address}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-[#0052cc] shrink-0" />
+                  <Phone className="w-4 h-4 text-[#063772] shrink-0" />
                   <span className="font-medium">{selectedLoc.phone}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-[#0052cc] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#063772] shrink-0" />
                   <span className="font-medium">{selectedLoc.email}</span>
                 </div>
               </div>

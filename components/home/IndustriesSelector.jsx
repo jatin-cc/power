@@ -35,7 +35,7 @@ export default function IndustriesSelector() {
                   onClick={() => setSelectedInd(ind)}
                   className={`w-full text-left p-4.5 border transition-all duration-200 flex items-center justify-between cursor-pointer rounded-sm ${
                     isSelected
-                      ? 'border-[#0052cc] bg-slate-50/80 text-[#0052cc] font-bold shadow-xs border-l-4 border-l-[#0052cc]'
+                      ? 'border-[#063772] bg-slate-50/80 text-[#063772] font-bold shadow-xs border-l-4 border-l-[#063772]'
                       : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50/50'
                   }`}
                 >
@@ -45,7 +45,7 @@ export default function IndustriesSelector() {
                   </div>
                   <ChevronRight
                     className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                      isSelected ? 'translate-x-1 text-[#0052cc]' : 'text-slate-400'
+                      isSelected ? 'translate-x-1 text-[#063772]' : 'text-slate-400'
                     }`}
                   />
                 </button>
@@ -59,7 +59,7 @@ export default function IndustriesSelector() {
               {/* Header inside Showcase */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-5">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-1">
+                  <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1">
                     SECTOR APPLICATION PROFILE
                   </span>
                   <h3 className="text-2xl font-extrabold text-[#0f172a]">{selectedInd.name}</h3>
@@ -81,7 +81,7 @@ export default function IndustriesSelector() {
                   {selectedInd.keyProducts.map((p, pIdx) => (
                     <span
                       key={pIdx}
-                      className="bg-white border border-[#0052cc]/20 text-[#0052cc] px-3 py-1.5 text-xs font-bold rounded-xs shadow-2xs"
+                      className="bg-[#23790a]/10 border border-[#23790a]/20 text-[#23790a] px-3 py-1.5 text-xs font-bold rounded-xs shadow-2xs"
                     >
                       {p}
                     </span>

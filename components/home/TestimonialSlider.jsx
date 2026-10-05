@@ -42,7 +42,7 @@ export default function TestimonialSlider() {
         />
 
         <div className="relative bg-slate-50 border border-slate-200 p-8 sm:p-14 shadow-sm mt-8">
-          <Quote className="w-12 h-12 text-[#0052cc]/20 mb-6" />
+          <Quote className="w-12 h-12 text-[#063772]/20 mb-6" />
 
           <div ref={cardRef} className="space-y-6">
             <p className="text-lg sm:text-2xl font-semibold text-[#0f172a] leading-relaxed italic">
@@ -53,7 +53,7 @@ export default function TestimonialSlider() {
               <div>
                 <h4 className="font-extrabold text-base text-[#0f172a]">{activeT.author}</h4>
                 <span className="text-xs text-slate-500 font-medium block">
-                  {activeT.role} — <strong className="text-[#0052cc]">{activeT.company}</strong>
+                  {activeT.role} — <strong className="text-[#063772]">{activeT.company}</strong>
                 </span>
               </div>
 
@@ -61,7 +61,7 @@ export default function TestimonialSlider() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={handlePrev}
-                  className="w-10 h-10 border border-slate-300 flex items-center justify-center text-[#0f172a] hover:border-[#0052cc] hover:text-[#0052cc] transition-colors cursor-pointer"
+                  className="w-10 h-10 border border-slate-300 flex items-center justify-center text-[#0f172a] hover:border-[#063772] hover:text-[#063772] transition-colors cursor-pointer"
                   aria-label="Previous quote"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -71,7 +71,7 @@ export default function TestimonialSlider() {
                 </span>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 border border-slate-300 flex items-center justify-center text-[#0f172a] hover:border-[#0052cc] hover:text-[#0052cc] transition-colors cursor-pointer"
+                  className="w-10 h-10 border border-slate-300 flex items-center justify-center text-[#0f172a] hover:border-[#063772] hover:text-[#063772] transition-colors cursor-pointer"
                   aria-label="Next quote"
                 >
                   <ChevronRight className="w-5 h-5" />

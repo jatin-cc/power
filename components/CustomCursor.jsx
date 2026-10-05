@@ -62,10 +62,10 @@ export default function CustomCursor() {
       {/* Outer Cursor Circle */}
       <div
         ref={cursorRef}
-        className={`fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#0052cc] flex items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ${
+        className={`fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-[#063772] flex items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ${
           isHovered
-            ? 'w-16 h-16 bg-[#0052cc] text-white opacity-95 shadow-lg shadow-[#0052cc]/20'
-            : 'w-8 h-8 bg-[#0052cc]/5 opacity-60'
+            ? 'w-16 h-16 bg-[#063772] text-white opacity-95 shadow-lg shadow-[#063772]/20'
+            : 'w-8 h-8 bg-[#063772]/5 opacity-60'
         }`}
       >
         {isHovered && cursorText && (
@@ -78,7 +78,7 @@ export default function CustomCursor() {
       {/* Inner Precision Dot */}
       <div
         ref={cursorDotRef}
-        className={`fixed top-0 left-0 pointer-events-none z-50 w-2 h-2 bg-[#0052cc] rounded-full -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200 ${
+        className={`fixed top-0 left-0 pointer-events-none z-50 w-2 h-2 bg-[#063772] rounded-full -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200 ${
           isHovered ? 'opacity-0' : 'opacity-80'
         }`}
       />

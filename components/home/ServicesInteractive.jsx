@@ -54,14 +54,14 @@ export default function ServicesInteractive() {
                   onClick={() => handleSelect(item)}
                   className={`w-full text-left p-4 border transition-all duration-200 flex items-center justify-between cursor-pointer ${
                     isSelected
-                      ? 'border-[#0052cc] bg-[#0052cc] text-white shadow-md shadow-[#0052cc]/15'
+                      ? 'border-[#063772] bg-[#063772] text-white shadow-md shadow-[#063772]/15'
                       : 'border-slate-200 bg-white text-[#0f172a] hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`w-8 h-8 flex items-center justify-center font-bold text-xs ${
-                        isSelected ? 'bg-white/20 text-white' : 'bg-[#0052cc]/10 text-[#0052cc]'
+                        isSelected ? 'bg-white/20 text-white' : 'bg-[#063772]/10 text-[#063772]'
                       }`}
                     >
                       {getIcon(item.icon)}
@@ -79,7 +79,7 @@ export default function ServicesInteractive() {
             <div ref={panelRef} className="space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-6">
                 <div>
-                  <span className="text-[10px] font-bold tracking-widest text-[#0052cc] uppercase block mb-1">
+                  <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1">
                     SERVICE OVERVIEW
                   </span>
                   <h3 className="text-2xl font-extrabold text-[#0f172a]">{selectedService.name}</h3>
@@ -102,7 +102,7 @@ export default function ServicesInteractive() {
                   {selectedService.process.map((step) => (
                     <div key={step.step} className="p-4 bg-slate-50 border border-slate-200">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-bold text-[#0052cc]">{step.step}</span>
+                        <span className="text-xs font-bold text-[#063772]">{step.step}</span>
                         <span className="font-bold text-xs text-[#0f172a]">{step.title}</span>
                       </div>
                       <p className="text-[11px] text-slate-500 leading-relaxed">{step.desc}</p>
@@ -119,7 +119,7 @@ export default function ServicesInteractive() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {selectedService.benefits.map((b, bIdx) => (
                     <div key={bIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#0052cc] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#23790a] shrink-0" />
                       <span>{b}</span>
                     </div>
                   ))}

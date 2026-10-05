@@ -28,7 +28,7 @@ export default async function CaseStudyDetailPage({ params }) {
       <div className="max-w-4xl mx-auto px-6 mb-8">
         <Link
           href="/case-studies"
-          className="inline-flex items-center gap-2 text-xs font-bold text-[#0052cc] uppercase tracking-wider hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#063772] uppercase tracking-wider hover:gap-3 transition-all"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Case Studies
         </Link>
@@ -37,7 +37,7 @@ export default async function CaseStudyDetailPage({ params }) {
       <article className="max-w-4xl mx-auto px-6 space-y-12">
         <div className="space-y-4 border-b border-slate-200 pb-8">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-[#0052cc] uppercase tracking-widest bg-[#0052cc]/10 px-3 py-1">
+            <span className="text-xs font-bold text-[#063772] uppercase tracking-widest bg-[#063772]/10 px-3 py-1">
               {cs.industry}
             </span>
             <span className="text-xs font-semibold text-slate-500">{cs.year}</span>
@@ -59,7 +59,7 @@ export default async function CaseStudyDetailPage({ params }) {
         {/* Project Breakdown Cards */}
         <div className="space-y-8">
           <div className="p-8 bg-slate-50 border border-slate-200 space-y-2">
-            <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest block">
+            <span className="text-[10px] font-bold text-[#063772] uppercase tracking-widest block">
               01 / PROJECT CHALLENGE
             </span>
             <h3 className="text-xl font-bold text-[#0f172a]">Operating Environment Constraints</h3>
@@ -69,8 +69,8 @@ export default async function CaseStudyDetailPage({ params }) {
           </div>
 
           <div className="p-8 bg-slate-50 border border-slate-200 space-y-2">
-            <span className="text-[10px] font-bold text-[#0052cc] uppercase tracking-widest block">
-              02 / VORTEX ENGINEERING SOLUTION
+            <span className="text-[10px] font-bold text-[#063772] uppercase tracking-widest block">
+              02 / G SONS ENGINEERING SOLUTION
             </span>
             <h3 className="text-xl font-bold text-[#0f172a]">Bespoke Electromagnetic Design</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
@@ -78,12 +78,12 @@ export default async function CaseStudyDetailPage({ params }) {
             </p>
           </div>
 
-          <div className="p-8 bg-emerald-50 border border-emerald-200 space-y-2">
-            <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest block">
+          <div className="p-8 bg-[#23790a]/5 border border-[#23790a]/30 space-y-2">
+            <span className="text-[10px] font-bold text-[#23790a] uppercase tracking-widest block">
               03 / MEASURABLE OUTCOME
             </span>
-            <h3 className="text-xl font-bold text-emerald-950">Verified Substation Performance</h3>
-            <p className="text-xs sm:text-sm text-emerald-900 leading-relaxed font-semibold">
+            <h3 className="text-xl font-bold text-[#0f172a]">Verified Substation Performance</h3>
+            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-semibold">
               {cs.outcome}
             </p>
           </div>

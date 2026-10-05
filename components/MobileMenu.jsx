@@ -65,7 +65,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#0052cc] hover:text-[#0052cc] hover:bg-slate-50 transition-colors cursor-pointer"
+          className="w-10 h-10 rounded border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#063772] hover:text-[#063772] hover:bg-slate-50 transition-colors cursor-pointer"
           aria-label="Close menu"
         >
           <X className="w-5 h-5" />
@@ -80,7 +80,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Home
@@ -91,25 +91,25 @@ export default function MobileMenu({ isOpen, onClose }) {
         <div className="border-b border-slate-100 pb-2">
           <button
             onClick={() => toggleSection('products')}
-            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors cursor-pointer text-left"
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#063772] transition-colors cursor-pointer text-left"
           >
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#0052cc]" />
+              <Zap className="w-4 h-4 text-[#063772]" />
               <span>Products</span>
             </div>
             <ChevronDown
-              className={`w-4 h-4 text-[#0052cc] transition-transform duration-200 ${
+              className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${
                 expandedSection === 'products' ? 'rotate-180' : ''
               }`}
             />
           </button>
 
           {expandedSection === 'products' && (
-            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#0052cc]/20">
+            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#063772]/20">
               <Link
                 href="/products-services"
                 onClick={onClose}
-                className="block text-xs font-bold uppercase tracking-wider text-[#0052cc] py-1"
+                className="block text-xs font-bold uppercase tracking-wider text-[#063772] py-1"
               >
                 → View All Products Catalog
               </Link>
@@ -118,7 +118,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                   key={p.id}
                   href={`/products/${p.slug}`}
                   onClick={onClose}
-                  className="block text-sm font-medium text-slate-700 hover:text-[#0052cc] py-1"
+                  className="block text-sm font-medium text-slate-700 hover:text-[#063772] py-1"
                 >
                   {p.name}
                 </Link>
@@ -131,25 +131,25 @@ export default function MobileMenu({ isOpen, onClose }) {
         <div className="border-b border-slate-100 pb-2">
           <button
             onClick={() => toggleSection('services')}
-            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#0052cc] transition-colors cursor-pointer text-left"
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#23790a] transition-colors cursor-pointer text-left"
           >
             <div className="flex items-center gap-2">
-              <Wrench className="w-4 h-4 text-[#0052cc]" />
+              <Wrench className="w-4 h-4 text-[#23790a]" />
               <span>Services</span>
             </div>
             <ChevronDown
-              className={`w-4 h-4 text-[#0052cc] transition-transform duration-200 ${
+              className={`w-4 h-4 text-[#23790a] transition-transform duration-200 ${
                 expandedSection === 'services' ? 'rotate-180' : ''
               }`}
             />
           </button>
 
           {expandedSection === 'services' && (
-            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#0052cc]/20">
+            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#23790a]/20">
               <Link
                 href="/services"
                 onClick={onClose}
-                className="block text-xs font-bold uppercase tracking-wider text-[#0052cc] py-1"
+                className="block text-xs font-bold uppercase tracking-wider text-[#23790a] py-1"
               >
                 → All Engineering Services
               </Link>
@@ -158,7 +158,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                   key={s.id}
                   href={`/services/${s.slug}`}
                   onClick={onClose}
-                  className="block text-sm font-medium text-slate-700 hover:text-[#0052cc] py-1"
+                  className="block text-sm font-medium text-slate-700 hover:text-[#23790a] py-1"
                 >
                   {s.name}
                 </Link>
@@ -173,7 +173,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/infrastructure"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/infrastructure' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/infrastructure' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Infrastructure
@@ -186,7 +186,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/industries"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/industries' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/industries' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Industries
@@ -199,7 +199,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/about"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/about' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/about' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             About Us
@@ -212,7 +212,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/events"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/events' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/events' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Events & Expos
@@ -225,7 +225,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/leadership"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/leadership' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/leadership' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Leadership
@@ -238,7 +238,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             href="/contact"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/contact' ? 'text-[#0052cc]' : 'text-[#0f172a] hover:text-[#0052cc]'
+              pathname === '/contact' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
             Contact & RFQ
@@ -251,16 +251,16 @@ export default function MobileMenu({ isOpen, onClose }) {
         <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
           <a
             href="tel:+918005557693"
-            className="flex items-center gap-1.5 text-slate-700 hover:text-[#0052cc]"
+            className="flex items-center gap-1.5 text-slate-700 hover:text-[#063772]"
           >
-            <Phone className="w-3.5 h-3.5 text-[#0052cc]" />
+            <Phone className="w-3.5 h-3.5 text-[#063772]" />
             <span>+91 800 555-POWER</span>
           </a>
           <a
             href="mailto:sales@gsonspower.com"
-            className="flex items-center gap-1.5 text-slate-700 hover:text-[#0052cc]"
+            className="flex items-center gap-1.5 text-slate-700 hover:text-[#063772]"
           >
-            <Mail className="w-3.5 h-3.5 text-[#0052cc]" />
+            <Mail className="w-3.5 h-3.5 text-[#063772]" />
             <span>sales@gsonspower.com</span>
           </a>
         </div>
@@ -268,7 +268,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         <Link
           href="/contact"
           onClick={onClose}
-          className="w-full bg-[#0052cc] text-white font-bold text-xs tracking-wider uppercase py-3.5 px-4 rounded-xs flex items-center justify-center gap-2 hover:bg-[#0041a3] transition-colors shadow-xs"
+          className="w-full bg-[#063772] text-white font-bold text-xs tracking-wider uppercase py-3.5 px-4 rounded-xs flex items-center justify-center gap-2 hover:bg-[#042956] transition-colors shadow-xs"
         >
           <span>Request Engineering Quote</span>
           <ArrowRight className="w-4 h-4" />

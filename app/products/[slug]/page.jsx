@@ -31,7 +31,7 @@ export default async function ProductDetailPage({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">
-              <Link href="/products-services" className="text-xs font-bold text-[#0052cc] uppercase hover:underline">
+              <Link href="/products-services" className="text-xs font-bold text-[#063772] uppercase hover:underline">
                 PRODUCTS
               </Link>
               <span className="text-xs text-slate-300">/</span>
@@ -42,7 +42,7 @@ export default async function ProductDetailPage({ params }) {
               {product.name}
             </h1>
 
-            <div className="inline-flex items-center gap-2 bg-[#0052cc]/10 text-[#0052cc] px-3.5 py-1.5 font-bold text-xs uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-[#23790a]/10 text-[#23790a] px-3.5 py-1.5 font-bold text-xs uppercase tracking-wider">
               <Zap className="w-4 h-4" />
               <span>CAPACITY RATING: {product.capacity}</span>
             </div>
@@ -108,7 +108,7 @@ export default async function ProductDetailPage({ params }) {
             <div className="space-y-3">
               {product.features.map((feat, fIdx) => (
                 <div key={fIdx} className="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 text-xs sm:text-sm font-medium text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-[#0052cc] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#23790a] shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </div>
               ))}
@@ -123,7 +123,7 @@ export default async function ProductDetailPage({ params }) {
             <div className="space-y-3">
               {product.applications.map((app, aIdx) => (
                 <div key={aIdx} className="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 text-xs sm:text-sm font-medium text-slate-700">
-                  <ShieldCheck className="w-4 h-4 text-[#0052cc] shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-[#063772] shrink-0 mt-0.5" />
                   <span>{app}</span>
                 </div>
               ))}
@@ -134,7 +134,7 @@ export default async function ProductDetailPage({ params }) {
 
       {/* Bottom CTA Banner */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="bg-[#0052cc] text-white p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <div className="bg-gradient-to-r from-[#031f42] via-[#063772] to-[#144905] text-white p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="max-w-xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-white/80">
               CUSTOM CAPABILITY
@@ -146,7 +146,7 @@ export default async function ProductDetailPage({ params }) {
               Our 3D finite element design team can tailor voltage taps, impedance levels, and tank dimensions to match your sub-station layout.
             </p>
           </div>
-          <CTAButton href="/contact" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0052cc] shrink-0">
+          <CTAButton href="/contact" size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#063772] shrink-0">
             Submit Customized RFQ
           </CTAButton>
         </div>

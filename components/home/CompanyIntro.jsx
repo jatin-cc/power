@@ -44,18 +44,25 @@ export default function CompanyIntro() {
 
         {/* 6 Value Cards from G_Sons_Power.docx */}
         <div className="pt-8 border-t border-slate-200">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#0052cc] block mb-6 text-center">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772] block mb-6 text-center">
             WHY CHOOSE G SONS POWER?
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {valueCards.map((card, idx) => {
               const IconComp = card.icon;
+              const isGreen = idx % 2 === 1;
               return (
                 <div
                   key={idx}
-                  className="bg-white p-6 border border-slate-200 shadow-sm hover:border-[#0052cc]/40 transition-all flex items-start gap-4"
+                  className={`bg-white p-6 border border-slate-200 shadow-sm transition-all flex items-start gap-4 ${
+                    isGreen ? 'hover:border-[#23790a]/50' : 'hover:border-[#063772]/50'
+                  }`}
                 >
-                  <div className="w-10 h-10 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold shrink-0">
+                  <div
+                    className={`w-10 h-10 rounded flex items-center justify-center font-bold shrink-0 ${
+                      isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]'
+                    }`}
+                  >
                     <IconComp className="w-5 h-5" />
                   </div>
                   <div>

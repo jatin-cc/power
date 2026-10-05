@@ -45,7 +45,7 @@ export default function StatisticsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-200">
           {/* Stat 1 */}
           <div className="pt-6 md:pt-0 md:px-6 first:px-0">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0052cc] tracking-tight mb-2">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#063772] tracking-tight mb-2">
               <span className="stat-number" data-target="5" data-suffix=" MVA">
                 0
               </span>
@@ -58,7 +58,7 @@ export default function StatisticsSection() {
 
           {/* Stat 2 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-2">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#23790a] tracking-tight mb-2">
               <span>BIS / ZED</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
@@ -69,7 +69,7 @@ export default function StatisticsSection() {
 
           {/* Stat 3 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0052cc] tracking-tight mb-2">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#063772] tracking-tight mb-2">
               <span>100%</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">
@@ -80,7 +80,7 @@ export default function StatisticsSection() {
 
           {/* Stat 4 */}
           <div className="pt-6 md:pt-0 md:px-6">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-2">
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#23790a] tracking-tight mb-2">
               <span>IS 1180 / 2026</span>
             </div>
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-1">

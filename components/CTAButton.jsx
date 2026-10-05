@@ -32,11 +32,13 @@ export default function CTAButton({
 
   const variantStyles = {
     primary:
-      'bg-[#0052cc] text-white border-[#0052cc] hover:bg-[#0041a3] hover:border-[#0041a3] shadow-md shadow-[#0052cc]/15',
+      'bg-[#063772] text-white border-[#063772] hover:bg-[#042956] hover:border-[#042956] shadow-md shadow-[#063772]/20',
     secondary:
-      'bg-[#0052cc]/10 text-[#0052cc] border-[#0052cc]/20 hover:bg-[#0052cc] hover:text-white hover:border-[#0052cc]',
+      'bg-[#23790a] text-white border-[#23790a] hover:bg-[#1c6208] hover:border-[#1c6208] shadow-md shadow-[#23790a]/20',
     outline:
-      'bg-transparent text-[#0f172a] border-slate-300 hover:border-[#0052cc] hover:text-[#0052cc]',
+      'bg-transparent text-[#063772] border-slate-300 hover:border-[#063772] hover:text-[#063772]',
+    'secondary-outline':
+      'bg-[#23790a]/10 text-[#23790a] border-[#23790a]/20 hover:bg-[#23790a] hover:text-white hover:border-[#23790a]',
   };
 
   const sizeStyles = {

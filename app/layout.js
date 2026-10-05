@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased light`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#0f172a] selection:bg-[#0052cc] selection:text-white">
+      <body className="min-h-full flex flex-col bg-white text-[#0f172a] selection:bg-[#063772] selection:text-white">
         <SmoothScroll>
           {/*<CustomCursor />*/}
           <Header />

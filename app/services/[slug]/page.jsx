@@ -31,7 +31,7 @@ export default async function ServiceDetailPage({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">
-              <Link href="/products-services" className="text-xs font-bold text-[#0052cc] uppercase hover:underline">
+              <Link href="/products-services" className="text-xs font-bold text-[#063772] uppercase hover:underline">
                 SERVICES
               </Link>
               <span className="text-xs text-slate-300">/</span>
@@ -47,7 +47,7 @@ export default async function ServiceDetailPage({ params }) {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <CTAButton href="/contact" size="lg" variant="primary">
+              <CTAButton href="/contact" size="lg" variant="secondary">
                 Book Diagnostic Team Dispatch
               </CTAButton>
               <CTAButton href="/contact" size="lg" variant="outline">
@@ -75,7 +75,7 @@ export default async function ServiceDetailPage({ params }) {
             {service.process.map((step) => (
               <div key={step.step} className="bg-white border border-slate-200 p-6 space-y-2 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-extrabold text-[#0052cc] bg-[#0052cc]/10 px-2.5 py-0.5">
+                  <span className="text-xs font-extrabold text-[#23790a] bg-[#23790a]/10 px-2.5 py-0.5">
                     STEP {step.step}
                   </span>
                   <h4 className="font-bold text-base text-[#0f172a]">{step.title}</h4>
@@ -97,7 +97,7 @@ export default async function ServiceDetailPage({ params }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {service.benefits.map((b, bIdx) => (
             <div key={bIdx} className="p-5 bg-slate-50 border border-slate-200 flex items-center gap-3 text-xs sm:text-sm font-semibold text-[#0f172a]">
-              <CheckCircle2 className="w-5 h-5 text-[#0052cc] shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-[#23790a] shrink-0" />
               <span>{b}</span>
             </div>
           ))}

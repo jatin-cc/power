@@ -46,35 +46,35 @@ export default function EngineeringVisual() {
 
         {/* Blueprint Vector Panel */}
         <div className="relative bg-slate-50 border border-slate-200 p-8 sm:p-12 overflow-hidden bg-grid-pattern">
-          <div className="absolute top-4 right-4 bg-[#0052cc]/10 text-[#0052cc] border border-[#0052cc]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
+          <div className="absolute top-4 right-4 bg-[#063772]/10 text-[#063772] border border-[#063772]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
             GSTPL CAD TRANSFORMER MODEL
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Graphic */}
             <div className="lg:col-span-7 relative h-72 sm:h-96 border border-slate-200 bg-white flex items-center justify-center p-6 shadow-inner">
-              <svg className="w-full h-full text-[#0052cc]/80" viewBox="0 0 600 400" fill="none">
+              <svg className="w-full h-full text-[#063772]/80" viewBox="0 0 600 400" fill="none">
                 <rect x="150" y="80" width="300" height="240" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
                 <rect x="200" y="110" width="70" height="180" fill="none" stroke="currentColor" strokeWidth="2" />
                 <rect x="330" y="110" width="70" height="180" fill="none" stroke="currentColor" strokeWidth="2" />
-                <circle cx="235" cy="200" r="45" stroke="#0052cc" strokeWidth="2" fill="rgba(0,82,204,0.05)" />
-                <circle cx="365" cy="200" r="45" stroke="#0052cc" strokeWidth="2" fill="rgba(0,82,204,0.05)" />
-                <path d="M 100 200 L 200 200" stroke="#0052cc" strokeWidth="2" />
-                <path d="M 400 200 L 500 200" stroke="#0052cc" strokeWidth="2" />
+                <circle cx="235" cy="200" r="45" stroke="#063772" strokeWidth="2" fill="rgba(6,55,114,0.05)" />
+                <circle cx="365" cy="200" r="45" stroke="#063772" strokeWidth="2" fill="rgba(6,55,114,0.05)" />
+                <path d="M 100 200 L 200 200" stroke="#063772" strokeWidth="2" />
+                <path d="M 400 200 L 500 200" stroke="#063772" strokeWidth="2" />
               </svg>
 
               {/* Callouts */}
-              <div className="blueprint-marker absolute top-12 left-16 bg-white border border-[#0052cc] px-2.5 py-1 shadow-sm text-[10px] font-bold text-[#0052cc] flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#0052cc]" />
+              <div className="blueprint-marker absolute top-12 left-16 bg-white border border-[#063772] px-2.5 py-1 shadow-sm text-[10px] font-bold text-[#063772] flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#063772]" />
                 CRGO Step-Lap Core
               </div>
 
-              <div className="blueprint-marker absolute bottom-16 right-16 bg-white border border-[#0052cc] px-2.5 py-1 shadow-sm text-[10px] font-bold text-[#0052cc] flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#0052cc]" />
+              <div className="blueprint-marker absolute bottom-16 right-16 bg-white border border-[#23790a] px-2.5 py-1 shadow-sm text-[10px] font-bold text-[#23790a] flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#23790a]" />
                 Electrolytic Copper Windings
               </div>
 
-              <div className="blueprint-marker absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0052cc] text-white px-3 py-1 shadow-md text-xs font-bold uppercase tracking-wider">
+              <div className="blueprint-marker absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#063772] text-white px-3 py-1 shadow-md text-xs font-bold uppercase tracking-wider">
                 11 kV / 33 kV Class
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function EngineeringVisual() {
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded bg-[#063772]/10 text-[#063772] flex items-center justify-center font-bold">
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div>
@@ -93,7 +93,7 @@ export default function EngineeringVisual() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded bg-[#23790a]/10 text-[#23790a] flex items-center justify-center font-bold">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export default function EngineeringVisual() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-[#0052cc]/10 text-[#0052cc] flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded bg-[#063772]/10 text-[#063772] flex items-center justify-center font-bold">
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>

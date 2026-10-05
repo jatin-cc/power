@@ -47,8 +47,8 @@ export default function ProductsSection() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4 py-2 text-xs font-bold rounded-sm uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-[#0052cc] text-white shadow-md'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:border-[#0052cc]/50 hover:text-[#0052cc]'
+                  ? 'bg-[#063772] text-white shadow-md'
+                  : 'bg-white border border-slate-200 text-slate-700 hover:border-[#063772]/50 hover:text-[#063772]'
               }`}
             >
               {cat.label}
@@ -61,7 +61,7 @@ export default function ProductsSection() {
           {filteredProducts.map((prod, idx) => (
             <div
               key={prod.id}
-              className="group bg-white border border-slate-200 rounded-sm overflow-hidden hover:border-[#0052cc] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white border border-slate-200 rounded-sm overflow-hidden hover:border-[#063772] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Product Image Container */}
@@ -79,12 +79,12 @@ export default function ProductsSection() {
                 {/* Product Details */}
                 <div className="p-6 space-y-4">
                   {/* Capacity Pill */}
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0052cc] bg-[#0052cc]/10 px-2.5 py-1 rounded-xs">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#063772] bg-[#063772]/10 px-2.5 py-1 rounded-xs">
                     <Zap className="w-3.5 h-3.5" />
                     <span>{prod.capacity}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#0052cc] transition-colors leading-snug">
+                  <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#063772] transition-colors leading-snug">
                     {prod.name}
                   </h3>
 
@@ -96,7 +96,7 @@ export default function ProductsSection() {
                   <div className="space-y-1.5 pt-3 border-t border-slate-100 text-xs text-slate-600">
                     {prod.features.slice(0, 3).map((feat, fIdx) => (
                       <div key={fIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0052cc] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#23790a] shrink-0 mt-0.5" />
                         <span className="text-[11px] leading-tight text-slate-600">{feat}</span>
                       </div>
                     ))}
@@ -108,7 +108,7 @@ export default function ProductsSection() {
               <div className="p-6 pt-0 mt-2">
                 <Link
                   href={`/products/${prod.slug}`}
-                  className="w-full py-2.5 px-4 bg-slate-50 group-hover:bg-[#0052cc] text-[#0f172a] group-hover:text-white border border-slate-200 group-hover:border-[#0052cc] font-bold text-xs uppercase tracking-wider rounded-xs flex items-center justify-between transition-all duration-200"
+                  className="w-full py-2.5 px-4 bg-slate-50 group-hover:bg-[#063772] text-[#0f172a] group-hover:text-white border border-slate-200 group-hover:border-[#063772] font-bold text-xs uppercase tracking-wider rounded-xs flex items-center justify-between transition-all duration-200"
                 >
                   <span>Explore Specifications</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

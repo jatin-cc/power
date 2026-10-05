@@ -34,11 +34,11 @@ export default function TrustedBy() {
     <section className=" bg-slate-50/80 border-b border-slate-200 overflow-hidden relative">
       {/* <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
         <div className="inline-flex items-center gap-2 mb-2">
-          <span className="w-6 h-[2px] bg-[#0052cc]" />
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#0052cc]">
+          <span className="w-6 h-[2px] bg-[#063772]" />
+          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#063772]">
             PROVEN TRACK RECORD & ACCREDITATIONS
           </span>
-          <span className="w-6 h-[2px] bg-[#0052cc]" />
+          <span className="w-6 h-[2px] bg-[#063772]" />
         </div>
         <h2 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
           Trusted By 500+ Utilities, EPCs & Industrial Leaders
@@ -54,13 +54,13 @@ export default function TrustedBy() {
           {marqueeClients.map((client, idx) => (
             <div
               key={`${client.name}-${idx}`}
-              className="group flex items-center gap-3.5 px-5 py-3 bg-white border border-slate-200 rounded-sm shadow-xs hover:border-[#0052cc] hover:shadow-md transition-all duration-300 shrink-0 cursor-default"
+              className="group flex items-center gap-3.5 px-5 py-3 bg-white border border-slate-200 rounded-sm shadow-xs hover:border-[#063772] hover:shadow-md transition-all duration-300 shrink-0 cursor-default"
             >
-              <div className="w-9 h-9 rounded bg-slate-100 flex items-center justify-center font-black text-xs tracking-wider text-slate-700 group-hover:bg-[#0052cc] group-hover:text-white transition-colors">
+              <div className="w-9 h-9 rounded bg-slate-100 flex items-center justify-center font-black text-xs tracking-wider text-slate-700 group-hover:bg-[#063772] group-hover:text-white transition-colors">
                 {client.code.slice(0, 3)}
               </div>
               <div className="text-left">
-                <span className="block font-bold text-xs sm:text-sm text-[#0f172a] group-hover:text-[#0052cc] transition-colors whitespace-nowrap">
+                <span className="block font-bold text-xs sm:text-sm text-[#0f172a] group-hover:text-[#063772] transition-colors whitespace-nowrap">
                   {client.name}
                 </span>
                 <span className="block text-[10px] text-slate-400 uppercase tracking-wider whitespace-nowrap">
@@ -75,22 +75,27 @@ export default function TrustedBy() {
       {/* Accreditations & Certifications Strip */}
       <div className="max-w-7xl mx-auto px-6 mt-10 pt-8 border-t border-slate-200/80">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {credentials.map((cred, idx) => (
-            <div
-              key={idx}
-              className="p-3 bg-white border border-slate-200/90 rounded-sm text-center hover:border-[#0052cc]/50 transition-colors"
-            >
-              <div className="inline-flex p-1.5 rounded-full bg-[#0052cc]/10 text-[#0052cc] mb-1.5">
-                <ShieldCheck className="w-3.5 h-3.5" />
+          {credentials.map((cred, idx) => {
+            const isGreen = idx % 2 === 1;
+            const iconBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
+            const hoverBorder = isGreen ? 'hover:border-[#23790a]/50' : 'hover:border-[#063772]/50';
+            return (
+              <div
+                key={idx}
+                className={`p-3 bg-white border border-slate-200/90 rounded-sm text-center transition-colors ${hoverBorder}`}
+              >
+                <div className={`inline-flex p-1.5 rounded-full mb-1.5 ${iconBg}`}>
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <span className="block font-bold text-xs text-[#0f172a] leading-tight">
+                  {cred.label}
+                </span>
+                <span className="block text-[10px] text-slate-500 mt-0.5 leading-snug">
+                  {cred.desc}
+                </span>
               </div>
-              <span className="block font-bold text-xs text-[#0f172a] leading-tight">
-                {cred.label}
-              </span>
-              <span className="block text-[10px] text-slate-500 mt-0.5 leading-snug">
-                {cred.desc}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
