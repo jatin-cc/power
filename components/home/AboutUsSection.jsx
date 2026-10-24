@@ -3,34 +3,7 @@
 import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
-import { Award, ShieldCheck, Zap, Factory, CheckCircle2, HeartHandshake, ArrowRight } from 'lucide-react';
-
-const pillars = [
-  {
-    title: 'BIS Licensed Manufacturer',
-    desc: 'Manufactured strictly compliant with IS 1180, IS 2026 & IS 335 national specifications with multi-level Bureau of Indian Standards certification.',
-    icon: Award,
-    badge: 'IS 1180 / 2026'
-  },
-  {
-    title: 'ZED Gold Certified',
-    desc: 'Honored by the Government of India for Zero Defect manufacturing processes and Zero Effect environmental sustainability standards.',
-    icon: ShieldCheck,
-    badge: 'Zero Defect'
-  },
-  {
-    title: 'Startup India Recognized',
-    desc: 'An agile, forward-looking Indian electrical enterprise combining rapid execution with advanced high-voltage design engineering.',
-    icon: Zap,
-    badge: 'Govt. Recognized'
-  },
-  {
-    title: 'Women-Led Enterprise',
-    desc: 'Championing inclusive industrial growth, diverse technical leadership, and precision governance in heavy power manufacturing.',
-    icon: HeartHandshake,
-    badge: 'Inclusive Leadership'
-  }
-];
+import { ArrowRight } from 'lucide-react';
 
 const stats = [
   { value: '5 MVA', label: 'Maximum Single Unit Capacity', detail: '11 kV & 33 kV Classes' },
@@ -79,55 +52,6 @@ export default function AboutUsSection() {
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {pillars.map((item, idx) => {
-            const Icon = item.icon;
-            const isGreen = idx % 2 === 1;
-            return (
-              <div
-                key={idx}
-                className={`group relative bg-slate-50 border border-slate-200 p-6 rounded-sm hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between ${
-                  isGreen ? 'hover:border-[#23790a]' : 'hover:border-[#063772]'
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`w-11 h-11 rounded-sm flex items-center justify-center font-bold transition-colors ${
-                        isGreen
-                          ? 'bg-[#23790a]/10 text-[#23790a] group-hover:bg-[#23790a] group-hover:text-white'
-                          : 'bg-[#063772]/10 text-[#063772] group-hover:bg-[#063772] group-hover:text-white'
-                      }`}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span
-                      className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs ${
-                        isGreen
-                          ? 'text-[#23790a] bg-[#23790a]/10'
-                          : 'text-[#063772] bg-[#063772]/10'
-                      }`}
-                    >
-                      {item.badge}
-                    </span>
-                  </div>
-                  <h3
-                    className={`text-base font-bold text-[#0f172a] mb-2 transition-colors ${
-                      isGreen ? 'group-hover:text-[#23790a]' : 'group-hover:text-[#063772]'
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
         {/* Real-world Metrics Strip */}
         <div className="bg-[#0f172a] text-white p-8 sm:p-10 rounded-sm shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
           {stats.map((stat, idx) => {
@@ -135,9 +59,8 @@ export default function AboutUsSection() {
             return (
               <div key={idx} className={`${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''} space-y-1`}>
                 <div
-                  className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-                    isGreen ? 'text-[#23790a]' : 'text-[#38bdf8]'
-                  }`}
+                  className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${isGreen ? 'text-[#23790a]' : 'text-[#38bdf8]'
+                    }`}
                 >
                   {stat.value}
                 </div>

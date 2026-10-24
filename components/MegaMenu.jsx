@@ -17,47 +17,90 @@ export default function MegaMenu({ activeTab, onClose }) {
       <div className="max-w-7xl mx-auto px-6 py-8">
         {activeTab === 'products' && (
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-8 grid grid-cols-2 gap-6">
-              {products.map((item) => (
-                <Link
-                  key={item.id}
-                  href={`/products/${item.slug}`}
-                  onClick={onClose}
-                  className="group p-3 border border-transparent hover:border-[#063772]/20 hover:bg-[#063772]/5 transition-all duration-200"
-                >
-                  <div className="flex items-center gap-3 mb-1">
-                    <div className="w-7 h-7 rounded bg-[#063772]/10 text-[#063772] flex items-center justify-center font-bold text-xs">
-                      <Zap className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="font-semibold text-sm text-[#0f172a] group-hover:text-[#063772] transition-colors">
+            {/* Col 1: Transformers */}
+            <div className="col-span-3 space-y-3">
+              <span className="text-[11px] font-bold tracking-widest text-[#063772] uppercase block pb-1 border-b border-slate-200">
+                Transformers
+              </span>
+              <div className="space-y-1.5">
+                {products.filter(p => p.categorySlug === 'transformers').map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/products/${item.slug}`}
+                    onClick={onClose}
+                    className="group block p-2 rounded-lg hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="font-semibold text-xs text-[#0f172a] group-hover:text-[#063772] transition-colors block leading-snug">
                       {item.name}
                     </span>
-                  </div>
-                  <p className="text-xs text-slate-500 line-clamp-2 pl-10 font-normal">
-                    {item.shortDesc}
-                  </p>
-                </Link>
-              ))}
+                    <span className="text-[10px] text-slate-500 block mt-0.5">{item.capacity}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="col-span-4 bg-slate-50 p-6 border border-slate-200 flex flex-col justify-between">
+            {/* Col 2: Compact Substations & HT Panels */}
+            <div className="col-span-3 space-y-3">
+              <span className="text-[11px] font-bold tracking-widest text-[#063772] uppercase block pb-1 border-b border-slate-200">
+                Substations & HT Panels
+              </span>
+              <div className="space-y-1.5">
+                {products.filter(p => p.categorySlug === 'compact-substations' || p.categorySlug === 'ht-panels').map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/products/${item.slug}`}
+                    onClick={onClose}
+                    className="group block p-2 rounded-lg hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="font-semibold text-xs text-[#0f172a] group-hover:text-[#063772] transition-colors block leading-snug">
+                      {item.name}
+                    </span>
+                    <span className="text-[10px] text-slate-500 block mt-0.5">{item.category}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Col 3: LT Panels */}
+            <div className="col-span-3 space-y-3">
+              <span className="text-[11px] font-bold tracking-widest text-[#063772] uppercase block pb-1 border-b border-slate-200">
+                LT Distribution Panels
+              </span>
+              <div className="grid grid-cols-1 gap-1 max-h-64 overflow-y-auto pr-1">
+                {products.filter(p => p.categorySlug === 'lt-panels').map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/products/${item.slug}`}
+                    onClick={onClose}
+                    className="group block p-1.5 rounded-lg hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="font-semibold text-xs text-[#0f172a] group-hover:text-[#063772] transition-colors block leading-snug line-clamp-1">
+                      {item.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Col 4: Featured Capability */}
+            <div className="col-span-3 bg-slate-50 p-5 rounded-xl border border-slate-200 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-2">
+                <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1.5">
                   FEATURED CAPABILITY
                 </span>
-                <h4 className="font-bold text-base text-[#0f172a] mb-2">
-                  Cast Resin Dry-Type & Oil-Filled up to 5 MVA
+                <h4 className="font-bold text-sm text-[#0f172a] mb-2 leading-snug">
+                  Oil-Filled & Cast Resin Transformers up to 5 MVA
                 </h4>
-                <p className="text-xs text-slate-600 mb-4 leading-relaxed font-normal">
-                  BIS Licensed and ZED Gold Certified manufacturing in 11 kV and 33 kV voltage classes tailored for industrial and utility installations.
+                <p className="text-xs text-slate-600 mb-3 leading-relaxed font-normal">
+                  BIS Licensed, ZED Gold Certified, 11 kV & 33 kV voltage classes tailored for industrial, commercial and renewable projects.
                 </p>
               </div>
               <Link
-                href="/products-services"
+                href="/products"
                 onClick={onClose}
                 className="inline-flex items-center gap-2 text-xs font-bold text-[#063772] uppercase tracking-wider hover:gap-3 transition-all"
               >
-                Explore Full Catalog <ArrowRight className="w-3.5 h-3.5" />
+                Explore All 14 Products <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>

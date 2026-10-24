@@ -67,12 +67,13 @@ export default function Header() {
             onMouseEnter={() => handleLinkHover('products')}
             className="relative py-2 cursor-pointer flex items-center gap-1 group"
           >
-            <span
+            <Link
+              href="/products"
               className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#063772] ${pathname.startsWith('/products') ? 'text-[#063772]' : 'text-[#0f172a]'
                 }`}
             >
               Products
-            </span>
+            </Link>
             <ChevronDown className="w-3.5 h-3.5 text-[#063772] group-hover:rotate-180 transition-transform duration-200" />
           </div>
 

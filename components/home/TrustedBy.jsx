@@ -1,7 +1,5 @@
 'use client';
 
-import { ShieldCheck, Award, CheckCircle2, Zap } from 'lucide-react';
-
 const clientLogos = [
   { name: 'Tata Power', type: 'Utility & Grid', code: 'TATA' },
   { name: 'Larsen & Toubro', type: 'EPC & Infrastructure', code: 'L&T' },
@@ -17,39 +15,14 @@ const clientLogos = [
   { name: 'JSW Energy', type: 'Industrial & Power', code: 'JSW' },
 ];
 
-const credentials = [
-  { label: 'BIS IS 1180 / 2026', desc: 'Bureau of Indian Standards Licensed' },
-  { label: 'ZED Gold Certified', desc: 'Zero Defect & Zero Effect Manufacturing' },
-  { label: 'CPRI & ERDA Tested', desc: 'Independently Type Tested Designs' },
-  { label: 'Startup India Recognized', desc: 'Govt. of India Initiative' },
-  { label: 'Women-Led Enterprise', desc: 'Inclusive Manufacturing Excellence' },
-  { label: 'ISO 9001:2015 Quality', desc: 'Global Quality Management Standard' }
-];
-
 export default function TrustedBy() {
   // Duplicate array for seamless infinite marquee loop
   const marqueeClients = [...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className=" bg-slate-50/80 border-b border-slate-200 overflow-hidden relative">
-      {/* <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-        <div className="inline-flex items-center gap-2 mb-2">
-          <span className="w-6 h-[2px] bg-[#063772]" />
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#063772]">
-            PROVEN TRACK RECORD & ACCREDITATIONS
-          </span>
-          <span className="w-6 h-[2px] bg-[#063772]" />
-        </div>
-        <h2 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
-          Trusted By 500+ Utilities, EPCs & Industrial Leaders
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-1.5 font-normal">
-          Supplying certified distribution transformers and turnkey compact substations across critical national infrastructure.
-        </p>
-      </div> */}
-
+    <section className="bg-slate-50/80 border-b border-slate-200 overflow-hidden relative py-4">
       {/* Infinite Logo Loop Ticker */}
-      <div className="relative w-full overflow-hidden marquee-mask py-3">
+      <div className="relative w-full overflow-hidden marquee-mask">
         <div className="animate-marquee flex items-center gap-4 sm:gap-6">
           {marqueeClients.map((client, idx) => (
             <div
@@ -69,33 +42,6 @@ export default function TrustedBy() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Accreditations & Certifications Strip */}
-      <div className="max-w-7xl mx-auto px-6 mt-10 pt-8 border-t border-slate-200/80">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {credentials.map((cred, idx) => {
-            const isGreen = idx % 2 === 1;
-            const iconBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
-            const hoverBorder = isGreen ? 'hover:border-[#23790a]/50' : 'hover:border-[#063772]/50';
-            return (
-              <div
-                key={idx}
-                className={`p-3 bg-white border border-slate-200/90 rounded-sm text-center transition-colors ${hoverBorder}`}
-              >
-                <div className={`inline-flex p-1.5 rounded-full mb-1.5 ${iconBg}`}>
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <span className="block font-bold text-xs text-[#0f172a] leading-tight">
-                  {cred.label}
-                </span>
-                <span className="block text-[10px] text-slate-500 mt-0.5 leading-snug">
-                  {cred.desc}
-                </span>
-              </div>
-            );
-          })}
         </div>
       </div>
     </section>

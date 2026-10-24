@@ -1,7 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import TrustedBy from '@/components/home/TrustedBy';
 import AboutUsSection from '@/components/home/AboutUsSection';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
 import HomeCTA from '@/components/home/HomeCTA';
 import MeetOurTeam from '@/components/home/MeetOurTeam';
 import ProductsSection from '@/components/home/ProductsSection';
@@ -27,28 +26,25 @@ export default function HomePage() {
       {/* 03. About Us */}
       <AboutUsSection />
 
-      {/* 04. Why Choose Us */}
-      <WhyChooseUs />
-
-      {/* 05. CTA – Call to Action */}
+      {/* 04. CTA – Call to Action */}
       <HomeCTA />
 
-      {/* 06. Meet Our Team */}
+      {/* 05. Meet Our Team */}
       <MeetOurTeam />
 
-      {/* 07. Our Products */}
+      {/* 06. Our Products */}
       <ProductsSection />
 
-      {/* 08. Industries We Empower With Expertise */}
+      {/* 07. Industries We Empower With Expertise */}
       <IndustriesSelector />
 
-      {/* 09. Events & Industry Interactions */}
+      {/* 08. Events & Industry Interactions */}
       <EventsSection />
 
-      {/* 10. FAQ */}
+      {/* 09. FAQ */}
       <FAQSection />
 
-      {/* 11. Blogs / Insights */}
+      {/* 10. Blogs / Insights */}
       <BlogSection />
     </main>
   );

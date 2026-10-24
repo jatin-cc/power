@@ -20,116 +20,104 @@ export default function Footer() {
 
   return (
     <footer className="bg-white text-[#0f172a] border-t border-slate-200">
-      {/* Final Pre-Footer CTA */}
-      <div className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white py-16 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="max-w-2xl">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#063772] uppercase block mb-3">
-              ENGINEERING RELIABLE POWER
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
-              Ready to power your next electrical infrastructure project?
-            </h2>
-          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <CTAButton href="/contact" size="lg" variant="primary">
-              Get Technical Quote
-            </CTAButton>
-            <CTAButton href="/products-services" size="lg" variant="outline">
-              Explore Product Lineup
-            </CTAButton>
-          </div>
-        </div>
-      </div>
+      {/* Main Footer Links & Info */}
+      <div className="max-w-7xl mx-auto px-6 py-14 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Col 1: Brand Info & Logo */}
+          <div className="lg:col-span-7 space-y-5">
+            <Link href="/" className="inline-block group">
+              <img
+                src="/logo.jpeg"
+                alt="G Sons Power Transformers Pvt. Ltd."
+                className="h-12 sm:h-14 w-auto object-contain transition-opacity group-hover:opacity-90"
+              />
+            </Link>
 
-      {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-        {/* Col 1: Brand Info & Logo */}
-        <div className="lg:col-span-2 space-y-4">
-          <Link href="/" className="inline-block">
-            <img
-              src="/logo.jpeg"
-              alt="G Sons Power Transformers Pvt. Ltd."
-              className="h-12 w-auto object-contain"
-            />
-          </Link>
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-normal">
+              G Sons Power Transformers Pvt. Ltd. manufactures Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), Compact Substations (CSS), and HT/LT switchgear panels up to 5 MVA in 11 kV & 33 kV voltage classes.
+            </p>
 
-          <p className="text-xs text-slate-600 leading-relaxed max-w-sm font-normal">
-            G Sons Power Transformers Pvt. Ltd. manufactures Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), Compact Substations (CSS), and HT/LT switchgear panels up to 5 MVA in 11 kV & 33 kV voltage classes.
-          </p>
-
-          <div className="pt-2 flex flex-col gap-2 text-xs text-slate-600 font-medium">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#063772] shrink-0" />
-              <span>G Sons Power Transformers Pvt. Ltd., India</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#063772] shrink-0" />
-              <span>+91 800 555-POWER</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#063772] shrink-0" />
-              <span>sales@gsonspower.com</span>
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> BIS Licensed Manufacturer
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#eff9ec] text-[#23790a] text-xs font-semibold border border-[#23790a]/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" /> ZED Gold Certified
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200">
+                Up to 5 MVA Capacity
+              </span>
             </div>
           </div>
-        </div>
 
-        {/* Col 2: Products */}
-        <div>
-          <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-4">
-            Products
-          </h4>
-          <ul className="space-y-2.5 text-xs font-medium text-slate-600">
-            <li><Link href="/products/oil-filled-distribution-transformers" className="hover:text-[#063772] transition-colors">Oil-Filled Transformers</Link></li>
-            <li><Link href="/products/cast-resin-dry-type-transformers" className="hover:text-[#063772] transition-colors">Cast Resin Dry Type (CRT)</Link></li>
-            <li><Link href="/products/vpi-dry-type-transformers" className="hover:text-[#063772] transition-colors">VPI Dry Type Units</Link></li>
-            <li><Link href="/products/inverter-duty-transformers" className="hover:text-[#063772] transition-colors">Inverter Duty Transformers</Link></li>
-            <li><Link href="/products/compact-substations-css" className="hover:text-[#063772] transition-colors">Compact Substations (CSS)</Link></li>
-            <li><Link href="/products/ht-lt-control-panels" className="hover:text-[#063772] transition-colors">HT & LT Switchgear Panels</Link></li>
-          </ul>
-        </div>
+          {/* Col 2: Contact Details */}
+          <div className="lg:col-span-5 space-y-5">
+            <h4 className="text-xs font-bold tracking-widest uppercase text-[#063772] border-b border-slate-200/80 pb-3">
+              Contact Information
+            </h4>
 
-        {/* Col 3: Services */}
-        <div>
-          <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-4">
-            Services
-          </h4>
-          <ul className="space-y-2.5 text-xs font-medium text-slate-600">
-            <li><Link href="/services/project-specific-custom-engineering" className="hover:text-[#23790a] transition-colors">Custom Engineering</Link></li>
-            <li><Link href="/services/factory-routine-type-testing" className="hover:text-[#23790a] transition-colors">Routine & Type Testing</Link></li>
-            <li><Link href="/services/site-commissioning-technical-support" className="hover:text-[#23790a] transition-colors">Site Commissioning Support</Link></li>
-          </ul>
-        </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center text-[#063772] shrink-0 group-hover:bg-[#063772] group-hover:text-white transition-colors">
+                  <MapPin className="w-4 h-4 shrink-0" />
+                </div>
+                <div className="pt-0.5">
+                  <span className="block text-[11px] font-medium uppercase tracking-wider text-slate-400 mb-0.5">
+                    Location
+                  </span>
+                  <p className="text-sm font-semibold text-[#0f172a] leading-snug">
+                    G Sons Power Transformers Pvt. Ltd., India
+                  </p>
+                </div>
+              </div>
 
-        {/* Col 4: Badges & Credentials */}
-        <div>
-          <h4 className="text-xs font-bold tracking-widest uppercase text-[#0f172a] mb-4">
-            Credentials
-          </h4>
-          <ul className="space-y-2 text-xs font-semibold text-slate-700">
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> BIS Licensed Manufacturer</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" /> ZED Gold Certified</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> Startup India Recognized</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" /> Women-Led Enterprise</li>
-            <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#063772]" /> Up to 5 MVA Capacity</li>
-          </ul>
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center text-[#063772] shrink-0 group-hover:bg-[#063772] group-hover:text-white transition-colors">
+                  <Phone className="w-4 h-4 shrink-0" />
+                </div>
+                <div className="pt-0.5">
+                  <span className="block text-[11px] font-medium uppercase tracking-wider text-slate-400 mb-0.5">
+                    Phone
+                  </span>
+                  <a
+                    href="tel:+91800555POWER"
+                    className="text-sm font-semibold text-[#0f172a] hover:text-[#063772] transition-colors"
+                  >
+                    +91 800 555-POWER
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center text-[#063772] shrink-0 group-hover:bg-[#063772] group-hover:text-white transition-colors">
+                  <Mail className="w-4 h-4 shrink-0" />
+                </div>
+                <div className="pt-0.5">
+                  <span className="block text-[11px] font-medium uppercase tracking-wider text-slate-400 mb-0.5">
+                    Email
+                  </span>
+                  <a
+                    href="mailto:sales@gsonspower.com"
+                    className="text-sm font-semibold text-[#0f172a] hover:text-[#063772] transition-colors"
+                  >
+                    sales@gsonspower.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Legal Bar */}
       <div className="border-t border-slate-200 py-6 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-slate-500">
+        <div className="max-w-7xl mx-auto flex  sm:flex-row items-center justify-center gap-4 text-[11px] font-medium text-slate-500">
           <div>
             © {new Date().getFullYear()} G Sons Power Transformers Pvt. Ltd. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 bg-[#eff9ec] text-[#23790a] px-2.5 py-1 border border-[#23790a]/25 rounded font-semibold text-[10px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#23790a] animate-pulse" />
-              BIS & ZED GOLD CERTIFIED {timeString && `(${timeString})`}
-            </span>
-          </div>
+
         </div>
       </div>
     </footer>

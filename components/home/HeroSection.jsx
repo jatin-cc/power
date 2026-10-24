@@ -73,14 +73,9 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Hero Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div ref={eyebrowRef} className="inline-flex items-center gap-2">
-              <span className="w-8 h-[2px] bg-gradient-to-r from-[#063772] to-[#23790a]" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
-                G SONS POWER TRANSFORMERS PVT. LTD.
-              </span>
-            </div>
 
-            <div className="space-y-2">
+
+            <div className="space-y-1">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0f172a] leading-[1.12]">
                 <span ref={titleLine1Ref} className="block">
                   Engineering Reliable Power.
@@ -108,23 +103,7 @@ export default function HeroSection() {
             </div>
 
             {/* Technical Metadata Badges */}
-            <div
-              ref={metaBadgeRef}
-              className="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 text-xs text-slate-600 font-medium"
-            >
-              <div>
-                <span className="block font-bold text-sm sm:text-base text-[#063772]">Up to 5 MVA</span>
-                <span className="text-slate-500">Manufacturing Capacity</span>
-              </div>
-              <div>
-                <span className="block font-bold text-sm sm:text-base text-[#23790a]">11 kV & 33 kV</span>
-                <span className="text-slate-500">Voltage Classes</span>
-              </div>
-              <div>
-                <span className="block font-bold text-sm sm:text-base text-[#063772]">BIS & ZED Gold</span>
-                <span className="text-slate-500">Licensed Quality</span>
-              </div>
-            </div>
+
           </div>
 
           {/* Right Visual Image Reveal */}

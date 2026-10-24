@@ -25,7 +25,8 @@ export default function ProductScroller() {
       const isMobile = window.innerWidth < 768;
       if (isMobile) return; // Responsive: fallback to horizontal touch slider on mobile
 
-      const totalSections = products.length;
+      const displayProducts = products.filter(p => p.featured);
+      const totalSections = displayProducts.length;
       const xPercent = -100 * (totalSections - 1) / totalSections;
 
       const animation = gsap.to(containerRef.current, {
@@ -70,7 +71,7 @@ export default function ProductScroller() {
       <div ref={cardsWrapperRef} className="w-full bg-white pt-4 pb-12">
         <div className="max-w-7xl mx-auto px-6 mb-6 flex justify-between items-center">
           <span className="text-xs font-extrabold tracking-widest text-[#063772] uppercase">
-            CATEGORY {String(activeIdx + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+            FLAGSHIP {String(activeIdx + 1).padStart(2, '0')} / {String(products.filter(p => p.featured).length).padStart(2, '0')}
           </span>
           <div className="w-48 h-1.5 bg-slate-100 border border-slate-200 relative overflow-hidden">
             <div
@@ -87,7 +88,7 @@ export default function ProductScroller() {
             ref={containerRef}
             className="flex flex-nowrap gap-8 px-6 md:px-12 w-full md:w-[600vw] transition-transform duration-75"
           >
-            {products.map((product, idx) => (
+            {products.filter(p => p.featured).map((product, idx) => (
               <div
                 key={product.id}
                 className="w-[85vw] sm:w-[550px] md:w-[80vw] lg:w-[70vw] max-w-5xl shrink-0 bg-slate-50 border border-slate-200 p-8 sm:p-10 flex flex-col lg:flex-row gap-8 items-center justify-between shadow-sm hover:border-[#063772]/40 transition-colors"
