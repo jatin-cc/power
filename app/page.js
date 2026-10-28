@@ -1,9 +1,9 @@
 import HeroSection from '@/components/home/HeroSection';
 import TrustedBy from '@/components/home/TrustedBy';
 import AboutUsSection from '@/components/home/AboutUsSection';
+import HighlightedProducts from '@/components/home/HighlightedProducts';
 import HomeCTA from '@/components/home/HomeCTA';
 import MeetOurTeam from '@/components/home/MeetOurTeam';
-import ProductsSection from '@/components/home/ProductsSection';
 import IndustriesSelector from '@/components/home/IndustriesSelector';
 import EventsSection from '@/components/home/EventsSection';
 import FAQSection from '@/components/home/FAQSection';
@@ -26,14 +26,14 @@ export default function HomePage() {
       {/* 03. About Us */}
       <AboutUsSection />
 
-      {/* 04. CTA – Call to Action */}
+      {/* 04. Highlighted Flagship Products */}
+      <HighlightedProducts />
+
+      {/* 05. CTA – Call to Action */}
       <HomeCTA />
 
-      {/* 05. Meet Our Team */}
+      {/* 06. Meet Our Team */}
       <MeetOurTeam />
-
-      {/* 06. Our Products */}
-      <ProductsSection />
 
       {/* 07. Industries We Empower With Expertise */}
       <IndustriesSelector />

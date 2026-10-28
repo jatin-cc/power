@@ -4,7 +4,21 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, ChevronDown, ArrowRight, Phone, Mail, Zap, Wrench, ShieldCheck } from 'lucide-react';
+import {
+  X,
+  ChevronDown,
+  ArrowRight,
+  Phone,
+  Mail,
+  Zap,
+  Wrench,
+  Boxes,
+  BookOpen,
+  Calendar,
+  Users,
+  Award,
+  Layers,
+} from 'lucide-react';
 import { products } from '@/data/products';
 import { services } from '@/data/services';
 
@@ -14,7 +28,10 @@ export default function MobileMenu({ isOpen, onClose }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Close menu on route change
@@ -22,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose }) {
     if (isOpen) {
       onClose();
     }
-  }, [pathname]);
+  }, [pathname, isOpen, onClose]);
 
   // Lock body scroll and listen for ESC key
   useEffect(() => {
@@ -48,7 +65,7 @@ export default function MobileMenu({ isOpen, onClose }) {
   if (!mounted || !isOpen) return null;
 
   const toggleSection = (section) => {
-    setExpandedSection(prev => prev === section ? null : section);
+    setExpandedSection((prev) => (prev === section ? null : section));
   };
 
   const menuContent = (
@@ -65,7 +82,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#063772] hover:text-[#063772] hover:bg-slate-50 transition-colors cursor-pointer"
+          className="w-10 h-10 rounded-lg border border-slate-200 flex items-center justify-center text-slate-700 hover:border-[#063772] hover:text-[#063772] hover:bg-slate-50 transition-colors cursor-pointer"
           aria-label="Close menu"
         >
           <X className="w-5 h-5" />
@@ -87,113 +104,7 @@ export default function MobileMenu({ isOpen, onClose }) {
           </Link>
         </div>
 
-        {/* Products Dropdown Accordion */}
-        <div className="border-b border-slate-100 pb-2">
-          <button
-            onClick={() => toggleSection('products')}
-            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#063772] transition-colors cursor-pointer text-left"
-          >
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#063772]" />
-              <span>Products</span>
-            </div>
-            <ChevronDown
-              className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${
-                expandedSection === 'products' ? 'rotate-180' : ''
-              }`}
-            />
-          </button>
-
-          {expandedSection === 'products' && (
-            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#063772]/20">
-              <Link
-                href="/products-services"
-                onClick={onClose}
-                className="block text-xs font-bold uppercase tracking-wider text-[#063772] py-1"
-              >
-                → View All Products Catalog
-              </Link>
-              {products.map((p) => (
-                <Link
-                  key={p.id}
-                  href={`/products/${p.slug}`}
-                  onClick={onClose}
-                  className="block text-sm font-medium text-slate-700 hover:text-[#063772] py-1"
-                >
-                  {p.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Services Dropdown Accordion */}
-        <div className="border-b border-slate-100 pb-2">
-          <button
-            onClick={() => toggleSection('services')}
-            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#23790a] transition-colors cursor-pointer text-left"
-          >
-            <div className="flex items-center gap-2">
-              <Wrench className="w-4 h-4 text-[#23790a]" />
-              <span>Services</span>
-            </div>
-            <ChevronDown
-              className={`w-4 h-4 text-[#23790a] transition-transform duration-200 ${
-                expandedSection === 'services' ? 'rotate-180' : ''
-              }`}
-            />
-          </button>
-
-          {expandedSection === 'services' && (
-            <div className="mt-1 pl-4 pb-2 space-y-2 border-l-2 border-[#23790a]/20">
-              <Link
-                href="/services"
-                onClick={onClose}
-                className="block text-xs font-bold uppercase tracking-wider text-[#23790a] py-1"
-              >
-                → All Engineering Services
-              </Link>
-              {services.map((s) => (
-                <Link
-                  key={s.id}
-                  href={`/services/${s.slug}`}
-                  onClick={onClose}
-                  className="block text-sm font-medium text-slate-700 hover:text-[#23790a] py-1"
-                >
-                  {s.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Infrastructure */}
-        <div className="border-b border-slate-100 pb-2">
-          <Link
-            href="/infrastructure"
-            onClick={onClose}
-            className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/infrastructure' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
-            }`}
-          >
-            Infrastructure
-          </Link>
-        </div>
-
-        {/* Industries */}
-        <div className="border-b border-slate-100 pb-2">
-          <Link
-            href="/industries"
-            onClick={onClose}
-            className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/industries' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
-            }`}
-          >
-            Industries
-          </Link>
-        </div>
-
-        {/* About Us */}
+        {/* 1. About */}
         <div className="border-b border-slate-100 pb-2">
           <Link
             href="/about"
@@ -202,37 +113,195 @@ export default function MobileMenu({ isOpen, onClose }) {
               pathname === '/about' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
-            About Us
+            About
           </Link>
         </div>
 
-        {/* Events */}
+        {/* 2. Product & Service (Combined Dropdown Accordion) */}
+        <div className="border-b border-slate-100 pb-2">
+          <button
+            onClick={() => toggleSection('products-services')}
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#063772] transition-colors cursor-pointer text-left"
+          >
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-[#063772]" />
+              <span>Product & Service</span>
+            </div>
+            <ChevronDown
+              className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${
+                expandedSection === 'products-services' ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+
+          {expandedSection === 'products-services' && (
+            <div className="mt-1 pl-4 pb-2 space-y-3 border-l-2 border-[#063772]/20">
+              <Link
+                href="/products-services"
+                onClick={onClose}
+                className="block text-xs font-bold uppercase tracking-wider text-[#063772] py-1 hover:underline"
+              >
+                → View Combined Products & Services Catalog
+              </Link>
+
+              {/* Transformers */}
+              <div className="space-y-1 pt-1">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+                  Transformers
+                </span>
+                {products
+                  .filter((p) => p.categorySlug === 'transformers')
+                  .slice(0, 4)
+                  .map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/products/${p.slug}`}
+                      onClick={onClose}
+                      className="block text-sm font-medium text-slate-700 hover:text-[#063772] py-0.5"
+                    >
+                      {p.name}
+                    </Link>
+                  ))}
+              </div>
+
+              {/* Substations & Panels */}
+              <div className="space-y-1 pt-1">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+                  Substations & Switchgear
+                </span>
+                {products
+                  .filter(
+                    (p) =>
+                      p.categorySlug === 'compact-substations' ||
+                      p.categorySlug === 'ht-panels' ||
+                      p.categorySlug === 'lt-panels'
+                  )
+                  .slice(0, 4)
+                  .map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/products/${p.slug}`}
+                      onClick={onClose}
+                      className="block text-sm font-medium text-slate-700 hover:text-[#063772] py-0.5"
+                    >
+                      {p.name}
+                    </Link>
+                  ))}
+              </div>
+
+              {/* Engineering Services */}
+              <div className="space-y-1 pt-1">
+                <span className="text-[10px] font-bold text-[#23790a] uppercase tracking-widest block">
+                  Field & Engineering Services
+                </span>
+                {services.map((s) => (
+                  <Link
+                    key={s.id}
+                    href={`/services/${s.slug}`}
+                    onClick={onClose}
+                    className="block text-sm font-medium text-slate-700 hover:text-[#23790a] py-0.5"
+                  >
+                    {s.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* 3. Infrastructure */}
         <div className="border-b border-slate-100 pb-2">
           <Link
-            href="/events"
+            href="/infrastructure"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/events' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
+              pathname === '/infrastructure'
+                ? 'text-[#063772]'
+                : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
-            Events & Expos
+            Infrastructure
           </Link>
         </div>
 
-        {/* Leadership */}
+        {/* 4. Industries */}
         <div className="border-b border-slate-100 pb-2">
           <Link
-            href="/leadership"
+            href="/industries"
             onClick={onClose}
             className={`block py-2.5 text-base font-bold transition-colors ${
-              pathname === '/leadership' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
+              pathname === '/industries'
+                ? 'text-[#063772]'
+                : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
-            Leadership
+            Industries
           </Link>
         </div>
 
-        {/* Contact */}
+        {/* 5. Our Resources (Dropdown Accordion: Blog, Event, Our Team, Case Studies) */}
+        <div className="border-b border-slate-100 pb-2">
+          <button
+            onClick={() => toggleSection('resources')}
+            className="w-full py-2.5 flex items-center justify-between text-base font-bold text-[#0f172a] hover:text-[#063772] transition-colors cursor-pointer text-left"
+          >
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-[#063772]" />
+              <span>Our Resources</span>
+            </div>
+            <ChevronDown
+              className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${
+                expandedSection === 'resources' ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+
+          {expandedSection === 'resources' && (
+            <div className="mt-1 pl-4 pb-2 space-y-2.5 border-l-2 border-[#063772]/20">
+              {/* Blog */}
+              <Link
+                href="/blog"
+                onClick={onClose}
+                className="flex items-center gap-2.5 text-sm font-medium text-slate-700 hover:text-[#063772] py-1"
+              >
+                <BookOpen className="w-4 h-4 text-[#063772] shrink-0" />
+                <span>Blog & Insights</span>
+              </Link>
+
+              {/* Event */}
+              <Link
+                href="/events"
+                onClick={onClose}
+                className="flex items-center gap-2.5 text-sm font-medium text-slate-700 hover:text-[#23790a] py-1"
+              >
+                <Calendar className="w-4 h-4 text-[#23790a] shrink-0" />
+                <span>Events & Expos</span>
+              </Link>
+
+              {/* Our Team */}
+              <Link
+                href="/leadership"
+                onClick={onClose}
+                className="flex items-center gap-2.5 text-sm font-medium text-slate-700 hover:text-indigo-600 py-1"
+              >
+                <Users className="w-4 h-4 text-indigo-600 shrink-0" />
+                <span>Our Team & Leadership</span>
+              </Link>
+
+              {/* Case Studies */}
+              <Link
+                href="/case-studies"
+                onClick={onClose}
+                className="flex items-center gap-2.5 text-sm font-medium text-slate-700 hover:text-amber-700 py-1"
+              >
+                <Award className="w-4 h-4 text-amber-700 shrink-0" />
+                <span>Case Studies & Projects</span>
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* 6. Contact */}
         <div className="pb-2">
           <Link
             href="/contact"
@@ -241,7 +310,7 @@ export default function MobileMenu({ isOpen, onClose }) {
               pathname === '/contact' ? 'text-[#063772]' : 'text-[#0f172a] hover:text-[#063772]'
             }`}
           >
-            Contact & RFQ
+            Contact
           </Link>
         </div>
       </div>
@@ -268,7 +337,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         <Link
           href="/contact"
           onClick={onClose}
-          className="w-full bg-[#063772] text-white font-bold text-xs tracking-wider uppercase py-3.5 px-4 rounded-xs flex items-center justify-center gap-2 hover:bg-[#042956] transition-colors shadow-xs"
+          className="w-full bg-[#063772] text-white font-bold text-xs tracking-wider uppercase py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#042956] transition-colors shadow-xs"
         >
           <span>Request Engineering Quote</span>
           <ArrowRight className="w-4 h-4" />

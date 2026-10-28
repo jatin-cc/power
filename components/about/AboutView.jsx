@@ -155,40 +155,7 @@ export default function AboutView() {
                 </p>
               </div>
 
-              {/* Verified Key Credentials Pills */}
-              <div className="gsap-hero-item grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 border-t border-slate-100 mt-8">
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-purple-300 hover:bg-purple-50/50 transition-all group">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Sparkles className="w-4 h-4 text-purple-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold text-[#0f172a]">Women-Led</span>
-                  </div>
-                  <span className="text-[11px] text-slate-500 font-medium">Enterprise</span>
-                </div>
 
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group">
-                  <div className="flex items-center gap-2 mb-1">
-                    <ShieldCheck className="w-4 h-4 text-[#23790a] group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold text-[#0f172a]">ZED Gold</span>
-                  </div>
-                  <span className="text-[11px] text-slate-500 font-medium">Certified Enterprise</span>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:bg-blue-50/50 transition-all group">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Award className="w-4 h-4 text-[#063772] group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold text-[#0f172a]">DPIIT</span>
-                  </div>
-                  <span className="text-[11px] text-slate-500 font-medium">Recognised Startup</span>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:bg-blue-50/50 transition-all group">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Factory className="w-4 h-4 text-[#063772] group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold text-[#0f172a]">Ahmedabad</span>
-                  </div>
-                  <span className="text-[11px] text-slate-500 font-medium">Gujarat, India</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -292,61 +259,7 @@ export default function AboutView() {
             </div>
 
             {/* Categorized Visual Tabs of Interconnected Equipment */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-100">
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50/50 to-slate-50 border border-blue-100">
-                <div className="flex items-center gap-2 mb-3">
-                  <Zap className="w-4 h-4 text-[#063772]" />
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#063772]">
-                    Transformers & Compact Substations
-                  </h4>
-                </div>
-                <ul className="space-y-2 text-xs font-semibold text-slate-700">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#063772]" />
-                    Oil-Filled Power & Distribution Transformers
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#063772]" />
-                    Cast Resin (CRT) & VPI Dry-Type Transformers
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#063772]" />
-                    Inverter Duty Transformers (Solar / Renewables)
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#063772]" />
-                    Compact Substations (CSS) with HT, Transformer & LT Package
-                  </li>
-                </ul>
-              </div>
 
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-50/50 to-slate-50 border border-emerald-100">
-                <div className="flex items-center gap-2 mb-3">
-                  <Layers className="w-4 h-4 text-[#23790a]" />
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#23790a]">
-                    HT & Comprehensive LT Panels Range
-                  </h4>
-                </div>
-                <ul className="space-y-2 text-xs font-semibold text-slate-700">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" />
-                    HT Panels & PCC / MCC Power Control Centers
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" />
-                    APFC, PLC & Industrial Automation Panels
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" />
-                    Metering & Solar Power Distribution Panels
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#23790a]" />
-                    Fire Fighting & Ventilation Control Panels
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -379,42 +292,7 @@ export default function AboutView() {
               </p>
             </div>
 
-            {/* Interactive Process Sequence Flow */}
-            <div className="mt-8 pt-8 border-t border-slate-100">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-4">
-                In-House Process Control Flow
-              </span>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                {[
-                  { step: '01', title: 'LV & HV Winding', desc: 'Precision coil winding' },
-                  { step: '02', title: 'Core & Active Assembly', desc: 'CRGO core stacking' },
-                  { step: '03', title: 'Vacuum Resin Casting', desc: 'Void-free encapsulation' },
-                  { step: '04', title: 'Oven Processing', desc: 'Controlled thermal curing' },
-                  { step: '05', title: 'Final Testing', desc: 'Routine & type tests' },
-                ].map((item, idx) => (
-                  <div
-                    key={item.step}
-                    onMouseEnter={() => setHoveredStep(idx)}
-                    onMouseLeave={() => setHoveredStep(null)}
-                    className={`p-3.5 rounded-xl border text-center transition-all cursor-default ${hoveredStep === idx
-                      ? 'border-[#063772] bg-blue-50/70 shadow-xs scale-105'
-                      : 'border-slate-200/80 bg-slate-50'
-                      }`}
-                  >
-                    <span className="inline-block px-2 py-0.5 rounded bg-white text-[10px] font-mono font-bold text-[#063772] border border-slate-200 mb-1.5">
-                      STEP {item.step}
-                    </span>
-                    <h5 className="font-bold text-xs text-[#0f172a] leading-tight mb-1">
-                      {item.title}
-                    </h5>
-                    <p className="text-[10px] text-slate-500 leading-tight">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Quality Credentials Trust Bar */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
