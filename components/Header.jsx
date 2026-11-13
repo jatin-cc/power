@@ -42,20 +42,21 @@ export default function Header() {
 
   return (
     <header
+      data-lenis-prevent="true"
       onMouseLeave={handleHeaderMouseLeave}
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2.5'
-          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2 sm:py-2.5'
+          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3 sm:py-3.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand Logo - Placed properly at the left side */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <img
             src="/logo.jpeg"
             alt="G Sons Power Transformers Pvt. Ltd."
-            className="h-10 sm:h-12 w-auto object-contain group-hover:opacity-95 transition-opacity"
+            className="h-9 sm:h-11 lg:h-12 w-auto object-contain group-hover:opacity-95 transition-opacity"
           />
         </Link>
 
@@ -158,24 +159,34 @@ export default function Header() {
           </CTAButton>
         </div>
 
-        {/* Mobile Hamburger Trigger */}
-        <button
-          type="button"
-          onClick={() => {
-            setActiveMegaTab(null);
-            setMobileMenuOpen(true);
-          }}
-          className="lg:hidden w-10 h-10 border border-slate-200 flex items-center justify-center text-[#0f172a] hover:border-[#063772] hover:text-[#063772] transition-colors cursor-pointer bg-white"
-          aria-label="Open mobile menu"
-        >
-          <Menu className="w-5 h-5" />
-        </button>
+        {/* Mobile Action Controls: Quote Button + Hamburger */}
+        <div className="flex items-center gap-2 lg:hidden shrink-0">
+          <Link
+            href="/contact"
+            className="px-3 py-1.5 bg-[#063772] hover:bg-[#042956] text-white text-[11px] font-bold uppercase tracking-wider rounded-lg transition-colors shadow-2xs"
+          >
+            Get Quote
+          </Link>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveMegaTab(null);
+              setMobileMenuOpen(true);
+            }}
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-center text-[#0f172a] hover:border-[#063772] hover:text-[#063772] transition-colors cursor-pointer"
+            aria-label="Open mobile navigation menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       {/* Desktop Mega Menu Dropdown */}
       <MegaMenu activeTab={activeMegaTab} onClose={() => setActiveMegaTab(null)} />
 
-      {/* Mobile Custom Drawer */}
+      {/* Mobile Custom Slide-Over Drawer */}
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>
   );

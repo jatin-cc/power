@@ -25,7 +25,9 @@ export default function MegaMenu({ activeTab, onClose }) {
 
   return (
     <div
+      data-lenis-prevent="true"
       onMouseLeave={onClose}
+      onWheel={(e) => e.stopPropagation()}
       className="hidden lg:block absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl shadow-slate-900/5 transition-all duration-300 z-50 text-[#0f172a]"
     >
       <div className="max-w-7xl mx-auto px-6 py-8">
@@ -84,7 +86,11 @@ export default function MegaMenu({ activeTab, onClose }) {
                   View All
                 </Link>
               </div>
-              <div className="space-y-1">
+              <div
+                data-lenis-prevent="true"
+                onWheel={(e) => e.stopPropagation()}
+                className="space-y-1 max-h-[340px] overflow-y-auto pr-1 scrollbar-thin overscroll-contain"
+              >
                 {products
                   .filter(
                     (p) =>
@@ -92,7 +98,6 @@ export default function MegaMenu({ activeTab, onClose }) {
                       p.categorySlug === 'ht-panels' ||
                       p.categorySlug === 'lt-panels'
                   )
-                  .slice(0, 4)
                   .map((item) => (
                     <Link
                       key={item.id}
@@ -126,7 +131,11 @@ export default function MegaMenu({ activeTab, onClose }) {
                   All ({services.length})
                 </Link>
               </div>
-              <div className="space-y-1 max-h-[340px] overflow-y-auto pr-1 scrollbar-thin">
+              <div
+                data-lenis-prevent="true"
+                onWheel={(e) => e.stopPropagation()}
+                className="space-y-1 max-h-[340px] overflow-y-auto pr-1 scrollbar-thin overscroll-contain"
+              >
                 {services.map((item) => (
                   <Link
                     key={item.id}

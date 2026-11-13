@@ -23,6 +23,16 @@ export default function SmoothScroll({ children }) {
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
+      prevent: (node) => {
+        if (!node || typeof node.closest !== 'function') return false;
+        return (
+          node.closest('[data-lenis-prevent]') !== null ||
+          node.closest('header') !== null ||
+          node.closest('[data-subscroll]') !== null ||
+          node.closest('.overflow-y-auto') !== null ||
+          node.closest('.overflow-x-auto') !== null
+        );
+      },
     });
 
     function updateScroll(time) {
