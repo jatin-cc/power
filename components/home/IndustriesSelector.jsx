@@ -1,119 +1,161 @@
 'use client';
 
 import { useState } from 'react';
-import SectionHeading from '@/components/SectionHeading';
-import { industries } from '@/data/industries';
-import CTAButton from '@/components/CTAButton';
-import { ArrowRight, Factory, Zap, Shield, CheckCircle2, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import {
+  Zap,
+  Building2,
+  FileText,
+  Settings,
+  Pickaxe,
+  Train,
+  Pill,
+  Truck,
+  Leaf,
+  ArrowRight,
+} from 'lucide-react';
+
+const industryPills = [
+  {
+    name: 'Power Transmission',
+    icon: Zap,
+    slug: 'power-transmission',
+    desc: 'Grid intertie and sub-transmission step-down transformers up to 33 kV for state utilities and private transmission networks.',
+  },
+  {
+    name: 'Cement',
+    icon: Building2,
+    slug: 'cement',
+    desc: 'Heavy-duty transformers engineered for extreme dust environments, rotary kiln drive motors, and high cyclical thermal shocks.',
+  },
+  {
+    name: 'Paper & Pulp',
+    icon: FileText,
+    slug: 'paper-pulp',
+    desc: 'Continuous-duty power units with special anti-corrosive chemical coatings and high harmonic tolerance for paper pulping lines.',
+  },
+  {
+    name: 'Metal Processing',
+    icon: Settings,
+    slug: 'metal-processing',
+    desc: 'Robust furnace step-down and induction heating transformers engineered to resist severe electromagnetic mechanical stress.',
+  },
+  {
+    name: 'Mining',
+    icon: Pickaxe,
+    slug: 'mining',
+    desc: 'Compact skid-mounted substations and flameproof dry-type transformers for underground and open-cast mining conveyor systems.',
+  },
+  {
+    name: 'Railways',
+    icon: Train,
+    slug: 'railways',
+    desc: 'Auxiliary substation distribution units and signaling power transformers complying with strict railway safety norms.',
+  },
+  {
+    name: 'Pharmaceutical',
+    icon: Pill,
+    slug: 'pharmaceutical',
+    desc: 'Zero-fire-risk Cast Resin Dry Type (CRT) transformers ensuring uninterrupted cleanroom power for bulk drug manufacturing.',
+  },
+  {
+    name: 'Distribution',
+    icon: Truck,
+    slug: 'distribution',
+    desc: 'BEE Star-labeled, low-loss oil-filled distribution transformers powering smart city grids, IT hubs, and commercial zones.',
+  },
+  {
+    name: 'Green Energy',
+    icon: Leaf,
+    slug: 'green-energy',
+    desc: 'Multi-winding solar inverter duty and wind farm step-up transformers engineered to maximize generation export to the grid.',
+  },
+];
 
 export default function IndustriesSelector() {
-  const [selectedInd, setSelectedInd] = useState(industries[0]);
+  const [activePill, setActivePill] = useState(industryPills[0]);
 
   return (
-    <section id="industries" className="py-24 bg-white border-b border-slate-200 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
-          <SectionHeading
-            eyebrow="APPLICATION EXPERTISE"
-            title="Industries We Empower With Expertise"
-            subtitle="From solar IPPs and high-rise commercial developments to heavy manufacturing and state power utilities, G Sons Power delivers tailor-engineered distribution solutions."
-            className="mb-0 max-w-3xl"
-          />
-          <CTAButton href="/industries" size="md" variant="outline">
-            Explore All Sectors
-          </CTAButton>
+    <section id="industries" className="py-20 bg-[#163f73] text-white relative overflow-hidden">
+      {/* Background Subtle Tech Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10 text-center space-y-10">
+        {/* Title matching PDF Page 4 Reference */}
+        <div className="flex items-center justify-center gap-4">
+          <span className="hidden sm:block w-16 h-[1.5px] bg-gradient-to-r from-transparent to-blue-300" />
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            Industries We Empower With Expertise
+          </h2>
+          <span className="hidden sm:block w-16 h-[1.5px] bg-gradient-to-l from-transparent to-blue-300" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Industry Navigation List */}
-          <div className="lg:col-span-5 space-y-2.5">
-            {industries.map((ind) => {
-              const isSelected = selectedInd.id === ind.id;
+        {/* Capsule Pills Grid matching PDF Page 4 Reference */}
+        <div className="space-y-4">
+          {/* Row 1: 6 pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {industryPills.slice(0, 6).map((item) => {
+              const Icon = item.icon;
+              const isActive = activePill.name === item.name;
               return (
                 <button
-                  key={ind.id}
-                  onClick={() => setSelectedInd(ind)}
-                  className={`w-full text-left p-4.5 border transition-all duration-200 flex items-center justify-between cursor-pointer rounded-sm ${
-                    isSelected
-                      ? 'border-[#063772] bg-slate-50/80 text-[#063772] font-bold shadow-xs border-l-4 border-l-[#063772]'
-                      : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50/50'
+                  key={item.name}
+                  type="button"
+                  onClick={() => setActivePill(item)}
+                  className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-white text-[#163f73] border-white shadow-lg scale-105'
+                      : 'bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40'
                   }`}
                 >
-                  <div className="pr-4">
-                    <span className="text-sm block font-bold leading-tight">{ind.name}</span>
-                    <span className="text-[11px] text-slate-500 font-normal block mt-1">{ind.tagline}</span>
-                  </div>
-                  <ChevronRight
-                    className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                      isSelected ? 'translate-x-1 text-[#063772]' : 'text-slate-400'
-                    }`}
-                  />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#163f73]' : 'text-blue-200'}`} />
+                  <span>{item.name}</span>
                 </button>
               );
             })}
           </div>
 
-          {/* Industry Content Showcase Card */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 sm:p-10 rounded-sm flex flex-col justify-between shadow-xs">
-            <div className="space-y-6">
-              {/* Header inside Showcase */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-5">
-                <div>
-                  <span className="text-[10px] font-bold tracking-widest text-[#063772] uppercase block mb-1">
-                    SECTOR APPLICATION PROFILE
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-[#0f172a]">{selectedInd.name}</h3>
-                  <span className="text-xs text-slate-500 font-medium block mt-0.5">{selectedInd.tagline}</span>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                {selectedInd.desc}
-              </p>
-
-              {/* Recommended Product Tags */}
-              <div className="space-y-2.5">
-                <span className="text-[11px] font-bold tracking-wider text-[#0f172a] uppercase block">
-                  RECOMMENDED TRANSFORMER ARCHITECTURE
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {selectedInd.keyProducts.map((p, pIdx) => (
-                    <span
-                      key={pIdx}
-                      className="bg-[#23790a]/10 border border-[#23790a]/20 text-[#23790a] px-3 py-1.5 text-xs font-bold rounded-xs shadow-2xs"
-                    >
-                      {p}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sector Metrics Grid */}
-              <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-xs">
-                {Object.entries(selectedInd.stats).map(([k, v]) => (
-                  <div key={k} className="p-3 bg-white border border-slate-200 rounded-xs">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-0.5">
-                      {k.replace(/([A-Z])/g, ' $1')}
-                    </span>
-                    <span className="text-xs sm:text-sm font-bold text-[#0f172a] block">
-                      {v}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Button inside Card */}
-            <div className="pt-6 mt-8 border-t border-slate-200/80 flex items-center justify-between">
-              <span className="text-xs text-slate-500">
-                Custom engineering available for {selectedInd.name}
-              </span>
-              <CTAButton href="/contact" size="sm" variant="primary">
-                Discuss Sector Specs
-              </CTAButton>
-            </div>
+          {/* Row 2: 3 pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {industryPills.slice(6, 9).map((item) => {
+              const Icon = item.icon;
+              const isActive = activePill.name === item.name;
+              return (
+                <button
+                  key={item.name}
+                  type="button"
+                  onClick={() => setActivePill(item)}
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-white text-[#163f73] border-white shadow-lg scale-105'
+                      : 'bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/40'
+                  }`}
+                >
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#163f73]' : 'text-blue-200'}`} />
+                  <span>{item.name}</span>
+                </button>
+              );
+            })}
           </div>
+        </div>
+
+        {/* Selected Industry Detail Card */}
+        <div className="max-w-2xl mx-auto p-6 rounded-xl bg-white/10 border border-white/20 backdrop-blur-md text-left transition-all">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-300">
+              Sector Overview &bull; {activePill.name}
+            </span>
+            <Link
+              href="/industries"
+              className="inline-flex items-center gap-1 text-xs font-bold text-white hover:text-emerald-300 transition-colors"
+            >
+              <span>Explore All Sectors</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed">
+            {activePill.desc}
+          </p>
         </div>
       </div>
     </section>

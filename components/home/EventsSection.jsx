@@ -1,99 +1,90 @@
 'use client';
 
-import SectionHeading from '@/components/SectionHeading';
 import Link from 'next/link';
-import { Calendar, MapPin, ArrowRight, Sparkles, Building2 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
-const industryEvents = [
+const eventCards = [
   {
-    id: "e1",
-    type: "PREMIER ELECTRICAL EXPO",
-    title: "ELECRAMA 2026 – World Electricity Forum",
-    date: "February 14–18, 2026",
-    location: "India Expo Mart, Greater Noida — Hall 12, Stall C-18",
-    desc: "Live demonstration of G Sons Power Cast Resin Dry-Type (CRT) Class-H transformers, energy-efficient IS 1180 distribution units, and vacuum resin casting technology."
+    title: 'Diwali Celebration & Annual Team Gathering',
+    category: 'Corporate Culture',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
+    link: '/events',
   },
   {
-    id: "e2",
-    type: "RENEWABLE ENERGY SUMMIT",
-    title: "Renewable Energy India Expo (REI)",
-    date: "October 08–10, 2026",
-    location: "India Expo Centre, Delhi NCR — Pavilion 4",
-    desc: "Showcasing specialized multi-winding Solar Inverter Duty Transformers, high-voltage step-up units, and turnkey package Compact Substations (CSS) for solar IPPs."
+    title: 'Team G Sons At Elecrama 2026 World Forum',
+    category: 'Industry Exhibition',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
+    link: '/events',
   },
   {
-    id: "e3",
-    type: "TECHNICAL WORKSHOP & EXPO",
-    title: "DistribuELEC Power Distribution Convention",
-    date: "November 22–24, 2026",
-    location: "Bombay Exhibition Centre, Mumbai",
-    desc: "Technical presentation by G Sons Power engineering team on minimizing no-load core losses with Prime CRGO steel and meeting Bureau of Energy Efficiency norms."
-  }
+    title: 'G Sons Power Orderbook Outlook | National Infra Forum',
+    category: 'Industry Summit',
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',
+    link: '/events',
+  },
 ];
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-24 bg-slate-50/70 border-b border-slate-200 relative overflow-hidden">
+    <section id="events" className="py-20 bg-white border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <SectionHeading
-            eyebrow="CONVENTIONS & EXHIBITIONS"
-            title="Events & Industry Interactions"
-            subtitle="Connect directly with G Sons Power technical directors and design engineers at premier power expos and engineering summits."
-            className="mb-0 max-w-3xl"
-          />
-          <Link
-            href="/events"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#063772] uppercase tracking-wider hover:gap-3 transition-all shrink-0"
-          >
-            All Upcoming Events <ArrowRight className="w-4 h-4" />
-          </Link>
+        {/* Section Heading & Introductory Text matching PDF Page 5 */}
+        <div className="max-w-4xl mx-auto text-center mb-12 space-y-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
+            Events &amp; Industry Interactions
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 font-normal leading-relaxed max-w-3xl mx-auto">
+            Join us at global exhibitions, conferences, and industry meet-ups where leading transformer suppliers showcase innovations, exchange ideas, and shape the future of power. Stay connected to witness our latest breakthroughs and collaborative energy solutions in action.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {industryEvents.map((item, idx) => {
-            const isGreen = idx === 1;
-            const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
-            return (
-              <div
-                key={item.id}
-                className="bg-white border border-slate-200 rounded-sm p-7 flex flex-col justify-between hover:border-[#063772] hover:shadow-xl transition-all duration-300 shadow-2xs group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-xs ${badgeBg}`}>
-                      {item.type}
-                    </span>
-                    <Building2 className="w-4 h-4 text-slate-400 group-hover:text-[#063772] transition-colors" />
-                  </div>
+        {/* 3 Event Cards matching PDF Page 5 Reference */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {eventCards.map((card, idx) => (
+            <div
+              key={idx}
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#063772] transition-all duration-300 flex flex-col justify-end min-h-[340px] sm:min-h-[380px] bg-slate-900"
+            >
+              {/* Image Background */}
+              <img
+                src={card.image}
+                alt={card.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e3f] via-[#0a1e3f]/40 to-transparent" />
 
-                  <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#063772] transition-colors leading-snug">
-                    {item.title}
+              {/* Bottom Card Overlay with Title and Circle Arrow Button */}
+              <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 block">
+                    {card.category}
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-sky-200 transition-colors">
+                    {card.title}
                   </h3>
-
-                  <div className="space-y-2 text-xs text-slate-500 font-medium pt-2 border-t border-slate-100">
-                    <div className="flex items-center gap-2 text-slate-700">
-                      <Calendar className="w-4 h-4 text-[#23790a] shrink-0" />
-                      <span>{item.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-500">
-                      <MapPin className="w-4 h-4 text-[#23790a] shrink-0" />
-                      <span>{item.location}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal pt-1">
-                    {item.desc}
-                  </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#063772]">
-                  <span className="uppercase tracking-wider text-[11px]">Schedule Booth Meeting</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                </div>
+                <Link
+                  href={card.link}
+                  className="w-10 h-10 rounded-full bg-white/20 hover:bg-[#e84e36] text-white flex items-center justify-center shrink-0 backdrop-blur-md border border-white/30 transition-all duration-200 group-hover:scale-110"
+                  aria-label="View event details"
+                >
+                  <ArrowUpRight className="w-5 h-5" />
+                </Link>
               </div>
-            );
-          })}
+            </div>
+          ))}
+        </div>
+
+        {/* Centered View More Button matching PDF Page 5 */}
+        <div className="text-center pt-10">
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#e84e36] hover:bg-[#d43d26] text-white text-xs sm:text-sm font-bold tracking-wide shadow-md transition-all duration-300 group cursor-pointer"
+          >
+            <span>View More</span>
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>

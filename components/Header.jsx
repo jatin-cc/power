@@ -31,6 +31,11 @@ export default function Header() {
     setActiveMegaTab(tabName);
   };
 
+  const handleLinkClick = (tabName, e) => {
+    e.preventDefault();
+    setActiveMegaTab((prev) => (prev === tabName ? null : tabName));
+  };
+
   const handleHeaderMouseLeave = () => {
     setActiveMegaTab(null);
   };
@@ -45,16 +50,17 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo - Placed properly at the left side */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <img
             src="/logo.jpeg"
             alt="G Sons Power Transformers Pvt. Ltd."
-            className="h-10 sm:h-11 w-auto object-contain group-hover:opacity-95 transition-opacity"
+            className="h-10 sm:h-12 w-auto object-contain group-hover:opacity-95 transition-opacity"
           />
         </Link>
 
         {/* Desktop Navigation Links */}
+        {/* Menu list as per PDF: [ About | Product & Service* | Infrastructure | Industries | Our Resources* | Contact ] */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {/* 1. About */}
           <Link
@@ -66,21 +72,21 @@ export default function Header() {
             About
           </Link>
 
-          {/* 2. Product & Service (Combined) */}
+          {/* 2. Product & Service* (Click or Hover reveals dropdown options) */}
           <div
             onMouseEnter={() => handleLinkHover('products-services')}
-            className="relative py-2 cursor-pointer flex items-center gap-1 group"
+            onClick={(e) => handleLinkClick('products-services', e)}
+            className="relative py-2 cursor-pointer flex items-center gap-1 group select-none"
           >
-            <Link
-              href="/products-services"
+            <span
               className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#063772] ${
-                pathname.startsWith('/products') || pathname.startsWith('/services')
+                pathname.startsWith('/products') || pathname.startsWith('/services') || activeMegaTab === 'products-services'
                   ? 'text-[#063772]'
                   : 'text-[#0f172a]'
               }`}
             >
-              Product & Service
-            </Link>
+              Product &amp; Service*
+            </span>
             <ChevronDown
               className={`w-3.5 h-3.5 text-[#063772] transition-transform duration-200 ${
                 activeMegaTab === 'products-services' ? 'rotate-180' : 'group-hover:rotate-180'
@@ -98,42 +104,34 @@ export default function Header() {
             Infrastructure
           </Link>
 
-          {/* 4. Industries */}
-          <div
-            onMouseEnter={() => handleLinkHover('industries')}
-            className="relative py-2 cursor-pointer flex items-center gap-1 group"
+          {/* 4. Industries (Direct Clean Link) */}
+          <Link
+            href="/industries"
+            className={`text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[#063772] ${
+              pathname === '/industries' ? 'text-[#063772]' : 'text-[#0f172a]'
+            }`}
           >
-            <Link
-              href="/industries"
-              className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#063772] ${
-                pathname === '/industries' ? 'text-[#063772]' : 'text-[#0f172a]'
-              }`}
-            >
-              Industries
-            </Link>
-            <ChevronDown
-              className={`w-3.5 h-3.5 text-[#063772] transition-transform duration-200 ${
-                activeMegaTab === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'
-              }`}
-            />
-          </div>
+            Industries
+          </Link>
 
-          {/* 5. Our Resources (Dropdown: Blog, Event, Our Team, Case Studies) */}
+          {/* 5. Our Resources* (Click or Hover reveals dropdown options) */}
           <div
             onMouseEnter={() => handleLinkHover('resources')}
-            className="relative py-2 cursor-pointer flex items-center gap-1 group"
+            onClick={(e) => handleLinkClick('resources', e)}
+            className="relative py-2 cursor-pointer flex items-center gap-1 group select-none"
           >
             <span
               className={`text-xs font-semibold uppercase tracking-wider transition-colors group-hover:text-[#063772] ${
                 pathname === '/blog' ||
                 pathname === '/events' ||
                 pathname === '/leadership' ||
-                pathname === '/case-studies'
+                pathname === '/case-studies' ||
+                activeMegaTab === 'resources'
                   ? 'text-[#063772]'
                   : 'text-[#0f172a]'
               }`}
             >
-              Our Resources
+              Our Resources*
             </span>
             <ChevronDown
               className={`w-3.5 h-3.5 text-[#063772] transition-transform duration-200 ${
@@ -153,7 +151,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right Desktop CTA */}
+        {/* Right Desktop CTA: Get Technical Quote Button */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
           <CTAButton href="/contact" size="sm" variant="primary">
             Get Technical Quote

@@ -125,7 +125,7 @@ export default function MobileMenu({ isOpen, onClose }) {
           >
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-[#063772]" />
-              <span>Product & Service</span>
+              <span>Product &amp; Service*</span>
             </div>
             <ChevronDown
               className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${
@@ -247,7 +247,7 @@ export default function MobileMenu({ isOpen, onClose }) {
           >
             <div className="flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[#063772]" />
-              <span>Our Resources</span>
+              <span>Our Resources*</span>
             </div>
             <ChevronDown
               className={`w-4 h-4 text-[#063772] transition-transform duration-200 ${

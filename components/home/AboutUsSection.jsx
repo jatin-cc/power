@@ -3,42 +3,65 @@
 import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
 import CTAButton from '@/components/CTAButton';
-import { ArrowRight } from 'lucide-react';
-
-const stats = [
-  { value: '5 MVA', label: 'Maximum Single Unit Capacity', detail: '11 kV & 33 kV Classes' },
-  { value: '10,000+', label: 'Transformers Installed', detail: 'Across India & Global Grids' },
-  { value: '100%', label: 'Routine Testing In-House', detail: 'Turn Ratio, Winding & Loss' },
-  { value: '99.98%', label: 'Field Operating Reliability', detail: 'Verified by Utility Audits' }
-];
+import { ArrowRight, CheckCircle2, ShieldCheck, Award, Building2, Factory, Sparkles } from 'lucide-react';
 
 export default function AboutUsSection() {
   return (
     <section id="about" className="py-24 bg-white border-b border-slate-200 relative overflow-hidden">
-      {/* Subtle blueprint grid in background */}
+      {/* Blueprint Grid Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Top Header & Intro Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-          <div className="lg:col-span-6 space-y-4">
-            <SectionHeading
-              eyebrow="ABOUT G SONS POWER TRANSFORMERS"
-              title="Decades of Precision Engineering. Reliable Power Across the Nation."
-              subtitle="At G Sons Power Transformers Pvt. Ltd., electrical equipment is the backbone of modern industry, critical infrastructure, and sustainable energy."
-              className="mb-0"
-            />
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Story & Content from About Us Document */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80">
+              <span className="w-2 h-2 rounded-full bg-[#063772] animate-pulse" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#063772]">
+                ABOUT G SONS POWER TRANSFORMERS
+              </span>
+            </div>
 
-          <div className="lg:col-span-6 space-y-5 text-sm text-slate-600 leading-relaxed font-normal">
-            <p>
-              Backed by decades of engineering expertise from the <strong className="text-[#0f172a] font-semibold">G Sons Group</strong>, our state-of-the-art facility integrates vacuum resin casting plants, automated coil winding lines, computerized testing bays, and precision fabrication.
-            </p>
-            <p>
-              Today, our certified <strong className="text-[#0f172a] font-semibold">Oil-Filled Distribution Transformers, Cast Resin Dry Type (CRT), VPI Dry Type Transformers</strong>, and <strong className="text-[#0f172a] font-semibold">Compact Substations (CSS)</strong> power industrial complexes, smart cities, commercial towers, healthcare facilities, solar farms, and regional power utilities.
-            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-[1.15]">
+              Two Decades of Electrical Heritage. Tailored For Mission-Critical Grids.
+            </h2>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="space-y-4 text-base text-slate-600 leading-relaxed font-normal">
+              <p>
+                <strong className="text-[#0f172a] font-semibold">G Sons Power Transformers Pvt. Ltd.</strong> is a women-led manufacturer of transformers and compact substations based in Ahmedabad, Gujarat. A DPIIT-recognised startup and ZED Gold-certified enterprise, we combine dedicated manufacturing capabilities with more than two decades of electrical engineering and turnkey project experience across the G Sons Power Group.
+              </p>
+              <p>
+                We engineer each unit around the application, site constraints, and customer’s technical single-line diagrams (SLD)—powering heavy industrial plants, public infrastructure, institutions, commercial complexes, and renewable energy farms.
+              </p>
+            </div>
+
+            {/* Representative Client Track Record Pills */}
+            <div className="pt-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-3">
+                Proven Group Project Experience Includes:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Hindustan Aeronautics Limited',
+                  'Banas Dairy',
+                  'GMM Pfaudler',
+                  'Micron Semiconductors',
+                  'Senapathy Whiteley',
+                  'Sobha Limited'
+                ].map((client) => (
+                  <span
+                    key={client}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-800"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    {client}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-4 flex flex-wrap items-center gap-4">
               <CTAButton href="/about" size="md" variant="primary">
                 Learn More About Us
               </CTAButton>
@@ -50,29 +73,59 @@ export default function AboutUsSection() {
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Real-world Metrics Strip */}
-        <div className="bg-[#0f172a] text-white p-8 sm:p-10 rounded-sm shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
-          {stats.map((stat, idx) => {
-            const isGreen = idx % 2 === 1;
-            return (
-              <div key={idx} className={`${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''} space-y-1`}>
-                <div
-                  className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${isGreen ? 'text-[#23790a]' : 'text-[#38bdf8]'
-                    }`}
-                >
-                  {stat.value}
+          {/* Right Column: Visual Creative Showcase Card */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-[#063772] to-[#042956] text-white p-8 sm:p-10 shadow-2xl overflow-hidden border border-slate-700">
+              {/* Subtle Ambient Rings */}
+              <div className="absolute -top-16 -right-16 w-64 h-64 border border-white/10 rounded-full pointer-events-none" />
+              <div className="absolute -bottom-16 -left-16 w-64 h-64 border border-white/10 rounded-full pointer-events-none" />
+
+              <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-emerald-400 mb-3">
+                KEY CREDENTIALS
+              </span>
+              <h3 className="text-2xl font-bold text-white mb-6 leading-snug">
+                Certified Manufacturing &amp; Quality Excellence
+              </h3>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+                  <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-sm text-white">Women-Led &amp; DPIIT Recognized</h4>
+                    <p className="text-xs text-slate-300 font-normal mt-0.5">
+                      Empowering inclusive industrial growth as a registered next-gen startup.
+                    </p>
+                  </div>
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
-                  {stat.label}
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+                  <Award className="w-6 h-6 text-yellow-400 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-sm text-white">ZED Gold Enterprise</h4>
+                    <p className="text-xs text-slate-300 font-normal mt-0.5">
+                      Zero Defect, Zero Effect certified manufacturing process and controls.
+                    </p>
+                  </div>
                 </div>
-                <div className="text-[11px] text-slate-400">
-                  {stat.detail}
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15">
+                  <Factory className="w-6 h-6 text-sky-400 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-sm text-white">BIS Licensed Manufacturer</h4>
+                    <p className="text-xs text-slate-300 font-normal mt-0.5">
+                      Compliant with IS 1180 &amp; IS 2026 standards with full in-house testing.
+                    </p>
+                  </div>
                 </div>
               </div>
-            );
-          })}
+
+              <div className="mt-6 pt-6 border-t border-white/15 flex items-center justify-between text-xs text-slate-300 font-medium">
+                <span>Ahmedabad, Gujarat, India</span>
+                <span className="text-emerald-400 font-bold">20+ Years Heritage</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

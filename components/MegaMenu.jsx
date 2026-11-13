@@ -126,7 +126,7 @@ export default function MegaMenu({ activeTab, onClose }) {
                   All ({services.length})
                 </Link>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 max-h-[340px] overflow-y-auto pr-1 scrollbar-thin">
                 {services.map((item) => (
                   <Link
                     key={item.id}

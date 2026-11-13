@@ -1,86 +1,61 @@
 'use client';
 
 import Link from 'next/link';
-import { leadershipTeam } from '@/data/team';
-import SectionHeading from '@/components/SectionHeading';
-import { ArrowRight, Linkedin, Mail, Award, CheckCircle } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function MeetOurTeam() {
   return (
-    <section id="team" className="py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+    <section id="team" className="py-20 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <SectionHeading
-            eyebrow="LEADERSHIP & ENGINEERING EXPERTISE"
-            title="Meet Our Leadership & Technical Team"
-            subtitle="Led by visionary industrial leaders, high-voltage design engineers, and certified testing specialists dedicated to Zero-Defect excellence."
-            className="mb-0 max-w-3xl"
-          />
-          <Link
-            href="/leadership"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#063772] hover:underline uppercase tracking-wider shrink-0"
-          >
-            Executive Governance <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        {/* Dark Navy Blueprint Card matching PDF Page 3 Reference */}
+        <div className="relative rounded-2xl bg-[#0a1e3f] text-white p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden border border-blue-900/50">
+          {/* Subtle concentric circles overlay as shown in reference */}
+          <div className="absolute top-0 left-0 w-80 h-80 rounded-full border border-blue-500/10 pointer-events-none -translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full border border-blue-500/10 pointer-events-none -translate-x-1/4 -translate-y-1/4" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full border border-blue-500/10 pointer-events-none translate-x-1/4 translate-y-1/4" />
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {leadershipTeam.map((member, idx) => {
-            const isGreen = idx % 2 === 1;
-            const badgeBg = isGreen ? 'bg-[#23790a]/10 text-[#23790a]' : 'bg-[#063772]/10 text-[#063772]';
-            return (
-              <div
-                key={idx}
-                className="group bg-slate-50 border border-slate-200 rounded-sm overflow-hidden hover:border-[#063772] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Photo with subtle hover zoom */}
-                  <div className="relative aspect-[4/5] bg-slate-200 overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+            {/* Left: Founder Photo in rounded frame */}
+            <div className="lg:col-span-4 flex justify-center lg:justify-start">
+              <div className="relative w-56 h-64 sm:w-64 sm:h-72 lg:w-72 lg:h-80 rounded-2xl overflow-hidden border-2 border-blue-400/30 shadow-2xl bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                  alt="Founder & Chairman - G Sons Power"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+              </div>
+            </div>
 
-                  {/* Info Container */}
-                  <div className="p-6 space-y-3">
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-xs inline-block ${badgeBg}`}>
-                      {member.role}
-                    </span>
+            {/* Right: Message & Attribution */}
+            <div className="lg:col-span-8 flex flex-col justify-between space-y-6">
+              <div className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                <p className="text-xs sm:text-sm lg:text-[13px] text-slate-200 leading-relaxed font-normal">
+                  The Fiscal Year has been an epoch period for G Sons Power Transformers. With record-high performance in production, delivery precision, and technical order inflow, we have consolidated our position as a trusted leader in power and distribution transformer solutions. Our relentless pursuit of innovation, zero-defect manufacturing, and customer satisfaction propels our long-term vision. As transformer manufacturers committed to India&apos;s future energy and global grid resilience, we remain committed to excellence in advancing national infrastructure objectives such as &ldquo;Viksit Bharat 2047&rdquo;. We are grateful to all our stakeholders for their trust and support in this change-making journey.
+                </p>
 
-                    <h3 className="text-lg font-bold text-[#0f172a] group-hover:text-[#063772] transition-colors leading-snug">
-                      {member.name}
-                    </h3>
-
-                    {member.credentials && (
-                      <div className="text-[11px] font-semibold text-slate-500 flex items-center gap-1.5">
-                        <Award className="w-3.5 h-3.5 text-[#23790a] shrink-0" />
-                        <span>{member.credentials}</span>
-                      </div>
-                    )}
-
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal pt-2 border-t border-slate-200/80">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom Card Footer */}
-                <div className="px-6 pb-5 pt-0 flex items-center justify-between text-xs text-slate-400">
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-                    G Sons Power Team
+                <div className="pt-6 mt-6 border-t border-white/10">
+                  <h4 className="text-base sm:text-lg font-bold text-white tracking-wide">
+                    Er. Rajesh Sharma / Sunita Goyal
+                  </h4>
+                  <span className="text-xs text-blue-300 font-medium block mt-0.5">
+                    Founder &amp; Chairman / Managing Director
                   </span>
-                  <div className="w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 group-hover:bg-[#063772] group-hover:text-white transition-colors">
-                    <CheckCircle className="w-3.5 h-3.5" />
-                  </div>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Right corner button as shown in reference */}
+              <div className="flex justify-end pt-2">
+                <Link
+                  href="/leadership"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#e84e36] hover:bg-[#d43d26] text-white text-xs sm:text-sm font-bold tracking-wide shadow-lg transition-all duration-300 group cursor-pointer"
+                >
+                  <span>Meet Our Team</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

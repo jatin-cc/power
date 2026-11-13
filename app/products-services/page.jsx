@@ -114,7 +114,7 @@ export default function ProductsServicesPage() {
                     <span className="text-[10px] font-bold tracking-widest text-[#23790a] uppercase block">
                       KEY DELIVERABLES
                     </span>
-                    {s.benefits.slice(0, 3).map((b, bIdx) => (
+                    {(s.benefits || s.scope || []).slice(0, 3).map((b, bIdx) => (
                       <div key={bIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#23790a] shrink-0" />
                         <span>{b}</span>

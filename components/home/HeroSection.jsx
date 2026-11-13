@@ -94,11 +94,8 @@ export default function HeroSection() {
             </p>
 
             <div ref={ctaGroupRef} className="pt-2 flex flex-wrap items-center gap-4">
-              <CTAButton href="/products-services" size="lg" variant="primary">
-                Explore Products & Switchgear
-              </CTAButton>
-              <CTAButton href="/contact" size="lg" variant="outline">
-                Request Engineering Quote
+              <CTAButton href="/products" size="lg" variant="primary">
+                Explore Products
               </CTAButton>
             </div>
 
